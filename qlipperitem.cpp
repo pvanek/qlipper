@@ -5,6 +5,7 @@
 #include <QtCore/QUrl>
 #include <QtDebug>
 
+#include "qlipperpreferences.h"
 #include "qlipperitem.h"
 
 
@@ -26,7 +27,12 @@ QlipperItem::QlipperItem(QClipboard::Mode mode)
 //        m_contentType = QlipperItem::RichText;
 //    }
     else if (mimeData->hasText()) {
-        m_content = mimeData->text();
+        QString s(mimeData->text());
+        if (QlipperPreferences::Instance()->value("trim").toBool())
+        {
+            s = s.trimmed();
+        }
+        m_content = s;
         m_contentType = QlipperItem::PlainText;
     }
     else if (mimeData->hasUrls()) {
@@ -97,7 +103,7 @@ QString QlipperItem::displayRole() const
     case QlipperItem::PlainText:
     case QlipperItem::RichText:
     case QlipperItem::Sticky:
-        return m_content.toString().left(20); // TODO/FIXME: configurable!
+        return m_content.toString().left(QlipperPreferences::Instance()->value("displaySize").toInt());
     case QlipperItem::Image:
         return QObject::tr("An Image");
     }

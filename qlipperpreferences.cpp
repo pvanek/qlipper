@@ -1,4 +1,5 @@
 #include "qlipperpreferences.h"
+#include <QtDebug>
 
 
 QlipperPreferences* QlipperPreferences::m_instance = 0;
@@ -7,7 +8,6 @@ QlipperPreferences* QlipperPreferences::m_instance = 0;
 QlipperPreferences::QlipperPreferences()
     : QSettings()
 {
-    setDefaultFormat(QSettings::IniFormat);
 }
 
 QlipperPreferences::~QlipperPreferences()
@@ -49,6 +49,7 @@ void QlipperPreferences::saveStickyItems(QList<QlipperItem> list)
 {
     beginGroup("sticky");
     int i = 0;
+    remove("items");
     beginWriteArray("items");
     foreach (QlipperItem item, list)
     {
@@ -62,6 +63,7 @@ void QlipperPreferences::saveStickyItems(QList<QlipperItem> list)
 
 QList<QlipperItem> QlipperPreferences::getDynamicItems()
 {
+    qDebug() << "QlipperPreferences::getDynamicItems()";
     QList<QlipperItem> l;
     //
     // keys:
@@ -77,8 +79,10 @@ QList<QlipperItem> QlipperPreferences::getDynamicItems()
         setArrayIndex(i);
         QlipperItem item(value("mode").value<QClipboard::Mode>(),
                          value("contentType").value<QlipperItem::ContentType>(),
-                         value("cotent")
+                         value("content")
                         );
+        qDebug() << "getDynamicItems" << value("mode") << value("contentType") << value("cotent");
+        qDebug() << "               " << value("mode").value<QClipboard::Mode>() << value("contentType").value<QlipperItem::ContentType>();
         if (item.isValid())
             l.append(item);
     }
@@ -90,8 +94,10 @@ QList<QlipperItem> QlipperPreferences::getDynamicItems()
 
 void QlipperPreferences::saveDynamicItems(QList<QlipperItem> list)
 {
+    qDebug() << "QlipperPreferences::saveDynamicItems(QList<QlipperItem> list)";
     beginGroup("dynamic");
     int i = 0;
+    remove("items");
     beginWriteArray("items");
     foreach (QlipperItem item, list)
     {
@@ -100,6 +106,7 @@ void QlipperPreferences::saveDynamicItems(QList<QlipperItem> list)
         setValue("mode", item.clipBoardMode());
         setValue("contentType", item.contentType());
         setValue("content", item.content());
+        qDebug() << "saveDynamicContent" << item.clipBoardMode() << item.contentType() << item.content();
     }
     endArray();
     endGroup();

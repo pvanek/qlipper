@@ -1,7 +1,10 @@
 #include <QtGui/QApplication>
 #include <QtGui/QIcon>
+#include <QtCore/QTimer>
+#include <QtDebug>
 
 #include "qlippermodel.h"
+#include "qlipperpreferences.h"
 
 
 QlipperModel::QlipperModel(QObject *parent) :
@@ -9,17 +12,37 @@ QlipperModel::QlipperModel(QObject *parent) :
 {
     m_clipboard = QApplication::clipboard();
 
+    m_sticky = QlipperPreferences::Instance()->getStickyItems();
+    m_dynamic = QlipperPreferences::Instance()->getDynamicItems();
+    reset();
+
+#ifdef Q_WS_MAC
+    m_timer = new QTimer(this);
+    connect(m_timer, SIGNAL(timeout()), this, SLOT(timer_timeout()));
+    m_timer->start(1000);
+#endif
+
     connect(m_clipboard, SIGNAL(changed(QClipboard::Mode)),
             this, SLOT(clipboard_changed(QClipboard::Mode)));
 }
 
-int QlipperModel::rowCount(const QModelIndex&) const
+QlipperModel::~QlipperModel()
 {
-    return m_sticky.count() + m_data.count();
+    QlipperPreferences::Instance()->saveDynamicItems(m_dynamic);
+    QlipperPreferences::Instance()->saveStickyItems(m_sticky);
+    m_dynamic.clear();
+    m_sticky.clear();
 }
 
+int QlipperModel::rowCount(const QModelIndex&) const
+{
+    return m_sticky.count() + m_dynamic.count();
+}
+
+// TODO/FIXME: BETTER API! This is very confusing and potentially dangerous...
 QList<QlipperItem> QlipperModel::getList(int & row) const
 {
+    qDebug() << "getList" << row;
     if (m_sticky.count() > row)
     {
         return m_sticky;
@@ -27,7 +50,7 @@ QList<QlipperItem> QlipperModel::getList(int & row) const
     else
     {
         row = row - m_sticky.count();
-        return m_data;
+        return m_dynamic;
     }
 }
 
@@ -38,12 +61,15 @@ QVariant QlipperModel::data(const QModelIndex& index, int role) const
 
     int row = index.row();
 
+    QList<QlipperItem> list = getList(row);
+    qDebug() << "ROW" << index << row;
+
     switch (role)
     {
     case Qt::DisplayRole:
-        return getList(row).at(row).displayRole();
+        return list.at(row).displayRole();
     case Qt::DecorationRole:
-        return getList(row).at(row).decorationRole();
+        return list.at(row).decorationRole();
     }
 
     return "";
@@ -65,25 +91,28 @@ void QlipperModel::clipboard_changed(QClipboard::Mode mode)
         return;
     }
 
-    int ix = m_data.indexOf(item);
+    int ix = m_dynamic.indexOf(item);
     qDebug() << "    ix" << ix;
     if (ix != -1)
     {
-        m_data.move(ix, 0);
+        m_dynamic.move(ix, 0);
     }
     else
     {
-        m_data.prepend(item);
-        if (m_data.count() > 5) // TODO/FIXME: configurable value!
-            m_data.removeLast();
+        m_dynamic.prepend(item);
+        if (m_dynamic.count() > QlipperPreferences::Instance()->value("historyCount").toInt())
+            m_dynamic.removeLast();
     }
+
+    // TODO/FIXME: optimize it somehow... it can be too brutal for HDD
+    QlipperPreferences::Instance()->saveDynamicItems(m_dynamic);
 
     reset();
 }
 
 void QlipperModel::clearHistory()
 {
-    m_data.clear();
+    m_dynamic.clear();
     reset();
 }
 
@@ -94,5 +123,15 @@ void QlipperModel::indexTriggered(const QModelIndex & index)
         return;
 
     int row = index.row();
-    m_data.at(row).toClipboard();
+    QList<QlipperItem> list = getList(row);
+    list.at(row).toClipboard();
 }
+
+#ifdef Q_WS_MAC
+void QlipperModel::timer_timeout()
+{
+    m_timer->stop();
+    clipboard_changed(QClipboard::Clipboard);
+    m_timer->start();
+}
+#endif

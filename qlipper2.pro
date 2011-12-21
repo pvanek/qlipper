@@ -1,6 +1,6 @@
 TARGET = qlipper2
 TEMPLATE = app
-CONFIG += debug
+CONFIG += release #debug
 OBJECTS_DIR += build
 MOC_DIR += build
 UI_DIR += build
@@ -18,7 +18,8 @@ SOURCES += \
     qlippersystray.cpp \
     qlipperitem.cpp \
     qlippermenuview.cpp \
-    qlipperpreferences.cpp
+    qlipperpreferences.cpp \
+    qlipperpreferencesdialog.cpp
 
 HEADERS += \
     qkeysequencewidget/qkeysequencewidget.h \
@@ -33,7 +34,8 @@ HEADERS += \
     qlipperitem.h \
     qlippermenuview.h \
     config.h \
-    qlipperpreferences.h
+    qlipperpreferences.h \
+    qlipperpreferencesdialog.h
 
 !os2 {
     SOURCES += qxt/qxtglobal.cpp \
@@ -58,16 +60,5 @@ win32 {
 RESOURCES += \
     qlipper.qrc
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+FORMS += \
+    qlipperpreferencesdialog.ui

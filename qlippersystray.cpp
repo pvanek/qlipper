@@ -5,6 +5,8 @@
 #include "qlippermenuview.h"
 #include "qlippermodel.h"
 #include "qxtglobalshortcut.h"
+#include "qlipperpreferences.h"
+#include "qlipperpreferencesdialog.h"
 #include "qlippersystray.h"
 
 
@@ -36,7 +38,7 @@ QlipperSystray::QlipperSystray(QObject *parent)
     m_shortcut = new QxtGlobalShortcut(this);
     connect(m_shortcut, SIGNAL(activated()), this, SLOT(shortcut_activated()));
     // TODO/FIXME: conf
-    m_shortcut->setShortcut(QKeySequence("CTRL+ALT+M"));
+    m_shortcut->setShortcut(QlipperPreferences::Instance()->value("shortcut").toString());
 #else
     qWarning() << "Global keyboard shortcut is not compiled in.";
 #endif
@@ -68,7 +70,11 @@ void QlipperSystray::shortcut_activated()
 
 void QlipperSystray::editPreferences()
 {
-    qDebug() << "TODO/FIXME: edit preferences";
+    QlipperPreferencesDialog d;
+    if (!d.exec())
+        return;
+
+    m_shortcut->setShortcut(QlipperPreferences::Instance()->value("shortcut").toString());
 }
 
 void QlipperSystray::showAbout()

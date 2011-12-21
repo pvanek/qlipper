@@ -1,4 +1,5 @@
 #include <QtGui/QApplication>
+#include <QtCore/QSettings>
 
 #include "qlippersystray.h"
 
@@ -9,6 +10,7 @@ int main(int argc, char **argv)
     a.setApplicationVersion("2.0.0"); // TODO/FXIME: build variable!
     a.setOrganizationDomain("qlipper.org");
     a.setOrganizationName("Qlipper");
+    QSettings::setDefaultFormat(QSettings::IniFormat);
 
     a.setQuitOnLastWindowClosed(false);
 
