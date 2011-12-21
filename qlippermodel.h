@@ -4,6 +4,8 @@
 #include <QAbstractListModel>
 #include <QtGui/QClipboard>
 
+#include "qlipperitem.h"
+
 
 class QlipperModel : public QAbstractListModel
 {
@@ -11,14 +13,21 @@ class QlipperModel : public QAbstractListModel
 public:
     explicit QlipperModel(QObject *parent = 0);
 
+public slots:
+    void clearHistory();
+    void indexTriggered(const QModelIndex &);
+
 protected:
     int rowCount(const QModelIndex&) const;
     QVariant data(const QModelIndex&, int) const;
     Qt::ItemFlags flags(const QModelIndex & index) const;
 
 private:
-    QList<QString> m_data;
+    QList<QlipperItem> m_sticky;
+    QList<QlipperItem> m_data;
     QClipboard *m_clipboard;
+
+    QList<QlipperItem> getList(int &row) const;
 
 private slots:
     void clipboard_changed(QClipboard::Mode);

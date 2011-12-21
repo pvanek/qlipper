@@ -15,7 +15,10 @@ SOURCES += \
     qkeysequencewidget/qkeysequencewidget.cpp \
     qmenuview/qmenuview.cpp \
     qlippermodel.cpp \
-    qlippersystray.cpp
+    qlippersystray.cpp \
+    qlipperitem.cpp \
+    qlippermenuview.cpp \
+    qlipperpreferences.cpp
 
 HEADERS += \
     qkeysequencewidget/qkeysequencewidget.h \
@@ -26,7 +29,11 @@ HEADERS += \
     qmenuview/qmenuview.h \
     qmenuview/qmenuview_p.h \
     qlippermodel.h \
-    qlippersystray.h
+    qlippersystray.h \
+    qlipperitem.h \
+    qlippermenuview.h \
+    config.h \
+    qlipperpreferences.h
 
 !os2 {
     SOURCES += qxt/qxtglobal.cpp \
@@ -50,6 +57,13 @@ win32 {
 
 RESOURCES += \
     qlipper.qrc
+
+
+
+
+
+
+
 
 
 

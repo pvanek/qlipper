@@ -3,9 +3,9 @@
 
 #include <QSystemTrayIcon>
 
-
 class QlipperModel;
 class QMenuView;
+class QlipperMenuView;
 class QxtGlobalShortcut;
 
 
@@ -18,12 +18,14 @@ public:
 
 private:
     QlipperModel *m_model;
-    QMenuView *m_contextMenu;
+    QlipperMenuView *m_contextMenu;
     QMenuView *m_shortcutMenu;
     QxtGlobalShortcut *m_shortcut;
 
 private slots:
     void shortcut_activated();
+    void editPreferences();
+    void showAbout();
 };
 
 #endif // QLIPPERSYSTRAY_H
