@@ -26,6 +26,7 @@ private slots:
     void shortcut_activated();
     void editPreferences();
     void showAbout();
+    void systray_activated(QSystemTrayIcon::ActivationReason reason);
 };
 
 #endif // QLIPPERSYSTRAY_H

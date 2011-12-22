@@ -43,6 +43,8 @@ QlipperSystray::QlipperSystray(QObject *parent)
     qWarning() << "Global keyboard shortcut is not compiled in.";
 #endif
 
+    connect(this, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
+            this, SLOT(systray_activated(QSystemTrayIcon::ActivationReason)));
 }
 
 QlipperSystray::~QlipperSystray()
@@ -99,4 +101,14 @@ void QlipperSystray::showAbout()
                                   "Support for global keyboard shortcut: %1").arg(globalKeySupport));
     msgBox.setStandardButtons(QMessageBox::Ok);
     msgBox.exec();
+}
+
+void QlipperSystray::systray_activated(QSystemTrayIcon::ActivationReason reason)
+{
+#ifndef Q_WS_MAC
+    if (reason == QSystemTrayIcon::Trigger)
+        shortcut_activated();
+#else
+    Q_UNUSED(reason);
+#endif
 }
