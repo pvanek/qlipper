@@ -105,3 +105,28 @@ void QlipperPreferences::saveDynamicItems(QList<QlipperItem> list)
     endArray();
     endGroup();
 }
+
+bool QlipperPreferences::trim()
+{
+    return value("trim", true).toBool();
+}
+
+int QlipperPreferences::displaySize()
+{
+    return value("displaySize", 30).toInt();
+}
+
+QString QlipperPreferences::shortcut()
+{
+    return value("shortcut", "CTRL+ALT+V").toString();
+}
+
+int QlipperPreferences::historyCount()
+{
+    return value("historyCount", 10).toInt();
+}
+
+bool QlipperPreferences::platformExtensions()
+{
+    return value("platformExtensions", false).toBool();
+}

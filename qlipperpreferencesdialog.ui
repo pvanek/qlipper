@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>316</width>
+    <width>317</width>
     <height>329</height>
    </rect>
   </property>
@@ -34,7 +34,7 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>298</width>
+        <width>299</width>
         <height>218</height>
        </rect>
       </property>
@@ -42,6 +42,33 @@
        <string>Preferences</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout">
+       <item row="3" column="0" colspan="2">
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QLabel" name="keyboardShortcutLabel">
+           <property name="text">
+            <string>Keyboard Shortcut:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QKeySequenceWidget" name="shortcutWidget" native="true"/>
+         </item>
+        </layout>
+       </item>
+       <item row="5" column="1">
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>96</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
        <item row="0" column="0">
         <widget class="QLabel" name="label">
          <property name="text">
@@ -91,6 +118,16 @@
          </property>
         </widget>
        </item>
+       <item row="4" column="0" colspan="2">
+        <widget class="QCheckBox" name="platformExtensionsCheckBox">
+         <property name="toolTip">
+          <string>X11 Selections, OS X Find Buffer</string>
+         </property>
+         <property name="text">
+          <string>Use Platform Specific Extensions (Advanced)</string>
+         </property>
+        </widget>
+       </item>
        <item row="2" column="0" colspan="2">
         <widget class="QCheckBox" name="trimCheckBox">
          <property name="toolTip">
@@ -101,64 +138,21 @@
          </property>
         </widget>
        </item>
-       <item row="3" column="0" colspan="2">
-        <layout class="QHBoxLayout" name="horizontalLayout">
-         <item>
-          <widget class="QLabel" name="keyboardShortcutLabel">
-           <property name="text">
-            <string>Keyboard Shortcut:</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QKeySequenceWidget" name="shortcutWidget" native="true"/>
-         </item>
-        </layout>
-       </item>
-       <item row="4" column="0" colspan="2">
-        <widget class="QCheckBox" name="x11SelectionCheckBox">
-         <property name="text">
-          <string>Catch X11 Selections (Advanced)</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="0" colspan="2">
-        <widget class="QCheckBox" name="macFindBufferCheckBox">
-         <property name="text">
-          <string>Catch Mac OS X Find Buffers (Advanced)</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="1">
-        <spacer name="verticalSpacer">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>96</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
       </layout>
       <zorder>label</zorder>
       <zorder>historyComboBox</zorder>
       <zorder>label_2</zorder>
       <zorder>displaySizeComboBox</zorder>
-      <zorder>macFindBufferCheckBox</zorder>
-      <zorder>x11SelectionCheckBox</zorder>
+      <zorder>platformExtensionsCheckBox</zorder>
       <zorder>trimCheckBox</zorder>
-      <zorder>keyboardShortcutLabel</zorder>
      </widget>
      <widget class="QWidget" name="page_2">
       <property name="geometry">
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>197</width>
-        <height>159</height>
+        <width>298</width>
+        <height>218</height>
        </rect>
       </property>
       <attribute name="label">

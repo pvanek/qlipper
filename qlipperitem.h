@@ -21,7 +21,7 @@ public:
 
     QClipboard::Mode clipBoardMode() const;
     QVariant content() const { return m_content; }
-    QlipperItem::ContentType contentType() { return m_contentType; }
+    QlipperItem::ContentType contentType() const { return m_contentType; }
 
     bool isValid() { return m_valid; }
 
@@ -38,6 +38,8 @@ private:
     ContentType m_contentType;
     QVariant m_content;
     bool m_valid;
+
+    QIcon iconForContentType() const;
 };
 
 Q_DECLARE_METATYPE(QlipperItem::ContentType)

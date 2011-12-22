@@ -11,12 +11,11 @@ QlipperPreferencesDialog::QlipperPreferencesDialog(QWidget *parent) :
     setupUi(this);
 
     QlipperPreferences *s = QlipperPreferences::Instance();
-    historyComboBox->setValue(s->value("historyCount", 5).toInt());
-    displaySizeComboBox->setValue(s->value("displaySize", 30).toInt());
-    trimCheckBox->setChecked(s->value("trim", true).toBool());
-    shortcutWidget->setKeySequence(QKeySequence(s->value("shortcut", "CTRL+ALT+V").toString()));
-    x11SelectionCheckBox->setChecked(s->value("X11Selection", false).toBool());
-    macFindBufferCheckBox->setChecked(s->value("macFindBuffer", false).toBool());
+    historyComboBox->setValue(s->historyCount());
+    displaySizeComboBox->setValue(s->displaySize());
+    trimCheckBox->setChecked(s->trim());
+    shortcutWidget->setKeySequence(QKeySequence(s->shortcut()));
+    platformExtensionsCheckBox->setChecked(s->platformExtensions());
 
     foreach(QlipperItem item, QlipperPreferences::Instance()->getStickyItems())
     {
@@ -50,8 +49,7 @@ void QlipperPreferencesDialog::accept()
     s->setValue("historyCount", historyComboBox->value());
     s->setValue("displaySize", displaySizeComboBox->value());
     s->setValue("trim", trimCheckBox->isChecked());
-    s->setValue("X11Selection", x11SelectionCheckBox->isChecked());
-    s->setValue("macFindBuffer", macFindBufferCheckBox->isChecked());
+    s->setValue("platformExtensions", platformExtensionsCheckBox->isChecked());
     s->setValue("shortcut", shortcutWidget->keySequence().toString());
 
     QList<QlipperItem> list;

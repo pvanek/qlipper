@@ -33,7 +33,7 @@ QlipperItem::QlipperItem(QClipboard::Mode mode)
 //    }
     else if (mimeData->hasText()) {
         QString s(mimeData->text());
-        if (QlipperPreferences::Instance()->value("trim").toBool())
+        if (QlipperPreferences::Instance()->trim())
         {
             QStringList list;
             foreach (QString i, s.split('\n'))
@@ -111,7 +111,7 @@ QString QlipperItem::displayRole() const
     case QlipperItem::PlainText:
     case QlipperItem::RichText:
     case QlipperItem::Sticky:
-        return m_content.toString().left(QlipperPreferences::Instance()->value("displaySize", 30).toInt());
+        return m_content.toString().left(QlipperPreferences::Instance()->displaySize());
     case QlipperItem::Image:
         return QObject::tr("An Image");
     }
@@ -121,6 +121,11 @@ QString QlipperItem::displayRole() const
 
 QIcon QlipperItem::decorationRole() const
 {
+    if (!QlipperPreferences::Instance()->platformExtensions())
+    {
+        return iconForContentType();
+    }
+
     QPixmap pm;
     QString cacheKey = QString("%1_%2").arg(m_contentType).arg(m_mode);
     if (QPixmapCache::find(cacheKey, &pm))
@@ -145,23 +150,7 @@ QIcon QlipperItem::decorationRole() const
     }
     pm.fill(QColor(theme));
 
-    switch (m_contentType)
-    {
-    case QlipperItem::PlainText:
-        theme = "text-plain";
-        break;
-    case QlipperItem::RichText:
-        theme = "text-enriched";
-        break;
-    case QlipperItem::Image:
-        theme = "image-x-generic";
-        break;
-    case QlipperItem::Sticky:
-        theme = "knotes";
-        break;
-    }
-
-    QIcon icon = QIcon::fromTheme(theme, QIcon(QString(":/icons/%1.png").arg(theme)));
+    QIcon icon = iconForContentType();
     p.drawPixmap(0, 0, icon.pixmap(pm.size()));
 
     QPixmapCache::insert(cacheKey, pm);
@@ -189,4 +178,26 @@ QString QlipperItem::tooltipRole() const
 bool QlipperItem::operator==(const QlipperItem &other) const {
     return this->clipBoardMode() == other.clipBoardMode()
             && this->content() == other.content();
+}
+
+QIcon QlipperItem::iconForContentType() const
+{
+    QString theme;
+    switch (m_contentType)
+    {
+    case QlipperItem::PlainText:
+        theme = "text-plain";
+        break;
+    case QlipperItem::RichText:
+        theme = "text-enriched";
+        break;
+    case QlipperItem::Image:
+        theme = "image-x-generic";
+        break;
+    case QlipperItem::Sticky:
+        theme = "knotes";
+        break;
+    }
+
+    return QIcon::fromTheme(theme, QIcon(QString(":/icons/%1.png").arg(theme)));
 }

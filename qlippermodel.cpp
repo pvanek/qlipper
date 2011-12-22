@@ -90,9 +90,8 @@ Qt::ItemFlags QlipperModel::flags(const QModelIndex & index) const
 
 void QlipperModel::clipboard_changed(QClipboard::Mode mode)
 {
-    if ((mode == QClipboard::Selection && QlipperPreferences::Instance()->value("X11Selection", false).toBool())
-            || (mode == QClipboard::FindBuffer && QlipperPreferences::Instance()->value("macFindBuffer", false).toBool())
-       )
+    if ((mode == QClipboard::Selection || mode == QClipboard::FindBuffer)
+            && !QlipperPreferences::Instance()->platformExtensions())
     {
         return;
     }
@@ -111,7 +110,7 @@ void QlipperModel::clipboard_changed(QClipboard::Mode mode)
     else
     {
         m_dynamic.prepend(item);
-        if (m_dynamic.count() > QlipperPreferences::Instance()->value("historyCount").toInt())
+        if (m_dynamic.count() > QlipperPreferences::Instance()->historyCount())
             m_dynamic.removeLast();
     }
 

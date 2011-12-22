@@ -17,6 +17,12 @@ public:
     QList<QlipperItem> getDynamicItems();
     void saveDynamicItems(QList<QlipperItem> list);
 
+    bool trim();
+    int displaySize();
+    QString shortcut();
+    int historyCount();
+    bool platformExtensions();
+
 private:
     QlipperPreferences();
 

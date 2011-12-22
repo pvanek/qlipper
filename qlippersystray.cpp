@@ -38,7 +38,7 @@ QlipperSystray::QlipperSystray(QObject *parent)
     m_shortcut = new QxtGlobalShortcut(this);
     connect(m_shortcut, SIGNAL(activated()), this, SLOT(shortcut_activated()));
     // TODO/FIXME: conf
-    m_shortcut->setShortcut(QlipperPreferences::Instance()->value("shortcut").toString());
+    m_shortcut->setShortcut(QlipperPreferences::Instance()->shortcut());
 #else
     qWarning() << "Global keyboard shortcut is not compiled in.";
 #endif
@@ -74,7 +74,7 @@ void QlipperSystray::editPreferences()
     if (!d.exec())
         return;
 
-    m_shortcut->setShortcut(QlipperPreferences::Instance()->value("shortcut").toString());
+    m_shortcut->setShortcut(QlipperPreferences::Instance()->shortcut());
     m_model->resetPreferences();
 }
 
