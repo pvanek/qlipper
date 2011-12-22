@@ -27,7 +27,7 @@
    <item row="0" column="0">
     <widget class="QToolBox" name="toolBox">
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="page">
       <property name="geometry">
@@ -52,7 +52,11 @@
           </widget>
          </item>
          <item>
-          <widget class="QKeySequenceWidget" name="shortcutWidget" native="true"/>
+          <widget class="QKeySequenceWidget" name="shortcutWidget" native="true">
+           <property name="toolTip">
+            <string>Change global keyboard shortcut to invoke the menu on screen</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
@@ -78,6 +82,9 @@
        </item>
        <item row="0" column="1">
         <widget class="QSpinBox" name="historyComboBox">
+         <property name="toolTip">
+          <string>The maximum count of dynamic items in the menu</string>
+         </property>
          <property name="alignment">
           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
          </property>
@@ -104,6 +111,9 @@
        </item>
        <item row="1" column="1">
         <widget class="QSpinBox" name="displaySizeComboBox">
+         <property name="toolTip">
+          <string>How long is the preview text in the menu</string>
+         </property>
          <property name="alignment">
           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
          </property>
@@ -121,7 +131,7 @@
        <item row="4" column="0" colspan="2">
         <widget class="QCheckBox" name="platformExtensionsCheckBox">
          <property name="toolTip">
-          <string>X11 Selections, OS X Find Buffer</string>
+          <string>Use clipboard extensions (X11 Selections, OS X Find Buffer) when it's supported</string>
          </property>
          <property name="text">
           <string>Use Platform Specific Extensions (Advanced)</string>
@@ -139,19 +149,13 @@
         </widget>
        </item>
       </layout>
-      <zorder>label</zorder>
-      <zorder>historyComboBox</zorder>
-      <zorder>label_2</zorder>
-      <zorder>displaySizeComboBox</zorder>
-      <zorder>platformExtensionsCheckBox</zorder>
-      <zorder>trimCheckBox</zorder>
      </widget>
      <widget class="QWidget" name="page_2">
       <property name="geometry">
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>298</width>
+        <width>299</width>
         <height>218</height>
        </rect>
       </property>
@@ -161,6 +165,9 @@
       <layout class="QGridLayout" name="gridLayout_3">
        <item row="0" column="0" rowspan="6">
         <widget class="QListWidget" name="listWidget">
+         <property name="toolTip">
+          <string>Sticky items are unchanged, always on top snippets in the menu</string>
+         </property>
          <property name="alternatingRowColors">
           <bool>true</bool>
          </property>
@@ -181,6 +188,9 @@
        </item>
        <item row="1" column="1">
         <widget class="QPushButton" name="stickyAddButton">
+         <property name="toolTip">
+          <string>Add new item to the end of the list</string>
+         </property>
          <property name="text">
           <string>&amp;Add</string>
          </property>
@@ -188,6 +198,9 @@
        </item>
        <item row="2" column="1">
         <widget class="QPushButton" name="stickyRemoveButton">
+         <property name="toolTip">
+          <string>Remove current item</string>
+         </property>
          <property name="text">
           <string>&amp;Remove</string>
          </property>
@@ -195,6 +208,9 @@
        </item>
        <item row="3" column="1">
         <widget class="QPushButton" name="stickyUpButton">
+         <property name="toolTip">
+          <string>Move item up</string>
+         </property>
          <property name="text">
           <string>&amp;Up</string>
          </property>
@@ -202,6 +218,9 @@
        </item>
        <item row="4" column="1">
         <widget class="QPushButton" name="stickyDownButton">
+         <property name="toolTip">
+          <string>Move item down</string>
+         </property>
          <property name="text">
           <string>&amp;Down</string>
          </property>
