@@ -34,6 +34,7 @@ QlipperSystray::QlipperSystray(QObject *parent)
     // the decoration if is the systray icon clicked.
     m_shortcutMenu->setWindowFlags(Qt::Window);
     connect(m_shortcutMenu, SIGNAL(triggered(QModelIndex)), m_model, SLOT(indexTriggered(QModelIndex)));
+    connect(m_shortcutMenu, SIGNAL(triggered(QModelIndex)), m_shortcutMenu, SLOT(close()));
 
     m_shortcut = new QxtGlobalShortcut(this);
     connect(m_shortcut, SIGNAL(activated()), this, SLOT(shortcut_activated()));
