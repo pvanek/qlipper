@@ -1,0 +1,14 @@
+[Desktop Entry]
+Terminal=false
+TryExec=qlipper
+Exec=qlipper
+Icon=qlipper
+Type=Application
+Categories=Qt;Utility;
+StartupNotify=false
+Name=Qlipper
+Name[fr]=Qlipper
+GenericName=Clipboard Tool
+GenericName[fr]=Presse-papiers
+Comment=Clipboard history tool
+Comment[fr]=Un outil d'historique du presse-papiers

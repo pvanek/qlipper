@@ -65,3 +65,34 @@ RESOURCES += \
 
 FORMS += \
     qlipperpreferencesdialog.ui
+
+TRANSLATIONS += \
+    ts/qlipper.cs.ts
+
+
+translations_qm.files = ts/*.qm
+
+# Unix installer.
+unix:!macx {
+    isEmpty(INSTALL_PREFIX):INSTALL_PREFIX = /usr/local
+
+    target.path = $$INSTALL_PREFIX/bin
+
+    desktop.path = $$INSTALL_PREFIX/share/applications
+    desktop.files = qlipper.desktop
+
+    icons.path = $$INSTALL_PREFIX/share/pixmaps
+    icons.files = icons/qlipper.png
+
+    translations_qm.files = ts/*.qm
+    translations_qm.path = $$INSTALL_PREFIX/share/qlipper/translations
+    DEFINES += TRANSLATION_DIR=\\\"$$INSTALL_PREFIX/share/qlipper/translations\\\"
+
+    INSTALLS += target desktop icons translations_qm
+}
+
+macx {
+    TARGET = Qlipper
+    ICON = macosx/qlipper.icns
+    QMAKE_INFO_PLIST = macosx/Info.plist
+}

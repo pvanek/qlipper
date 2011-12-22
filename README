@@ -1,0 +1,41 @@
+Qlipper 2.x
+
+
+ABOUT:
+------
+
+Lightweight & cross-platform clipboard history applet.
+This software is complete rework of the original Qlipper 1.x
+  
+
+FEATURES:
+---------
+
+- saves clipboard history entries and restores them
+- sticky clipboard
+- lightweight
+- systray docking app
+- few requirements
+- can be used in any X11 environment, MS Windows, OS/2, and Mac OS X (and probably more)
+
+
+REQUIREMENTS:
+-------------
+
+Qt4
+
+
+LICENSE:
+--------
+
+GPLv3
+
+
+CONTACT:
+--------
+
+ - website: http://code.google.com/p/qlipper/
+ - author: Petr Vanek <petr@scribus.info> 
+ - author: thierry deseez <pizza.tony@free.fr>
+
+
