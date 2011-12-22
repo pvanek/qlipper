@@ -9,20 +9,21 @@ UI_DIR += build
 
 INCLUDEPATH += qkeysequencewidget \
                qmenuview \
-               qxt
+               qxt \
+               src
 
 DEFINES += QLIPPER_VERSION=\\\"$${QLIPPER_VERSION}\\\"
 
 SOURCES += \
-    main.cpp \
+    src/main.cpp \
     qkeysequencewidget/qkeysequencewidget.cpp \
     qmenuview/qmenuview.cpp \
-    qlippermodel.cpp \
-    qlippersystray.cpp \
-    qlipperitem.cpp \
-    qlippermenuview.cpp \
-    qlipperpreferences.cpp \
-    qlipperpreferencesdialog.cpp
+    src/qlippermodel.cpp \
+    src/qlippersystray.cpp \
+    src/qlipperitem.cpp \
+    src/qlippermenuview.cpp \
+    src/qlipperpreferences.cpp \
+    src/qlipperpreferencesdialog.cpp
 
 HEADERS += \
     qkeysequencewidget/qkeysequencewidget.h \
@@ -32,13 +33,13 @@ HEADERS += \
     qxt/qxtglobal.h \
     qmenuview/qmenuview.h \
     qmenuview/qmenuview_p.h \
-    qlippermodel.h \
-    qlippersystray.h \
-    qlipperitem.h \
-    qlippermenuview.h \
-    config.h \
-    qlipperpreferences.h \
-    qlipperpreferencesdialog.h
+    src/qlippermodel.h \
+    src/qlippersystray.h \
+    src/qlipperitem.h \
+    src/qlippermenuview.h \
+    src/config.h \
+    src/qlipperpreferences.h \
+    src/qlipperpreferencesdialog.h
 
 !os2 {
     SOURCES += qxt/qxtglobal.cpp \
@@ -61,10 +62,10 @@ win32 {
 }
 
 RESOURCES += \
-    qlipper.qrc
+    src/qlipper.qrc
 
 FORMS += \
-    qlipperpreferencesdialog.ui
+    src/qlipperpreferencesdialog.ui
 
 TRANSLATIONS += \
     ts/qlipper.cs.ts
