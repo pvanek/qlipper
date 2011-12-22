@@ -41,6 +41,8 @@ QlipperPreferencesDialog::QlipperPreferencesDialog(QWidget *parent) :
         stickyDownButton->setEnabled(false);
         stickyRemoveButton->setEnabled(false);
     }
+
+    resize(sizeHint());
 }
 
 void QlipperPreferencesDialog::accept()
