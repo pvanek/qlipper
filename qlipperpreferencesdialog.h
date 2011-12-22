@@ -12,6 +12,12 @@ public:
 
 private slots:
     void accept();
+
+    void stickyAddButton_clicked();
+    void stickyRemoveButton_clicked();
+    void stickyUpButton_clicked();
+    void stickyDownButton_clicked();
+    void listWidget_currentRowChanged(int);
 };
 
 #endif // QLIPPERPREFERENCESDIALOG_H

@@ -1,7 +1,6 @@
 #include <QtGui/QApplication>
 #include <QtGui/QIcon>
 #include <QtCore/QTimer>
-#include <QtDebug>
 
 #include "qlippermodel.h"
 #include "qlipperpreferences.h"
@@ -34,6 +33,14 @@ QlipperModel::~QlipperModel()
     m_sticky.clear();
 }
 
+void QlipperModel::resetPreferences()
+{
+    m_sticky.clear();
+    m_sticky = QlipperPreferences::Instance()->getStickyItems();
+
+    reset();
+}
+
 int QlipperModel::rowCount(const QModelIndex&) const
 {
     return m_sticky.count() + m_dynamic.count();
@@ -42,7 +49,6 @@ int QlipperModel::rowCount(const QModelIndex&) const
 // TODO/FIXME: BETTER API! This is very confusing and potentially dangerous...
 QList<QlipperItem> QlipperModel::getList(int & row) const
 {
-    qDebug() << "getList" << row;
     if (m_sticky.count() > row)
     {
         return m_sticky;
@@ -62,7 +68,6 @@ QVariant QlipperModel::data(const QModelIndex& index, int role) const
     int row = index.row();
 
     QList<QlipperItem> list = getList(row);
-    qDebug() << "ROW" << index << row;
 
     switch (role)
     {
@@ -70,6 +75,8 @@ QVariant QlipperModel::data(const QModelIndex& index, int role) const
         return list.at(row).displayRole();
     case Qt::DecorationRole:
         return list.at(row).decorationRole();
+    case Qt::ToolTipRole:
+        return list.at(row).tooltipRole();
     }
 
     return "";
@@ -81,10 +88,15 @@ Qt::ItemFlags QlipperModel::flags(const QModelIndex & index) const
     return Qt::ItemIsEditable | Qt::ItemIsEnabled;
 }
 
-#include <QtDebug>
 void QlipperModel::clipboard_changed(QClipboard::Mode mode)
 {
-    qDebug() << "void clipboard_changed(QClipboard::Mode)" << mode << m_clipboard->mimeData(mode) << m_clipboard->text(mode);
+    if ((mode == QClipboard::Selection && QlipperPreferences::Instance()->value("X11Selection", false).toBool())
+            || (mode == QClipboard::FindBuffer && QlipperPreferences::Instance()->value("macFindBuffer", false).toBool())
+       )
+    {
+        return;
+    }
+
     QlipperItem item(mode);
     if (!item.isValid())
     {
@@ -92,7 +104,6 @@ void QlipperModel::clipboard_changed(QClipboard::Mode mode)
     }
 
     int ix = m_dynamic.indexOf(item);
-    qDebug() << "    ix" << ix;
     if (ix != -1)
     {
         m_dynamic.move(ix, 0);
@@ -118,7 +129,6 @@ void QlipperModel::clearHistory()
 
 void QlipperModel::indexTriggered(const QModelIndex & index)
 {
-    qDebug() << "void indexTriggered(QModelIndex)" << index << index.row();
     if (!index.isValid())
         return;
 

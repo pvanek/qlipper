@@ -16,6 +16,8 @@ public:
     explicit QlipperModel(QObject *parent = 0);
     ~QlipperModel();
 
+    void resetPreferences();
+
 public slots:
     void clearHistory();
     void indexTriggered(const QModelIndex &);

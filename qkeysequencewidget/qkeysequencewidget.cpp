@@ -278,7 +278,7 @@ void QKeySequenceWidgetPrivate::init(const QKeySequence keySeq, const QString no
 
     showClearButton = QKeySequenceWidget::ShowRight;
 
-    clearButton->setIcon(QIcon(":/images/dialog-cancel.png"));
+    clearButton->setIcon(QIcon::fromTheme("dialog-cancel", QIcon(":/icons/dialog-cancel.png")));
 
     // unfocused clear button  afyer created (small hack)
     clearButton->setFocusPolicy(Qt::NoFocus);

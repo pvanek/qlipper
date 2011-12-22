@@ -29,6 +29,7 @@ public:
 
     QString displayRole() const;
     QIcon decorationRole() const;
+    QString tooltipRole() const;
 
     bool operator==(const QlipperItem &other) const;
 

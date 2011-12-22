@@ -75,6 +75,7 @@ void QlipperSystray::editPreferences()
         return;
 
     m_shortcut->setShortcut(QlipperPreferences::Instance()->value("shortcut").toString());
+    m_model->resetPreferences();
 }
 
 void QlipperSystray::showAbout()

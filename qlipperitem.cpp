@@ -1,6 +1,8 @@
 #include <QtGui/QApplication>
 #include <QtGui/QImage>
 #include <QtGui/QIcon>
+#include <QtGui/QPainter>
+#include <QtGui/QPixmapCache>
 #include <QtCore/QMimeData>
 #include <QtCore/QUrl>
 #include <QtDebug>
@@ -16,11 +18,14 @@ QlipperItem::QlipperItem(QClipboard::Mode mode)
     QClipboard * clipboard = QApplication::clipboard();
     const QMimeData *mimeData = clipboard->mimeData();
 
+//    qDebug() << "QlipperItem::QlipperItem(QClipboard::Mode mode)" << mode << clipboard->text();
+
     if (mimeData->hasImage())
     {
         m_content = mimeData->imageData();
         m_contentType = QlipperItem::Image;
     }
+    // all seems html in clipboard. Bummer.
 //    else if (mimeData->hasHtml())
 //    {
 //        m_content = mimeData->html();
@@ -30,7 +35,10 @@ QlipperItem::QlipperItem(QClipboard::Mode mode)
         QString s(mimeData->text());
         if (QlipperPreferences::Instance()->value("trim").toBool())
         {
-            s = s.trimmed();
+            QStringList list;
+            foreach (QString i, s.split('\n'))
+                list << i.trimmed();
+            s = list.join("\n");
         }
         m_content = s;
         m_contentType = QlipperItem::PlainText;
@@ -43,7 +51,7 @@ QlipperItem::QlipperItem(QClipboard::Mode mode)
         m_contentType = QlipperItem::PlainText;
     }
     else {
-        qDebug() << "QlipperItem::QlipperItem unknown data mimetype";
+        qWarning() << "QlipperItem::QlipperItem unknown data mimetype";
         m_valid = false;
     }
 }
@@ -103,7 +111,7 @@ QString QlipperItem::displayRole() const
     case QlipperItem::PlainText:
     case QlipperItem::RichText:
     case QlipperItem::Sticky:
-        return m_content.toString().left(QlipperPreferences::Instance()->value("displaySize").toInt());
+        return m_content.toString().left(QlipperPreferences::Instance()->value("displaySize", 30).toInt());
     case QlipperItem::Image:
         return QObject::tr("An Image");
     }
@@ -113,23 +121,72 @@ QString QlipperItem::displayRole() const
 
 QIcon QlipperItem::decorationRole() const
 {
+    QPixmap pm;
+    QString cacheKey = QString("%1_%2").arg(m_contentType).arg(m_mode);
+    if (QPixmapCache::find(cacheKey, &pm))
+        return pm;
+
+    pm = QPixmap(32, 32);
+    QPainter p(&pm);
+
+    QString theme;
+
+    switch (m_mode)
+    {
+    case QClipboard::Clipboard:
+        theme = "#004400";
+        break;
+    case QClipboard::Selection:
+        theme = "#000044";
+        break;
+    case QClipboard::FindBuffer:
+        theme = "#440000";
+        break;
+    }
+    pm.fill(QColor(theme));
+
     switch (m_contentType)
     {
     case QlipperItem::PlainText:
-        return QIcon::fromTheme("text-plain", QIcon(":/icons/text-plain.png"));
+        theme = "text-plain";
+        break;
     case QlipperItem::RichText:
-        return QIcon::fromTheme("text-enriched", QIcon(":/icons/text-enriched.png"));
+        theme = "text-enriched";
+        break;
     case QlipperItem::Image:
-        return QIcon::fromTheme("image-x-generic", QIcon(":/icons/image-x-generic.png"));
+        theme = "image-x-generic";
+        break;
     case QlipperItem::Sticky:
-        return QIcon::fromTheme("knotes", QIcon(":/icons/knotes.png"));
+        theme = "knotes";
+        break;
     }
 
-    return QIcon();
+    QIcon icon = QIcon::fromTheme(theme, QIcon(QString(":/icons/%1.png").arg(theme)));
+    p.drawPixmap(0, 0, icon.pixmap(pm.size()));
+
+    QPixmapCache::insert(cacheKey, pm);
+    return pm;
+}
+
+QString QlipperItem::tooltipRole() const
+{
+    switch (m_mode)
+    {
+    case QClipboard::Clipboard:
+        return QObject::tr("Clipboard");
+        break;
+    case QClipboard::Selection:
+        return QObject::tr("Selection");
+        break;
+    case QClipboard::FindBuffer:
+        return QObject::tr("Find Bufer");
+        break;
+    }
+
+    return "";
 }
 
 bool QlipperItem::operator==(const QlipperItem &other) const {
-//    qDebug() << "    == " << this->clipBoardMode() << other.clipBoardMode() << this->content() << other.content();
     return this->clipBoardMode() == other.clipBoardMode()
             && this->content() == other.content();
 }
