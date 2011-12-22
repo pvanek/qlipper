@@ -7,7 +7,7 @@ int main(int argc, char **argv)
 {
     QApplication a(argc, argv);
     a.setApplicationName("qlipper");
-    a.setApplicationVersion("2.0.0"); // TODO/FXIME: build variable!
+    a.setApplicationVersion(QLIPPER_VERSION);
     a.setOrganizationDomain("qlipper.org");
     a.setOrganizationName("Qlipper");
     QSettings::setDefaultFormat(QSettings::IniFormat);

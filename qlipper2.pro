@@ -1,3 +1,5 @@
+QLIPPER_VERSION = 2.0.0
+
 TARGET = qlipper2
 TEMPLATE = app
 CONFIG += release #debug
@@ -9,6 +11,7 @@ INCLUDEPATH += qkeysequencewidget \
                qmenuview \
                qxt
 
+DEFINES += QLIPPER_VERSION=\\\"$${QLIPPER_VERSION}\\\"
 
 SOURCES += \
     main.cpp \
