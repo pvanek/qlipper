@@ -18,11 +18,17 @@ QlipperItem::QlipperItem(QClipboard::Mode mode)
     QClipboard * clipboard = QApplication::clipboard();
     const QMimeData *mimeData = clipboard->mimeData();
 
-//    qDebug() << "QlipperItem::QlipperItem(QClipboard::Mode mode)" << mode << clipboard->text();
+//    qDebug() << "QlipperItem::QlipperItem(QClipboard::Mode mode)" << mode << clipboard->text() << mimeData->hasImage();
 
     if (mimeData->hasImage())
     {
-        m_content = mimeData->imageData();
+        m_media = mimeData->imageData();
+        if (mimeData->hasUrls()) {
+            QString s;
+            foreach (QUrl i, mimeData->urls())
+                s += i.toString() + '\n';
+            m_text = s.trimmed();
+        }
         m_contentType = QlipperItem::Image;
     }
     // all seems html in clipboard. Bummer.
@@ -31,6 +37,13 @@ QlipperItem::QlipperItem(QClipboard::Mode mode)
 //        m_content = mimeData->html();
 //        m_contentType = QlipperItem::RichText;
 //    }
+    else if (mimeData->hasUrls()) {
+        QString s;
+        foreach (QUrl i, mimeData->urls())
+            s += i.toString() + '\n';
+        m_text = s;
+        m_contentType = QlipperItem::PlainText;
+    }
     else if (mimeData->hasText()) {
         QString s(mimeData->text());
         if (QlipperPreferences::Instance()->trim())
@@ -40,26 +53,22 @@ QlipperItem::QlipperItem(QClipboard::Mode mode)
                 list << i.trimmed();
             s = list.join("\n");
         }
-        m_content = s;
-        m_contentType = QlipperItem::PlainText;
-    }
-    else if (mimeData->hasUrls()) {
-        QString s;
-        foreach (QUrl i, mimeData->urls())
-            s += i.toString() + '\n';
-        m_content = s;
+        m_text = s;
         m_contentType = QlipperItem::PlainText;
     }
     else {
         qWarning() << "QlipperItem::QlipperItem unknown data mimetype";
         m_valid = false;
     }
+
+//    qDebug() << "NEW" << m_text << m_media;
 }
 
-QlipperItem::QlipperItem(QClipboard::Mode mode, QlipperItem::ContentType contentType, QVariant content)
+QlipperItem::QlipperItem(QClipboard::Mode mode, QlipperItem::ContentType contentType, QVariant text, QVariant media)
     : m_mode(mode),
       m_contentType(contentType),
-      m_content(content),
+      m_text(text),
+      m_media(media),
       m_valid(true)
 {
 }
@@ -74,7 +83,7 @@ QlipperItem::QlipperItem(const QString &sticky)
     }
     else
     {
-        m_content = sticky;
+        m_text = sticky;
         m_contentType = QlipperItem::Sticky;
     }
 }
@@ -89,18 +98,22 @@ void QlipperItem::toClipboard() const
     QClipboard * clipboard = QApplication::clipboard();
     clipboard->blockSignals(true);
 
+    QMimeData *mime = new QMimeData();
+
     switch (m_contentType)
     {
     case QlipperItem::PlainText:
     case QlipperItem::RichText:
     case QlipperItem::Sticky:
-        clipboard->setText(m_content.toString(), m_mode);
+        mime->setText(m_text.toString());
         break;
     case QlipperItem::Image:
-        clipboard->setImage(qvariant_cast<QImage>(m_content), m_mode);
+        mime->setImageData(m_media);
+        mime->setUrls(QList<QUrl>() << m_text.toString().trimmed());
         break;
     }
 
+    clipboard->setMimeData(mime, m_mode);
     clipboard->blockSignals(false);
 }
 
@@ -111,9 +124,9 @@ QString QlipperItem::displayRole() const
     case QlipperItem::PlainText:
     case QlipperItem::RichText:
     case QlipperItem::Sticky:
-        return m_content.toString().left(QlipperPreferences::Instance()->displaySize());
+        return m_text.toString().left(QlipperPreferences::Instance()->displaySize());
     case QlipperItem::Image:
-        return QObject::tr("An Image");
+        return QObject::tr("An Image: %1").arg(m_text.toString()).left(QlipperPreferences::Instance()->displaySize());
     }
 
     return "";
@@ -177,7 +190,7 @@ QString QlipperItem::tooltipRole() const
 
 bool QlipperItem::operator==(const QlipperItem &other) const {
     return this->clipBoardMode() == other.clipBoardMode()
-            && this->content() == other.content();
+            && this->text() == other.text();
 }
 
 QIcon QlipperItem::iconForContentType() const

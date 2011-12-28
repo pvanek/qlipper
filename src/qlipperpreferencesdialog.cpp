@@ -19,7 +19,7 @@ QlipperPreferencesDialog::QlipperPreferencesDialog(QWidget *parent) :
 
     foreach(QlipperItem item, QlipperPreferences::Instance()->getStickyItems())
     {
-        listWidget->addItem(item.content().toString());
+        listWidget->addItem(item.text().toString());
     }
 
     connect(stickyAddButton, SIGNAL(clicked()),

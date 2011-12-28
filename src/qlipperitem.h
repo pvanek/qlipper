@@ -16,11 +16,12 @@ public:
     };
 
     QlipperItem(QClipboard::Mode mode);
-    QlipperItem(QClipboard::Mode mode, ContentType contentType, QVariant content);
+    QlipperItem(QClipboard::Mode mode, ContentType contentType, QVariant content, QVariant media=QVariant());
     QlipperItem(const QString & sticky);
 
     QClipboard::Mode clipBoardMode() const;
-    QVariant content() const { return m_content; }
+    QVariant text() const { return m_text; }
+    QVariant media() const { return m_media; }
     QlipperItem::ContentType contentType() const { return m_contentType; }
 
     bool isValid() { return m_valid; }
@@ -36,7 +37,8 @@ public:
 private:
     QClipboard::Mode m_mode;
     ContentType m_contentType;
-    QVariant m_content;
+    QVariant m_text;
+    QVariant m_media;
     bool m_valid;
 
     QIcon iconForContentType() const;
