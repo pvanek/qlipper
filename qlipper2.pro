@@ -1,6 +1,6 @@
 QLIPPER_VERSION = 2.0.0
 
-TARGET = qlipper2
+TARGET = qlipper
 TEMPLATE = app
 CONFIG += release #debug
 OBJECTS_DIR += build
