@@ -45,6 +45,6 @@ private:
 };
 
 Q_DECLARE_METATYPE(QlipperItem::ContentType)
-Q_DECLARE_METATYPE(QClipboard::Mode);
+Q_DECLARE_METATYPE(QClipboard::Mode)
 
 #endif // QLIPPERITEM_H

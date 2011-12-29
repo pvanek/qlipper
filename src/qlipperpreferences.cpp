@@ -59,7 +59,7 @@ void QlipperPreferences::saveStickyItems(QList<QlipperItem> list)
     endArray();
     endGroup();
 }
-#include <QtDebug>
+
 QList<QlipperItem> QlipperPreferences::getDynamicItems()
 {
     QList<QlipperItem> l;
@@ -75,9 +75,8 @@ QList<QlipperItem> QlipperPreferences::getDynamicItems()
     for (int i = 0; i < count; ++i)
     {
         setArrayIndex(i);
-        qDebug() << "READ" << value("contentType").value<QlipperItem::ContentType>() << value("mode").value<QClipboard::Mode>()<<  value("text");
-        QlipperItem item(value("mode").value<QClipboard::Mode>(),
-                         value("contentType").value<QlipperItem::ContentType>(),
+        QlipperItem item(static_cast<QClipboard::Mode>(value("mode").toUInt()),//value("mode").value<QClipboard::Mode>(),
+                         static_cast<QlipperItem::ContentType>(value("contentType").toUInt()), // value("contentType").value<QlipperItem::ContentType>(),
                          value("text"),
                          value("media")
                         );
