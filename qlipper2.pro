@@ -13,6 +13,7 @@ INCLUDEPATH += qkeysequencewidget \
                src
 
 DEFINES += QLIPPER_VERSION=\\\"$${QLIPPER_VERSION}\\\"
+DEFINES += QXT_STATIC
 
 SOURCES += \
     src/main.cpp \
