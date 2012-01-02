@@ -127,6 +127,13 @@ void QlipperModel::clipboard_changed(QClipboard::Mode mode)
     QlipperItem item(mode);
     if (!item.isValid())
     {
+        // See QlipperItem sonstructor: On X11 clipboard content is owned by the
+        //    application, so naturally closing the application drops
+        //    clipboard content. In this case the latest item should be set again.
+        if (item.enforceHistory() && m_dynamic.count())
+        {
+            m_dynamic.at(0).toClipboard();
+        }
         return;
     }
 

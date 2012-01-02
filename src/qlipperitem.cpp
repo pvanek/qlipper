@@ -32,7 +32,8 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 
 QlipperItem::QlipperItem(QClipboard::Mode mode)
     : m_mode(mode),
-      m_valid(true)
+      m_valid(true),
+      m_enforceHistory(false)
 {
     QClipboard * clipboard = QApplication::clipboard();
     const QMimeData *mimeData = clipboard->mimeData();
@@ -76,8 +77,17 @@ QlipperItem::QlipperItem(QClipboard::Mode mode)
         m_contentType = QlipperItem::PlainText;
     }
     else {
-        qWarning() << "QlipperItem::QlipperItem unknown data mimetype";
+        qWarning() << "QlipperItem::QlipperItem unknown data mimetype" << mimeData->formats();
         m_valid = false;
+        // Clipboard can contain more possible values now:
+        //  - any mimetype which is not supported (qcolor, custom mime, ...).
+        //    in this case it will NOT be sored in the history but it will
+        //    be kept in the clipboard itself
+        //  - an empty clipboard. On X11 clipboard content is owned by the
+        //    application, so naturally closing the application drops
+        //    clipboard content. In this case the latest item should be set again.
+        if (mimeData->formats().count() == 0)
+            m_enforceHistory = true;
     }
 
 //    qDebug() << "NEW" << m_text << m_media;

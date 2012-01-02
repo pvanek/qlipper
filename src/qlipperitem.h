@@ -44,6 +44,7 @@ public:
     QlipperItem::ContentType contentType() const { return m_contentType; }
 
     bool isValid() { return m_valid; }
+    bool enforceHistory() { return m_enforceHistory; }
 
     void toClipboard() const;
 
@@ -59,6 +60,7 @@ private:
     QVariant m_text;
     QVariant m_media;
     bool m_valid;
+    bool m_enforceHistory;
 
     QIcon iconForContentType() const;
 };
