@@ -51,7 +51,7 @@ QlipperSystray::QlipperSystray(QObject *parent)
     // This flag is mandatory to get focus when user activates global_key.
     // OK, window gets a decoration but it works. Menu is displayed without the
     // the decoration if is the systray icon clicked.
-    m_shortcutMenu->setWindowFlags(Qt::Window);
+    m_shortcutMenu->setWindowFlags(Qt::Dialog | Qt::CustomizeWindowHint);
     connect(m_shortcutMenu, SIGNAL(triggered(QModelIndex)), m_model, SLOT(indexTriggered(QModelIndex)));
     connect(m_shortcutMenu, SIGNAL(triggered(QModelIndex)), m_shortcutMenu, SLOT(close()));
 
