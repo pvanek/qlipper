@@ -32,6 +32,15 @@ QlipperModel::QlipperModel(QObject *parent) :
 
     m_sticky = QlipperPreferences::Instance()->getStickyItems();
     m_dynamic = QlipperPreferences::Instance()->getDynamicItems();
+    // a little hack-a-magic to have almost
+    if (m_sticky.count() + m_dynamic.count() == 0)
+    {
+        clipboard_changed(QClipboard::Clipboard);
+        if (m_dynamic.count() == 0)
+        {
+            m_dynamic.append(QlipperItem(QClipboard::Clipboard, QlipperItem::PlainText, tr("Welcome to the Qlipper clipboard history applet")));
+        }
+    }
     reset();
 
 #ifdef Q_WS_MAC
@@ -142,6 +151,7 @@ void QlipperModel::clipboard_changed(QClipboard::Mode mode)
 void QlipperModel::clearHistory()
 {
     m_dynamic.clear();
+    m_dynamic.append(QlipperItem(QClipboard::Clipboard, QlipperItem::PlainText, tr("Welcome to the Qlipper clipboard history applet")));
     reset();
 }
 
