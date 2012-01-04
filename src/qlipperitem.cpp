@@ -219,7 +219,8 @@ QString QlipperItem::tooltipRole() const
 
 bool QlipperItem::operator==(const QlipperItem &other) const {
     return this->clipBoardMode() == other.clipBoardMode()
-            && this->text() == other.text();
+            && this->text() == other.text()
+            && this->media() == other.media();
 }
 
 QIcon QlipperItem::iconForContentType() const

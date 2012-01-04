@@ -69,7 +69,8 @@ FORMS += \
     src/qlipperpreferencesdialog.ui
 
 TRANSLATIONS += \
-    ts/qlipper.cs.ts
+    ts/qlipper.cs.ts \
+    ts/qlipper.sr.ts
 
 
 translations_qm.files = ts/*.qm
