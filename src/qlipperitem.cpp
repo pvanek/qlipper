@@ -30,6 +30,11 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 #include "qlipperitem.h"
 
 
+QlipperItem::QlipperItem()
+    : m_valid(false)
+{
+}
+
 QlipperItem::QlipperItem(QClipboard::Mode mode)
     : m_mode(mode),
       m_valid(true),
@@ -95,8 +100,7 @@ QlipperItem::QlipperItem(QClipboard::Mode mode, QlipperItem::ContentType content
       m_contentType(contentType),
       m_text(text),
       m_media(media),
-      m_valid(true),
-      m_isHighlighted(false)
+      m_valid(true)
 {
 }
 
@@ -123,7 +127,6 @@ QClipboard::Mode QlipperItem::clipBoardMode() const
 void QlipperItem::toClipboard() const
 {
     QClipboard * clipboard = QApplication::clipboard();
-    clipboard->blockSignals(true);
 
     QMimeData *mime = new QMimeData();
 
@@ -141,7 +144,6 @@ void QlipperItem::toClipboard() const
     }
 
     clipboard->setMimeData(mime, m_mode);
-    clipboard->blockSignals(false);
 }
 
 QString QlipperItem::displayRole() const
@@ -215,16 +217,10 @@ QString QlipperItem::tooltipRole() const
     return "";
 }
 
-QFont QlipperItem::fontRole() const
-{
-    QFont f;
-    f.setBold(m_isHighlighted);
-//    qDebug() << f << m_isHighlighted;
-    return f;
-}
-
 bool QlipperItem::operator==(const QlipperItem &other) const {
-    return this->clipBoardMode() == other.clipBoardMode()
+    // do not check contentType here as we need to compare sticky vs. rest of the world
+    return this->isValid() == other.isValid()
+            && this->clipBoardMode() == other.clipBoardMode()
             && this->text() == other.text()
             && this->media() == other.media();
 }
@@ -249,4 +245,11 @@ QIcon QlipperItem::iconForContentType() const
     }
 
     return QIcon::fromTheme(theme, QIcon(QString(":/icons/%1.png").arg(theme)));
+}
+
+
+QDebug operator<<(QDebug dbg, const QlipperItem &c)
+{
+    dbg.nospace() << "QlipperItem(mode=" << c.clipBoardMode() << ", contentType=" << c.contentType() << ", text=" << c.text() << ")";
+    return dbg.space();
 }

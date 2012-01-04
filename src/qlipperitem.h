@@ -22,6 +22,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 
 #include <QtGui/QClipboard>
 #include <QtCore/QVariant>
+#include <QtDebug>
 
 
 class QlipperItem
@@ -34,6 +35,7 @@ public:
         Sticky
     };
 
+    QlipperItem();
     QlipperItem(QClipboard::Mode mode);
     QlipperItem(QClipboard::Mode mode, ContentType contentType, QVariant content, QVariant media=QVariant());
     QlipperItem(const QString & sticky);
@@ -43,18 +45,14 @@ public:
     QVariant media() const { return m_media; }
     QlipperItem::ContentType contentType() const { return m_contentType; }
 
-    bool isValid() { return m_valid; }
-    bool enforceHistory() { return m_enforceHistory; }
+    bool isValid() const { return m_valid; }
+    bool enforceHistory() const { return m_enforceHistory; }
 
     void toClipboard() const;
 
     QString displayRole() const;
     QIcon decorationRole() const;
     QString tooltipRole() const;
-    QFont fontRole() const;
-
-    void setHighlighted(bool highlight) { m_isHighlighted = highlight; }
-
 
     bool operator==(const QlipperItem &other) const;
 
@@ -65,12 +63,13 @@ private:
     QVariant m_media;
     bool m_valid;
     bool m_enforceHistory;
-    bool m_isHighlighted;
 
     QIcon iconForContentType() const;
 };
 
 Q_DECLARE_METATYPE(QlipperItem::ContentType)
 Q_DECLARE_METATYPE(QClipboard::Mode)
+
+QDebug operator<<(QDebug dbg, const QlipperItem &c);
 
 #endif // QLIPPERITEM_H

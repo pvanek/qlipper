@@ -89,17 +89,6 @@ QList<QlipperItem> QlipperModel::getList(int & row) const
     }
 }
 
-void QlipperModel::toClipboard(QlipperItem *item)
-{
-    item->toClipboard();
-    foreach(QlipperItem i, m_sticky+m_dynamic)
-    {
-//        qDebug() << (i == *item);
-        i.setHighlighted(i == *item);
-    }
-    reset();
-}
-
 QVariant QlipperModel::data(const QModelIndex& index, int role) const
 {
     if (!index.isValid())
@@ -118,7 +107,15 @@ QVariant QlipperModel::data(const QModelIndex& index, int role) const
     case Qt::ToolTipRole:
         return list.at(row).tooltipRole();
     case Qt::FontRole:
-        return list.at(row).fontRole();
+        {
+            if (list.at(row) == m_currentItem)
+            {
+                QFont f;
+                f.setBold(true);
+                return f;
+            }
+        }
+        break;
     }
 
     return "";
@@ -146,8 +143,16 @@ void QlipperModel::clipboard_changed(QClipboard::Mode mode)
         //    clipboard content. In this case the latest item should be set again.
         if (item.enforceHistory() && m_dynamic.count())
         {
-            toClipboard(&m_dynamic[0]);
+            m_dynamic.at(0).toClipboard();
+            m_currentItem = m_dynamic.at(0);
         }
+        return;
+    }
+
+    // evaluate sticky items...
+    if (m_sticky.contains(item))
+    {
+        m_currentItem = m_sticky.at(m_sticky.indexOf(item));
         return;
     }
 
@@ -163,6 +168,8 @@ void QlipperModel::clipboard_changed(QClipboard::Mode mode)
             m_dynamic.removeLast();
     }
 
+    m_currentItem = m_dynamic.at(0);
+
     // TODO/FIXME: optimize it somehow... it can be too brutal for HDD
     QlipperPreferences::Instance()->saveDynamicItems(m_dynamic);
 
@@ -172,7 +179,9 @@ void QlipperModel::clipboard_changed(QClipboard::Mode mode)
 void QlipperModel::clearHistory()
 {
     m_dynamic.clear();
-    m_dynamic.append(QlipperItem(QClipboard::Clipboard, QlipperItem::PlainText, tr("Welcome to the Qlipper clipboard history applet")));
+    QlipperItem item(QClipboard::Clipboard, QlipperItem::PlainText, tr("Welcome to the Qlipper clipboard history applet"));
+    m_dynamic.append(item);
+    m_currentItem = item;
     reset();
 }
 
@@ -183,7 +192,7 @@ void QlipperModel::indexTriggered(const QModelIndex & index)
 
     int row = index.row();
     QList<QlipperItem> list = getList(row);
-    toClipboard(&list[row]);
+    list.at(row).toClipboard();
 }
 
 #ifdef Q_WS_MAC

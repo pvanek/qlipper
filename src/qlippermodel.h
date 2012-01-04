@@ -50,6 +50,7 @@ private:
     QList<QlipperItem> m_sticky;
     QList<QlipperItem> m_dynamic;
     QClipboard *m_clipboard;
+    QlipperItem m_currentItem;
 
 #ifdef Q_WS_MAC
     QTimer *m_timer;
@@ -57,7 +58,6 @@ private:
 #endif
 
     QList<QlipperItem> getList(int &row) const;
-    void toClipboard(QlipperItem *item);
 
 private slots:
     void clipboard_changed(QClipboard::Mode);
