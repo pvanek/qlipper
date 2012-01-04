@@ -68,10 +68,7 @@ QlipperItem::QlipperItem(QClipboard::Mode mode)
         QString s(mimeData->text());
         if (QlipperPreferences::Instance()->trim())
         {
-            QStringList list;
-            foreach (QString i, s.split('\n'))
-                list << i.trimmed();
-            s = list.join("\n");
+            s = s.replace(QRegExp(" +\n"), "\n");
         }
         m_text = s;
         m_contentType = QlipperItem::PlainText;
