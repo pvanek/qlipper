@@ -57,6 +57,7 @@ private:
 #endif
 
     QList<QlipperItem> getList(int &row) const;
+    void toClipboard(QlipperItem *item);
 
 private slots:
     void clipboard_changed(QClipboard::Mode);

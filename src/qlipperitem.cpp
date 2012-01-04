@@ -95,7 +95,8 @@ QlipperItem::QlipperItem(QClipboard::Mode mode, QlipperItem::ContentType content
       m_contentType(contentType),
       m_text(text),
       m_media(media),
-      m_valid(true)
+      m_valid(true),
+      m_isHighlighted(false)
 {
 }
 
@@ -212,6 +213,14 @@ QString QlipperItem::tooltipRole() const
     }
 
     return "";
+}
+
+QFont QlipperItem::fontRole() const
+{
+    QFont f;
+    f.setBold(m_isHighlighted);
+//    qDebug() << f << m_isHighlighted;
+    return f;
 }
 
 bool QlipperItem::operator==(const QlipperItem &other) const {

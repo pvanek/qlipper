@@ -51,6 +51,10 @@ public:
     QString displayRole() const;
     QIcon decorationRole() const;
     QString tooltipRole() const;
+    QFont fontRole() const;
+
+    void setHighlighted(bool highlight) { m_isHighlighted = highlight; }
+
 
     bool operator==(const QlipperItem &other) const;
 
@@ -61,6 +65,7 @@ private:
     QVariant m_media;
     bool m_valid;
     bool m_enforceHistory;
+    bool m_isHighlighted;
 
     QIcon iconForContentType() const;
 };

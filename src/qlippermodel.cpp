@@ -19,6 +19,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 
 #include <QtGui/QApplication>
 #include <QtGui/QIcon>
+#include <QtGui/QFont>
 #include <QtCore/QTimer>
 
 #include "qlippermodel.h"
@@ -88,6 +89,17 @@ QList<QlipperItem> QlipperModel::getList(int & row) const
     }
 }
 
+void QlipperModel::toClipboard(QlipperItem *item)
+{
+    item->toClipboard();
+    foreach(QlipperItem i, m_sticky+m_dynamic)
+    {
+//        qDebug() << (i == *item);
+        i.setHighlighted(i == *item);
+    }
+    reset();
+}
+
 QVariant QlipperModel::data(const QModelIndex& index, int role) const
 {
     if (!index.isValid())
@@ -105,6 +117,8 @@ QVariant QlipperModel::data(const QModelIndex& index, int role) const
         return list.at(row).decorationRole();
     case Qt::ToolTipRole:
         return list.at(row).tooltipRole();
+    case Qt::FontRole:
+        return list.at(row).fontRole();
     }
 
     return "";
@@ -132,7 +146,7 @@ void QlipperModel::clipboard_changed(QClipboard::Mode mode)
         //    clipboard content. In this case the latest item should be set again.
         if (item.enforceHistory() && m_dynamic.count())
         {
-            m_dynamic.at(0).toClipboard();
+            toClipboard(&m_dynamic[0]);
         }
         return;
     }
@@ -169,7 +183,7 @@ void QlipperModel::indexTriggered(const QModelIndex & index)
 
     int row = index.row();
     QList<QlipperItem> list = getList(row);
-    list.at(row).toClipboard();
+    toClipboard(&list[row]);
 }
 
 #ifdef Q_WS_MAC
