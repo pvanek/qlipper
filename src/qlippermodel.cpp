@@ -30,6 +30,7 @@ QlipperModel::QlipperModel(QObject *parent) :
     QAbstractListModel(parent)
 {
     m_clipboard = QApplication::clipboard();
+    m_boldFont.setBold(true);
 
     m_sticky = QlipperPreferences::Instance()->getStickyItems();
     m_dynamic = QlipperPreferences::Instance()->getDynamicItems();
@@ -107,15 +108,7 @@ QVariant QlipperModel::data(const QModelIndex& index, int role) const
     case Qt::ToolTipRole:
         return list.at(row).tooltipRole();
     case Qt::FontRole:
-        {
-            if (list.at(row) == m_currentItem)
-            {
-                QFont f;
-                f.setBold(true);
-                return f;
-            }
-        }
-        break;
+        return list.at(row) == m_currentItem ? m_boldFont : m_normalFont;
     }
 
     return "";

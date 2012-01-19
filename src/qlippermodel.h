@@ -22,6 +22,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 
 #include <QAbstractListModel>
 #include <QtGui/QClipboard>
+#include <QtGui/QFont>
 
 #include "qlipperitem.h"
 
@@ -51,6 +52,9 @@ private:
     QList<QlipperItem> m_dynamic;
     QClipboard *m_clipboard;
     QlipperItem m_currentItem;
+
+    QFont m_normalFont;
+    QFont m_boldFont;
 
 #ifdef Q_WS_MAC
     QTimer *m_timer;
