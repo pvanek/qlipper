@@ -85,7 +85,7 @@ unix:!macx {
     desktop.files = qlipper.desktop
 
     icons.path = $$INSTALL_PREFIX/share/pixmaps
-    icons.files = icons/qlipper.png
+    icons.files = src/icons/qlipper.png
 
     translations_qm.files = ts/*.qm
     translations_qm.path = $$INSTALL_PREFIX/share/qlipper/translations
