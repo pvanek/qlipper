@@ -19,6 +19,36 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 
 #include "qlipperpreferences.h"
 
+// allow to store ClipboardContent in the QSettings variant
+QDataStream &operator<<(QDataStream &out, const ClipboardContent &obj)
+{
+    int size = obj.size();
+    out << size;
+    ClipboardContentIterator it(obj);
+    while (it.hasNext())
+    {
+        it.next();
+        out << it.key() << it.value();
+    }
+
+    return out;
+}
+// allow to read ClipboardContent from QSettings
+QDataStream &operator>>(QDataStream &in, ClipboardContent &obj)
+{
+    int size;
+    QString key;
+    QByteArray value;
+    in >> size;
+    for (int i = 0; i < size; ++i)
+    {
+        in >> key >> value;
+        obj[key] = value;
+    }
+
+    return in;
+}
+
 
 QlipperPreferences* QlipperPreferences::m_instance = 0;
 
@@ -26,6 +56,8 @@ QlipperPreferences* QlipperPreferences::m_instance = 0;
 QlipperPreferences::QlipperPreferences()
     : QSettings()
 {
+    qRegisterMetaType<ClipboardContent>("ClipboardContent");
+    qRegisterMetaTypeStreamOperators<ClipboardContent>("ClipboardContent");
 }
 
 QlipperPreferences::~QlipperPreferences()
@@ -73,7 +105,7 @@ void QlipperPreferences::saveStickyItems(QList<QlipperItem> list)
     {
         setArrayIndex(i);
         i++;
-        setValue("text", item.text());
+        setValue("text", item.display());
     }
     endArray();
     endGroup();
@@ -94,10 +126,10 @@ QList<QlipperItem> QlipperPreferences::getDynamicItems()
     for (int i = 0; i < count; ++i)
     {
         setArrayIndex(i);
+//        qDebug() << "R" << qVariantValue<ClipboardContent>(value("content"));
         QlipperItem item(static_cast<QClipboard::Mode>(value("mode").toUInt()),//value("mode").value<QClipboard::Mode>(),
                          static_cast<QlipperItem::ContentType>(value("contentType").toUInt()), // value("contentType").value<QlipperItem::ContentType>(),
-                         value("text"),
-                         value("media")
+                         qVariantValue<ClipboardContent>(value("content"))
                         );
         if (item.isValid())
             l.append(item);
@@ -120,8 +152,8 @@ void QlipperPreferences::saveDynamicItems(QList<QlipperItem> list)
         i++;
         setValue("mode", item.clipBoardMode());
         setValue("contentType", item.contentType());
-        setValue("text", item.text());
-        setValue("media", item.media());
+//        qDebug() << "W" << qVariantFromValue(item.content()) << qVariantFromValue(item.content()).value<ClipboardContent>();
+        setValue("content", qVariantFromValue(item.content()));
     }
     endArray();
     endGroup();

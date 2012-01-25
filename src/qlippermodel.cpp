@@ -40,7 +40,7 @@ QlipperModel::QlipperModel(QObject *parent) :
         clipboard_changed(QClipboard::Clipboard);
         if (m_dynamic.count() == 0)
         {
-            m_dynamic.append(QlipperItem(QClipboard::Clipboard, QlipperItem::PlainText, tr("Welcome to the Qlipper clipboard history applet")));
+            clearHistory();
         }
     }
     reset();
@@ -172,7 +172,9 @@ void QlipperModel::clipboard_changed(QClipboard::Mode mode)
 void QlipperModel::clearHistory()
 {
     m_dynamic.clear();
-    QlipperItem item(QClipboard::Clipboard, QlipperItem::PlainText, tr("Welcome to the Qlipper clipboard history applet"));
+    ClipboardContent tmp;
+    tmp["text/plain"] = tr("Welcome to the Qlipper clipboard history applet").toUtf8();
+    QlipperItem item(QClipboard::Clipboard, QlipperItem::PlainText, tmp);
     m_dynamic.append(item);
     m_currentItem = item;
     reset();

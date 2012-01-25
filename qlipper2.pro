@@ -40,7 +40,8 @@ HEADERS += \
     src/qlippermenuview.h \
     src/config.h \
     src/qlipperpreferences.h \
-    src/qlipperpreferencesdialog.h
+    src/qlipperpreferencesdialog.h \
+    src/qlippertypes.h
 
 !os2 {
     SOURCES += qxt/qxtglobal.cpp \

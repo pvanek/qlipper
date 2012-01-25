@@ -23,6 +23,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 #include <QtGui/QClipboard>
 #include <QtCore/QVariant>
 #include <QtDebug>
+#include "qlippertypes.h"
 
 
 class QlipperItem
@@ -37,12 +38,12 @@ public:
 
     QlipperItem();
     QlipperItem(QClipboard::Mode mode);
-    QlipperItem(QClipboard::Mode mode, ContentType contentType, QVariant content, QVariant media=QVariant());
+    QlipperItem(QClipboard::Mode mode, ContentType contentType, const ClipboardContent &content);
     QlipperItem(const QString & sticky);
 
     QClipboard::Mode clipBoardMode() const;
-    QVariant text() const { return m_text; }
-    QVariant media() const { return m_media; }
+    ClipboardContent content() const { return m_content; }
+    QString display() const { return m_display; }
     QlipperItem::ContentType contentType() const { return m_contentType; }
 
     bool isValid() const { return m_valid; }
@@ -59,16 +60,16 @@ public:
 private:
     QClipboard::Mode m_mode;
     ContentType m_contentType;
-    QVariant m_text;
-    QVariant m_media;
     bool m_valid;
     bool m_enforceHistory;
+
+    ClipboardContent m_content;
+    QString m_display;
 
     QIcon iconForContentType() const;
 };
 
 Q_DECLARE_METATYPE(QlipperItem::ContentType)
-Q_DECLARE_METATYPE(QClipboard::Mode)
 
 QDebug operator<<(QDebug dbg, const QlipperItem &c);
 
