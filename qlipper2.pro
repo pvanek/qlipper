@@ -29,9 +29,6 @@ SOURCES += \
 HEADERS += \
     qkeysequencewidget/qkeysequencewidget.h \
     qkeysequencewidget/qkeysequencewidget_p.h \
-    qxt/qxtglobalshortcut.h \
-    qxt/qxtglobalshortcut_p.h \
-    qxt/qxtglobal.h \
     qmenuview/qmenuview.h \
     qmenuview/qmenuview_p.h \
     src/qlippermodel.h \
@@ -45,7 +42,10 @@ HEADERS += \
 
 !os2 {
     SOURCES += qxt/qxtglobal.cpp \
-    qxt/qxtglobalshortcut.cpp
+               qxt/qxtglobalshortcut.cpp
+    HEADERS += qxt/qxtglobalshortcut.h \
+               qxt/qxtglobalshortcut_p.h \
+               qxt/qxtglobal.h
 }
 
 
