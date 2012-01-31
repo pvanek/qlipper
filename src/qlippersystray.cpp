@@ -30,8 +30,10 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 
 
 QlipperSystray::QlipperSystray(QObject *parent)
-    : QSystemTrayIcon(parent),
-      m_shortcutMenu(0)
+    : QSystemTrayIcon(parent)
+#ifndef NO_QXT
+      , m_shortcutMenu(0)
+#endif
 {
     setIcon(QIcon(":/icons/qlipper.png"));
 
@@ -68,9 +70,11 @@ QlipperSystray::QlipperSystray(QObject *parent)
 
 QlipperSystray::~QlipperSystray()
 {
+#ifndef NO_QXT
     m_contextMenu->deleteLater();
     if (m_shortcutMenu)
         m_shortcutMenu->deleteLater();
+#endif
     m_model->deleteLater();
 }
 
@@ -95,7 +99,9 @@ void QlipperSystray::editPreferences()
     if (!d.exec())
         return;
 
+#ifndef NO_QXT
     m_shortcut->setShortcut(QlipperPreferences::Instance()->shortcut());
+#endif
     m_model->resetPreferences();
 }
 
