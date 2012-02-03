@@ -57,28 +57,33 @@ QlipperItem::QlipperItem(QClipboard::Mode mode)
 
     foreach (QString format, mimeData->formats())
     {
+//        qDebug() << format << mimeData->data(format);
         m_content[format] = mimeData->data(format);
     }
 
     m_display = mimeData->text();
 
-    if (mimeData->hasImage())
+    if (mimeData->hasHtml())
     {
-        m_contentType = QlipperItem::Image;
+        m_contentType = QlipperItem::RichText;
     }
-    else if (mimeData->hasUrls()) {
+    else if (mimeData->hasUrls())
+    {
         QString s;
         foreach (QUrl i, mimeData->urls())
             s += i.toString() + '\n';
         m_display = s;
-        //qDebug() << "URLs" << s;
+        m_contentType = QlipperItem::Url;
+    }
+    else if (mimeData->hasText())
+    {
         m_contentType = QlipperItem::PlainText;
     }
-    else {
-        m_contentType = QlipperItem::PlainText;
+    else
+    {
+        // any binary stuff
+        m_contentType = QlipperItem::Binary;
     }
-
-//    qDebug() << "NEW" << m_text << m_media;
 }
 
 QlipperItem::QlipperItem(QClipboard::Mode mode, QlipperItem::ContentType contentType, const ClipboardContent &content)
@@ -135,8 +140,10 @@ QString QlipperItem::displayRole() const
     case QlipperItem::RichText:
     case QlipperItem::Sticky:
         return m_display.left(QlipperPreferences::Instance()->displaySize());
-    case QlipperItem::Image:
-        return QObject::tr("An Image: %1").arg(m_display).left(QlipperPreferences::Instance()->displaySize());
+    case QlipperItem::Url:
+        return QObject::tr("Url: %1").arg(m_display).left(QlipperPreferences::Instance()->displaySize());
+    case QlipperItem::Binary:
+        return QObject::tr("Binary: %1").arg(m_display).left(QlipperPreferences::Instance()->displaySize());
     }
 
     return "";
@@ -182,20 +189,42 @@ QIcon QlipperItem::decorationRole() const
 
 QString QlipperItem::tooltipRole() const
 {
+    QString m;
+    QString t;
+
     switch (m_mode)
     {
     case QClipboard::Clipboard:
-        return QObject::tr("Clipboard");
+        m = QObject::tr("Clipboard");
         break;
     case QClipboard::Selection:
-        return QObject::tr("Selection");
+        m = QObject::tr("Selection");
         break;
     case QClipboard::FindBuffer:
-        return QObject::tr("Find Bufer");
+        m = QObject::tr("Find Bufer");
         break;
     }
 
-    return "";
+    switch (m_contentType)
+    {
+    case QlipperItem::PlainText:
+        t = QObject::tr("Plain Text");
+        break;
+    case QlipperItem::RichText:
+        t = QObject::tr("Rich Text");
+        break;
+    case QlipperItem::Binary:
+        t = QObject::tr("Binary Content");
+        break;
+    case QlipperItem::Url:
+        t = QObject::tr("URL");
+        break;
+    case QlipperItem::Sticky:
+        t = QObject::tr("Sticky Item (Plain Text)");
+        break;
+    }
+
+    return QString("%1: %2").arg(m).arg(t);
 }
 
 bool QlipperItem::operator==(const QlipperItem &other) const {
@@ -216,8 +245,11 @@ QIcon QlipperItem::iconForContentType() const
     case QlipperItem::RichText:
         theme = "text-enriched";
         break;
-    case QlipperItem::Image:
+    case QlipperItem::Binary:
         theme = "image-x-generic";
+        break;
+    case QlipperItem::Url:
+        theme = "quickopen-file";
         break;
     case QlipperItem::Sticky:
         theme = "knotes";

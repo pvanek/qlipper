@@ -9,6 +9,7 @@
         <file>icons/image-x-generic.png</file>
         <file>icons/text-enriched.png</file>
         <file>icons/text-plain.png</file>
+        <file>icons/quickopen-file.png</file>
         <file>icons/knotes.png</file>
     </qresource>
 </RCC>
