@@ -41,23 +41,26 @@ QlipperItem::QlipperItem(QClipboard::Mode mode)
       m_enforceHistory(false)
 {
     QClipboard * clipboard = QApplication::clipboard();
-    const QMimeData *mimeData = clipboard->mimeData();
+    const QMimeData *mimeData = clipboard->mimeData(mode);
 
-//    qDebug() << "QlipperItem::QlipperItem(QClipboard::Mode mode)" << mode << clipboard->text() << mimeData->hasImage();
+//    qDebug() << "QlipperItem::QlipperItem(QClipboard::Mode mode)" << mode << clipboard->text(mode) << mimeData->hasImage();
 
     // Clipboard can contain more possible values now:
     //  - any mimetype which is not supported (qcolor, custom mime, ...).
-    //    in this case it will NOT be sored in the history but it will
+    //    in this case it will NOT be stored in the history but it will
     //    be kept in the clipboard itself
     //  - an empty clipboard. On X11 clipboard content is owned by the
     //    application, so naturally closing the application drops
     //    clipboard content. In this case the latest item should be set again.
     if (mimeData->formats().count() == 0)
+    {
+        m_valid = false;
         m_enforceHistory = true;
+    }
 
     foreach (QString format, mimeData->formats())
     {
-//        qDebug() << format << mimeData->data(format);
+        //qDebug() << format << mimeData->data(format);
         m_content[format] = mimeData->data(format);
     }
 
