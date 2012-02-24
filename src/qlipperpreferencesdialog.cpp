@@ -36,6 +36,10 @@ QlipperPreferencesDialog::QlipperPreferencesDialog(QWidget *parent) :
     shortcutWidget->setKeySequence(QKeySequence(s->shortcut()));
     platformExtensionsCheckBox->setChecked(s->platformExtensions());
 
+    networkSendCheckBox->setChecked(s->networkSend());
+    networkReceiveCheckBox->setChecked(s->networkReceive());
+    portSpinBox->setValue(s->networkPort());
+
     foreach(QlipperItem item, QlipperPreferences::Instance()->getStickyItems())
     {
         listWidget->addItem(item.display());
@@ -72,6 +76,10 @@ void QlipperPreferencesDialog::accept()
     s->setValue("trim", trimCheckBox->isChecked());
     s->setValue("platformExtensions", platformExtensionsCheckBox->isChecked());
     s->setValue("shortcut", shortcutWidget->keySequence().toString());
+
+    s->setValue("networkReceive", networkReceiveCheckBox->isChecked());
+    s->setValue("networkSend", networkSendCheckBox->isChecked());
+    s->setValue("networkPort", portSpinBox->value());
 
     QList<QlipperItem> list;
     for (int i = 0; i < listWidget->count(); ++i)

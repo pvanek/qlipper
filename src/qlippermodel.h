@@ -27,6 +27,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 #include "qlipperitem.h"
 
 class QTimer;
+class QlipperNetwork;
 
 
 class QlipperModel : public QAbstractListModel
@@ -52,6 +53,7 @@ private:
     QList<QlipperItem> m_dynamic;
     QClipboard *m_clipboard;
     QlipperItem m_currentItem;
+    QlipperNetwork *m_network;
 
     QFont m_normalFont;
     QFont m_boldFont;
@@ -66,7 +68,6 @@ private:
 private slots:
     void clipboard_changed(QClipboard::Mode);
 
-#ifdef Q_WS_MAC
     /*! Mac OS X from Qt 4.3.x does not handle signals sent
       from QClipboard until the app window is activated (eg. by
       the global shortcuts. It leads into possible lost items.
@@ -77,7 +78,6 @@ private slots:
       See m_timer, m_previousContent
      */
     void timer_timeout();
-#endif
 };
 
 #endif // QLIPPERMODEL_H

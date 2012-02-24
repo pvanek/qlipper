@@ -1,6 +1,9 @@
 #ifndef QLIPPERTYPES_H
 #define QLIPPERTYPES_H
 
+#include <QMetaType>
+
+
 typedef QHash<QString,QByteArray> ClipboardContent;
 typedef QHashIterator<QString,QByteArray> ClipboardContentIterator;
 

@@ -183,3 +183,20 @@ bool QlipperPreferences::platformExtensions()
 {
     return value("platformExtensions", false).toBool();
 }
+
+bool QlipperPreferences::networkSend()
+{
+    return value("networkSend", false).toBool();
+}
+
+bool QlipperPreferences::networkReceive()
+{
+    return value("networkReceive", false).toBool();
+}
+
+int QlipperPreferences::networkPort()
+{
+    return value("networkPort", 6666).toInt();
+}
+
+

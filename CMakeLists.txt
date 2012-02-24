@@ -49,7 +49,7 @@ set(QLIPPER_VERSION 2.0.1)
 
 
 # Find required libraries
-find_package(Qt4 REQUIRED QtCore QtGui)
+find_package(Qt4 REQUIRED QtCore QtGui QtNetwork)
 include(${QT_USE_FILE})
 
 
@@ -74,6 +74,7 @@ set (QLIPPER_SOURCES
     src/qlipperpreferences.cpp
     src/qlipperpreferencesdialog.cpp
     src/qlippersystray.cpp
+    src/qlippernetwork.cpp
 )
 set (HAVE_QXT 1)
 if (APPLE)
@@ -114,6 +115,7 @@ set (QLIPPER_HEADERS
     src/qlipperpreferences.h
     src/qlipperpreferencesdialog.h
     src/qlippersystray.h
+    src/qlippernetwork.h
     src/qlippertypes.h
 )
 
@@ -145,6 +147,7 @@ QT4_WRAP_CPP( QLIPPER_MOC ${QLIPPER_HEADERS} )
 QT4_ADD_RESOURCES( QLIPPER_RCC ${QLIPPER_RESOURCES} )
 QT4_ADD_TRANSLATION( QLIPPER_QM ${QLIPPER_TRANSLATIONS} )
 
+
 include_directories (
     ${CMAKE_CURRENT_SOURCE_DIR}/src
     ${CMAKE_CURRENT_BINARY_DIR}
@@ -166,6 +169,7 @@ target_link_libraries( ${EXE_NAME}
     ${QT_QTCORE_LIBRARY}
     ${QT_QTGUI_LIBRARY}
     ${QT_QTMAIN_LIBRARY}
+    ${QT_QTNETWORK_LIBRARY}
 )
 if (APPLE)
     target_link_libraries(${EXE_NAME} ${CARBON_LIBRARY})
@@ -176,9 +180,9 @@ endif (APPLE)
 if (APPLE)
     # mac's bundle install
     SET_TARGET_PROPERTIES(${EXE_NAME} PROPERTIES MACOSX_BUNDLE_INFO_PLIST "${CMAKE_SOURCE_DIR}/macosx/Info.plist.in")
-   	SET(MACOSX_BUNDLE_ICON_FILE qlipper.icns)
-   	SET(MACOSX_BUNDLE_INFO_STRING "${EXE_NAME} ${QLIPPER_VERSION}")
-    SET(MACOSX_BUNDLE_GUI_IDENTIFIER "com.googlecode.rss-guard")
+    SET(MACOSX_BUNDLE_ICON_FILE qlipper.icns)
+    SET(MACOSX_BUNDLE_INFO_STRING "${EXE_NAME} ${QLIPPER_VERSION}")
+    SET(MACOSX_BUNDLE_GUI_IDENTIFIER "com.googlecode.qlipper")
     SET(MACOSX_BUNDLE_LONG_VERSION_STRING "${QLIPPER_VERSION}")
     SET(MACOSX_BUNDLE_BUNDLE_NAME "${EXE_NAME}")
     SET(MACOSX_BUNDLE_SHORT_VERSION_STRING "${QLIPPER_VERSION}")
@@ -187,20 +191,20 @@ if (APPLE)
     SET_SOURCE_FILES_PROPERTIES(${CMAKE_SOURCE_DIR}/macosx/qlipper.icns PROPERTIES MACOSX_PACKAGE_LOCATION Resources)
 
     INSTALL(TARGETS ${EXE_NAME} BUNDLE DESTINATION ${CMAKE_INSTALL_PREFIX})
-	install(FILES ${QLIPPER_QM} DESTINATION ${CMAKE_INSTALL_PREFIX}/${EXE_NAME}.app/Contents/Resources/translations)
+    install(FILES ${QLIPPER_QM} DESTINATION ${CMAKE_INSTALL_PREFIX}/${EXE_NAME}.app/Contents/Resources/translations)
 
     # create a "transportable" bundle - all libs into the bundle: "make bundle" after make install
     configure_file(macosx/bundle.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/bundle.cmake @ONLY)
     add_custom_target(bundle ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/bundle.cmake)
 
 elseif (WIN32)
-	install(TARGETS ${EXE_NAME} RUNTIME DESTINATION ./)
-	install(FILES ${QLIPPER_QM} DESTINATION ./translations)
+    install(TARGETS ${EXE_NAME} RUNTIME DESTINATION ./)
+    install(FILES ${QLIPPER_QM} DESTINATION ./translations)
 elseif (UNIX)
     install(TARGETS ${EXE_NAME} RUNTIME DESTINATION bin)
     install(FILES qlipper.desktop DESTINATION share/applications)
     install(FILES src/icons/qlipper.png DESTINATION share/pixmaps)
-	install(FILES ${QLIPPER_QM} DESTINATION share/qlipper/translations)
+    install(FILES ${QLIPPER_QM} DESTINATION share/qlipper/translations)
 endif ()
 
 
@@ -220,14 +224,14 @@ add_custom_target(dist COMMAND ${CMAKE_MAKE_PROGRAM} package_source)
 # make lupdate
 # it generates new translation files
 add_custom_target(lupdate
-	${QT_QMAKE_EXECUTABLE} -project -o ${CMAKE_CURRENT_BINARY_DIR}/qlipper.pro
-	COMMAND ${QT_LUPDATE_EXECUTABLE} -noobsolete ${CMAKE_CURRENT_BINARY_DIR}/qlipper.pro
+    ${QT_QMAKE_EXECUTABLE} -project -o ${CMAKE_CURRENT_BINARY_DIR}/qlipper.pro
+    COMMAND ${QT_LUPDATE_EXECUTABLE} -noobsolete ${CMAKE_CURRENT_BINARY_DIR}/qlipper.pro
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
 )
 # lrelease
 add_custom_target(lrelease
-	${QT_QMAKE_EXECUTABLE} -project -o ${CMAKE_CURRENT_BINARY_DIR}/qlipper.pro
-	COMMAND ${QT_LRELEASE_EXECUTABLE} -compress ${CMAKE_CURRENT_BINARY_DIR}/qlipper.pro
+    ${QT_QMAKE_EXECUTABLE} -project -o ${CMAKE_CURRENT_BINARY_DIR}/qlipper.pro
+    COMMAND ${QT_LRELEASE_EXECUTABLE} -compress ${CMAKE_CURRENT_BINARY_DIR}/qlipper.pro
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
 )
 

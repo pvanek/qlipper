@@ -24,12 +24,15 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 
 #include "qlippermodel.h"
 #include "qlipperpreferences.h"
+#include "qlippernetwork.h"
 
 
 QlipperModel::QlipperModel(QObject *parent) :
     QAbstractListModel(parent)
 {
     m_clipboard = QApplication::clipboard();
+    m_network = new QlipperNetwork(this);
+
     m_boldFont.setBold(true);
 
     m_sticky = QlipperPreferences::Instance()->getStickyItems();
@@ -150,6 +153,11 @@ void QlipperModel::clipboard_changed(QClipboard::Mode mode)
     }
 
     int ix = m_dynamic.indexOf(item);
+    if (ix == 0)
+    {
+        // already on top
+        return;
+    }
     if (ix != -1)
     {
         m_dynamic.move(ix, 0);
@@ -162,6 +170,7 @@ void QlipperModel::clipboard_changed(QClipboard::Mode mode)
     }
 
     m_currentItem = m_dynamic.at(0);
+    m_network->sendData(m_currentItem.content());
 
     // TODO/FIXME: optimize it somehow... it can be too brutal for HDD
     QlipperPreferences::Instance()->saveDynamicItems(m_dynamic);
@@ -190,11 +199,11 @@ void QlipperModel::indexTriggered(const QModelIndex & index)
     list.at(row).toClipboard();
 }
 
-#ifdef Q_WS_MAC
 void QlipperModel::timer_timeout()
 {
+#ifdef Q_WS_MAC
     m_timer->stop();
     clipboard_changed(QClipboard::Clipboard);
     m_timer->start();
-}
 #endif
+}

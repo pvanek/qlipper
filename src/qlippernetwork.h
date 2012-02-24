@@ -17,39 +17,30 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
-#ifndef QLIPPERPREFERENCES_H
-#define QLIPPERPREFERENCES_H
+#ifndef QLIPPERNETWORK_H
+#define QLIPPERNETWORK_H
 
-#include <QtCore/QSettings>
+#include <QtCore/QObject>
+#include <QtNetwork/QUdpSocket>
+#include "qlippertypes.h"
 
-#include "qlipperitem.h"
 
-
-class QlipperPreferences : public QSettings
+class QlipperNetwork : public QObject
 {
+    Q_OBJECT
+
 public:
-    static QlipperPreferences *Instance();
-    ~QlipperPreferences();
+    QlipperNetwork(QObject *parent=0);
 
-    QList<QlipperItem> getStickyItems();
-    void saveStickyItems(QList<QlipperItem> list);
-    QList<QlipperItem> getDynamicItems();
-    void saveDynamicItems(QList<QlipperItem> list);
-
-    bool trim();
-    int displaySize();
-    QString shortcut();
-    int historyCount();
-    bool platformExtensions();
-
-    bool networkSend();
-    bool networkReceive();
-    int networkPort();
+public slots:
+    void sendData(const ClipboardContent &value);
 
 private:
-    QlipperPreferences();
+    QUdpSocket *m_socket;
 
-    static QlipperPreferences* m_instance;
+private slots:
+    void readData();
 };
 
-#endif // QLIPPERPREFERENCES_H
+#endif
+
