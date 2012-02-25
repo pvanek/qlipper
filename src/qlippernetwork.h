@@ -37,6 +37,7 @@ public slots:
 
 private:
     QUdpSocket *m_socket;
+    QString m_id;
 
 private slots:
     void readData();

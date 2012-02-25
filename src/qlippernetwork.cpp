@@ -21,12 +21,31 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 #include "qlipperitem.h"
 #include "qlipperpreferences.h"
 #include <QtDebug>
+#include <QtNetwork/QHostInfo>
 
 
 QlipperNetwork::QlipperNetwork(QObject *parent)
     : QObject(parent)
 {
     setObjectName("qlipperNetwork");
+
+    QString hostname(QHostInfo::localHostName());
+    if (hostname.isEmpty())
+        hostname = "unknown";
+
+    QString uname;
+#ifdef Q_OS_UNIX
+    // Mac, linux, and the other unices.
+    uname = qgetenv("USER");
+#endif
+#ifdef Q_WS_WIN
+        // Windows.
+    uname = qgetenv("USERNAME");
+#endif
+    if (uname.isEmpty())
+        uname = "unknown";
+
+    m_id = uname + "@" + hostname;
 
     m_socket = new QUdpSocket(this);
     bool r = m_socket->bind(QlipperPreferences::Instance()->networkPort(), QUdpSocket::ShareAddress);
@@ -43,7 +62,7 @@ void QlipperNetwork::sendData(const ClipboardContent &value)
     QByteArray serialized;
     QDataStream ds(&serialized, QIODevice::WriteOnly);
 
-    ds << value;
+    ds << m_id << value;
 
     qDebug() << "SENDING:" << serialized;
     QByteArray data = qCompress(serialized);
@@ -57,6 +76,8 @@ void QlipperNetwork::readData()
     if (!QlipperPreferences::Instance()->networkReceive())
         return;
 
+    QString remoteId;
+
     while (m_socket->hasPendingDatagrams())
     {
         QByteArray data;
@@ -64,6 +85,11 @@ void QlipperNetwork::readData()
         m_socket->readDatagram(data.data(), data.size());
         QByteArray value = qUncompress(data);
         QDataStream ds(value);
+        ds >> remoteId;
+        // ignore own data
+        if (m_id == remoteId)
+             continue;
+
         ClipboardContent c;
         ds >> c;
         qDebug() << "RECEIVED:" << c;
