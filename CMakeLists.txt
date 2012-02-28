@@ -82,12 +82,15 @@ if (APPLE)
     set (QLIPPER_SOURCES ${QLIPPER_SOURCES} qxt/qxtglobalshortcut_mac.cpp)
     message(STATUS "Global shortcut for MAC")
 
-   FIND_LIBRARY(CARBON_LIBRARY Carbon REQURED)
-   MESSAGE(STATUS "CARBON_LIBRARY: ${CARBON_LIBRARY}")
+    FIND_LIBRARY(CARBON_LIBRARY Carbon REQURED)
+    MESSAGE(STATUS "CARBON_LIBRARY: ${CARBON_LIBRARY}")
 elseif (WIN32)
     set (QLIPPER_SOURCES ${QLIPPER_SOURCES} qxt/qxtglobalshortcut_win.cpp)
     message(STATUS "Global shortcut for WIN")
 elseif (UNIX)
+    FIND_PACKAGE(X11 REQUIRED)
+    MESSAGE(STATUS "X11_X11_LIB: ${X11_X11_LIB}")
+
     set (QLIPPER_SOURCES ${QLIPPER_SOURCES} qxt/qxtglobalshortcut_x11.cpp)
     message(STATUS "Global shortcut for X11")
 else ()
@@ -173,7 +176,9 @@ target_link_libraries( ${EXE_NAME}
 )
 if (APPLE)
     target_link_libraries(${EXE_NAME} ${CARBON_LIBRARY})
-endif (APPLE)
+elseif (UNIX)
+    target_link_libraries(${EXE_NAME} ${X11_X11_LIB})
+endif ()
 
 
 # installation
@@ -205,6 +210,7 @@ elseif (UNIX)
     install(FILES qlipper.desktop DESTINATION share/applications)
     install(FILES src/icons/qlipper.png DESTINATION share/pixmaps)
     install(FILES ${QLIPPER_QM} DESTINATION share/qlipper/translations)
+    add_definitions(-DTRANSLATION_DIR="${CMAKE_INSTALL_PREFIX}/share/qlipper/translations")
 endif ()
 
 
