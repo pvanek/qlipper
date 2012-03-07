@@ -20,6 +20,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 #include <QtGui/QApplication>
 #include <QtCore/QSettings>
 #include <QtCore/QTranslator>
+#include <QtCore/QTextCodec>
 #include <QtDebug>
 
 #include "qlippersystray.h"
@@ -33,6 +34,9 @@ int main(int argc, char **argv)
     a.setOrganizationName("Qlipper");
     a.setWindowIcon(QIcon(":/icons/qlipper.png"));
     QSettings::setDefaultFormat(QSettings::IniFormat);
+
+    // for QByteArray to QString constructors
+    QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));
 
     a.setQuitOnLastWindowClosed(false);
 
