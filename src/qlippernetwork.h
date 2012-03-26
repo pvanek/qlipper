@@ -21,7 +21,9 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 #define QLIPPERNETWORK_H
 
 #include <QtCore/QObject>
+#ifndef ENABLE_NETWORK
 #include <QtNetwork/QUdpSocket>
+#endif
 #include "qlippertypes.h"
 
 
@@ -36,8 +38,10 @@ public slots:
     void sendData(const ClipboardContent &value);
 
 private:
+#ifndef ENABLE_NETWORK
     QUdpSocket *m_socket;
     QString m_id;
+#endif
 
 private slots:
     void readData();

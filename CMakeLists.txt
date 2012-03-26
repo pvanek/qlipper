@@ -47,9 +47,15 @@ project(qlipper)
 
 set(QLIPPER_VERSION 2.0.1)
 
+option(ENABLE_NETWORK "Enables experimental network support for clipboard sharing" OFF)
+
 
 # Find required libraries
-find_package(Qt4 REQUIRED QtCore QtGui QtNetwork)
+if (ENABLE_NETWORK)
+    find_package(Qt4 REQUIRED QtCore QtGui QtNetwork)
+else (ENABLE_NETWORK)
+    find_package(Qt4 REQUIRED QtCore QtGui)
+endif (ENABLE_NETWORK)
 include(${QT_USE_FILE})
 
 
@@ -61,6 +67,9 @@ endif (APPLE)
 
 add_definitions(-DIS_CMAKE)
 add_definitions(-DQLIPPER_VERSION="${QLIPPER_VERSION}")
+if (ENABLE_NETWORK)
+    add_definitions(-DENABLE_NETWORK)
+endif (ENABLE_NETWORK)
 
 
 # source code and compilation
@@ -172,8 +181,14 @@ target_link_libraries( ${EXE_NAME}
     ${QT_QTCORE_LIBRARY}
     ${QT_QTGUI_LIBRARY}
     ${QT_QTMAIN_LIBRARY}
-    ${QT_QTNETWORK_LIBRARY}
 )
+
+if (ENABLE_NETWORK)
+    target_link_libraries( ${EXE_NAME}
+        ${QT_QTNETWORK_LIBRARY}
+    )
+endif (ENABLE_NETWORK)
+
 if (APPLE)
     target_link_libraries(${EXE_NAME} ${CARBON_LIBRARY})
 elseif (UNIX)
@@ -240,6 +255,4 @@ add_custom_target(lrelease
     COMMAND ${QT_LRELEASE_EXECUTABLE} -compress ${CMAKE_CURRENT_BINARY_DIR}/qlipper.pro
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
 )
-
-
 

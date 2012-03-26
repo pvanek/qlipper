@@ -39,6 +39,9 @@ QlipperPreferencesDialog::QlipperPreferencesDialog(QWidget *parent) :
     networkSendCheckBox->setChecked(s->networkSend());
     networkReceiveCheckBox->setChecked(s->networkReceive());
     portSpinBox->setValue(s->networkPort());
+#ifndef ENABLE_NETWORK
+    toolBox->setItemEnabled(2, false);
+#endif
 
     foreach(QlipperItem item, QlipperPreferences::Instance()->getStickyItems())
     {

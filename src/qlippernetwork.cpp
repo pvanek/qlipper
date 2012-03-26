@@ -21,7 +21,9 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 #include "qlipperitem.h"
 #include "qlipperpreferences.h"
 #include <QtDebug>
+#ifdef ENABLE_NETWORK
 #include <QtNetwork/QHostInfo>
+#endif
 
 
 QlipperNetwork::QlipperNetwork(QObject *parent)
@@ -29,6 +31,7 @@ QlipperNetwork::QlipperNetwork(QObject *parent)
 {
     setObjectName("qlipperNetwork");
 
+#ifdef ENABLE_NETWORK
     QString hostname(QHostInfo::localHostName());
     if (hostname.isEmpty())
         hostname = "unknown";
@@ -52,10 +55,12 @@ QlipperNetwork::QlipperNetwork(QObject *parent)
     connect(m_socket, SIGNAL(readyRead()), this, SLOT(readData()));
     if (!r)
         qDebug() << "socket bound:" << r << m_socket->error() << m_socket->errorString();
+#endif
 }
 
 void QlipperNetwork::sendData(const ClipboardContent &value)
 {
+#ifdef ENABLE_NETWORK
     if (!QlipperPreferences::Instance()->networkSend())
         return;
 
@@ -69,10 +74,12 @@ void QlipperNetwork::sendData(const ClipboardContent &value)
     int r = m_socket->writeDatagram(data.data(), data.size(), QHostAddress::Broadcast, QlipperPreferences::Instance()->networkPort());
     if (r == -1)
         qDebug() << "error to send" << m_socket->error() << m_socket->errorString();
+#endif
 }
 
 void QlipperNetwork::readData()
 {
+#ifdef ENABLE_NETWORK
     if (!QlipperPreferences::Instance()->networkReceive())
         return;
 
@@ -96,5 +103,6 @@ void QlipperNetwork::readData()
         QlipperItem item(QClipboard::Clipboard, QlipperItem::PlainText, c);
         item.toClipboard();
     }
+#endif
 }
 
