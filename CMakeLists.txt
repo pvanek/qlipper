@@ -47,15 +47,10 @@ project(qlipper)
 
 set(QLIPPER_VERSION 2.0.1)
 
-option(ENABLE_NETWORK "Enables experimental network support for clipboard sharing" OFF)
+option(ENABLE_NETWORK_CLIPBOARD_SHARING "Enables experimental network support for clipboard sharing" OFF)
 
 
-# Find required libraries
-if (ENABLE_NETWORK)
-    find_package(Qt4 REQUIRED QtCore QtGui QtNetwork)
-else (ENABLE_NETWORK)
-    find_package(Qt4 REQUIRED QtCore QtGui)
-endif (ENABLE_NETWORK)
+find_package(Qt4 REQUIRED QtCore QtGui QtNetwork)
 include(${QT_USE_FILE})
 
 
@@ -67,9 +62,9 @@ endif (APPLE)
 
 add_definitions(-DIS_CMAKE)
 add_definitions(-DQLIPPER_VERSION="${QLIPPER_VERSION}")
-if (ENABLE_NETWORK)
-    add_definitions(-DENABLE_NETWORK)
-endif (ENABLE_NETWORK)
+if (ENABLE_NETWORK_CLIPBOARD_SHARING)
+    add_definitions(-DENABLE_NETWORK_CLIPBOARD_SHARING)
+endif (ENABLE_NETWORK_CLIPBOARD_SHARING)
 
 
 # source code and compilation
@@ -183,11 +178,9 @@ target_link_libraries( ${EXE_NAME}
     ${QT_QTMAIN_LIBRARY}
 )
 
-if (ENABLE_NETWORK)
-    target_link_libraries( ${EXE_NAME}
-        ${QT_QTNETWORK_LIBRARY}
-    )
-endif (ENABLE_NETWORK)
+target_link_libraries( ${EXE_NAME}
+    ${QT_QTNETWORK_LIBRARY}
+)
 
 if (APPLE)
     target_link_libraries(${EXE_NAME} ${CARBON_LIBRARY})

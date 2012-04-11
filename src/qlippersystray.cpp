@@ -118,7 +118,7 @@ void QlipperSystray::showAbout()
     QString globalKeySupport = tr("No");
 #endif
 
-#ifdef ENABLE_NETWORK
+#ifdef ENABLE_NETWORK_CLIPBOARD_SHARING
     QString enableNetwork = tr("Yes (experimental)");
 #else
     QString enableNetwork = tr("No");

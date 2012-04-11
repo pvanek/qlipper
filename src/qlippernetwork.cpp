@@ -21,7 +21,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 #include "qlipperitem.h"
 #include "qlipperpreferences.h"
 #include <QtDebug>
-#ifdef ENABLE_NETWORK
+#ifdef ENABLE_NETWORK_CLIPBOARD_SHARING
 #include <QtNetwork/QHostInfo>
 #endif
 
@@ -31,7 +31,7 @@ QlipperNetwork::QlipperNetwork(QObject *parent)
 {
     setObjectName("qlipperNetwork");
 
-#ifdef ENABLE_NETWORK
+#ifdef ENABLE_NETWORK_CLIPBOARD_SHARING
     QString hostname(QHostInfo::localHostName());
     if (hostname.isEmpty())
         hostname = "unknown";
@@ -60,7 +60,7 @@ QlipperNetwork::QlipperNetwork(QObject *parent)
 
 void QlipperNetwork::sendData(const ClipboardContent &value)
 {
-#ifdef ENABLE_NETWORK
+#ifdef ENABLE_NETWORK_CLIPBOARD_SHARING
     if (!QlipperPreferences::Instance()->networkSend())
         return;
 
@@ -79,7 +79,7 @@ void QlipperNetwork::sendData(const ClipboardContent &value)
 
 void QlipperNetwork::readData()
 {
-#ifdef ENABLE_NETWORK
+#ifdef ENABLE_NETWORK_CLIPBOARD_SHARING
     if (!QlipperPreferences::Instance()->networkReceive())
         return;
 

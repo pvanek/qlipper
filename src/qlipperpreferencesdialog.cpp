@@ -39,7 +39,7 @@ QlipperPreferencesDialog::QlipperPreferencesDialog(QWidget *parent) :
     networkSendCheckBox->setChecked(s->networkSend());
     networkReceiveCheckBox->setChecked(s->networkReceive());
     portSpinBox->setValue(s->networkPort());
-#ifndef ENABLE_NETWORK
+#ifndef ENABLE_NETWORK_CLIPBOARD_SHARING
     toolBox->setItemEnabled(2, false);
 #endif
 
