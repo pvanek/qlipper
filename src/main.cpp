@@ -17,7 +17,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
-#include <QtGui/QApplication>
+#include <QtSingleApplication>
 #include <QtCore/QSettings>
 #include <QtCore/QTranslator>
 #include <QtCore/QTextCodec>
@@ -27,7 +27,14 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 
 int main(int argc, char **argv)
 {
-    QApplication a(argc, argv);
+    QtSingleApplication a(argc, argv);
+
+    if (a.isRunning())
+    {
+        qWarning("An instance of qlipper is already running!");
+        return 0;
+    }
+
     a.setApplicationName("qlipper");
     a.setApplicationVersion(QLIPPER_VERSION);
     a.setOrganizationDomain("qlipper.org");
