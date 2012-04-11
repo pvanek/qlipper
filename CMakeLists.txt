@@ -69,6 +69,8 @@ endif (ENABLE_NETWORK_CLIPBOARD_SHARING)
 
 # source code and compilation
 set (QLIPPER_SOURCES 
+    qtsingleapplication/qtsingleapplication.cpp
+    qtsingleapplication/qtlocalpeer.cpp
     qkeysequencewidget/qkeysequencewidget.cpp
     qmenuview/qmenuview.cpp
     src/main.cpp
@@ -111,6 +113,8 @@ endif (HAVE_QXT)
 
 
 set (QLIPPER_HEADERS
+    qtsingleapplication/qtsingleapplication.h
+    qtsingleapplication/qtlocalpeer.h
     qkeysequencewidget/qkeysequencewidget.h
     qkeysequencewidget/qkeysequencewidget_p.h
     qmenuview/qmenuview.h
@@ -162,6 +166,7 @@ include_directories (
     ${CMAKE_CURRENT_SOURCE_DIR}/qkeysequencewidget
     ${CMAKE_CURRENT_SOURCE_DIR}/qxt
     ${CMAKE_CURRENT_SOURCE_DIR}/qmenuview
+    ${CMAKE_CURRENT_SOURCE_DIR}/qtsingleapplication
 )
 
 add_executable( ${EXE_NAME} WIN32 MACOSX_BUNDLE 
