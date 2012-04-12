@@ -119,22 +119,16 @@ set (QLIPPER_HEADERS
     qkeysequencewidget/qkeysequencewidget_p.h
     qmenuview/qmenuview.h
     qmenuview/qmenuview_p.h
-    src/config.h
-    src/qlipperitem.h
     src/qlippermenuview.h
     src/qlippermodel.h
-    src/qlipperpreferences.h
     src/qlipperpreferencesdialog.h
     src/qlippersystray.h
     src/qlippernetwork.h
-    src/qlippertypes.h
 )
 
 if (HAVE_QXT)
     set (QLIPPER_HEADERS ${QLIPPER_HEADERS}
-            qxt/qxtglobal.h
             qxt/qxtglobalshortcut.h
-            qxt/qxtglobalshortcut_p.h
         )
 else (HAVE_QXT)
     add_definitions(-DNO_QXT)
