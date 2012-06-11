@@ -227,7 +227,7 @@ SET(CPACK_PACKAGE_NAME "qlipper")
 SET(CPACK_PACKAGE_VERSION ${QLIPPER_VERSION})
 SET(CPACK_SOURCE_GENERATOR "TBZ2")
 SET(CPACK_SOURCE_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}-${CPACK_PACKAGE_VERSION}")
-SET(CPACK_IGNORE_FILES "/CVS/;/\\\\.svn/;/\\\\.git/;\\\\.swp$;\\\\.#;/#;\\\\.tar.gz$;/CMakeFiles/;CMakeCache.txt;\\\\.qm$;/build/;\\\\.diff$;.DS_Store'")
+SET(CPACK_IGNORE_FILES "/CVS/;/\\\\.svn/;/\\\\.git/;\\\\.swp$;\\\\.#;/#;\\\\.tar.gz$;/CMakeFiles/;CMakeCache.txt;\\\\.qm$;/build/;/release/;\\\\.diff$;.DS_Store'")
 SET(CPACK_SOURCE_IGNORE_FILES ${CPACK_IGNORE_FILES})
 INCLUDE(CPack)
 # simulate autotools' "make dist"

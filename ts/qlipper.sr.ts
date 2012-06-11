@@ -4,24 +4,54 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/qlipperitem.cpp" line="158"/>
-        <source>An Image: %1</source>
-        <translation>Слика: %1</translation>
+        <location filename="../src/qlipperitem.cpp" line="147"/>
+        <source>Url: %1</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qlipperitem.cpp" line="207"/>
+        <location filename="../src/qlipperitem.cpp" line="149"/>
+        <source>Binary: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qlipperitem.cpp" line="201"/>
         <source>Clipboard</source>
         <translation>Клипборд</translation>
     </message>
     <message>
-        <location filename="../src/qlipperitem.cpp" line="210"/>
+        <location filename="../src/qlipperitem.cpp" line="204"/>
         <source>Selection</source>
         <translation>Одабир</translation>
     </message>
     <message>
-        <location filename="../src/qlipperitem.cpp" line="213"/>
+        <location filename="../src/qlipperitem.cpp" line="207"/>
         <source>Find Bufer</source>
         <translation>Пронађи међуспремник</translation>
+    </message>
+    <message>
+        <location filename="../src/qlipperitem.cpp" line="214"/>
+        <source>Plain Text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qlipperitem.cpp" line="217"/>
+        <source>Rich Text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qlipperitem.cpp" line="220"/>
+        <source>Binary Content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qlipperitem.cpp" line="223"/>
+        <source>URL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qlipperitem.cpp" line="226"/>
+        <source>Sticky Item (Plain Text)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -50,8 +80,7 @@
 <context>
     <name>QlipperModel</name>
     <message>
-        <location filename="../src/qlippermodel.cpp" line="41"/>
-        <location filename="../src/qlippermodel.cpp" line="161"/>
+        <location filename="../src/qlippermodel.cpp" line="185"/>
         <source>Welcome to the Qlipper clipboard history applet</source>
         <translation>Добродошли у Кјулипер, алатку за историјат клипборда</translation>
     </message>
@@ -179,7 +208,27 @@
         <translation>До&amp;ле</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.cpp" line="90"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="254"/>
+        <source>Network</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="260"/>
+        <source>Send Content to Network</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="267"/>
+        <source>Receive Content from Network</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="274"/>
+        <source>Port:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qlipperpreferencesdialog.cpp" line="101"/>
         <source>Add New Sticky Item</source>
         <translation>Додај нови лепљиви унос</translation>
     </message>
@@ -187,29 +236,35 @@
 <context>
     <name>QlipperSystray</name>
     <message>
-        <location filename="../src/qlippersystray.cpp" line="50"/>
+        <location filename="../src/qlippersystray.cpp" line="52"/>
         <source>Qlipper - a clipboard history applet</source>
         <translation>Кјулипер - алатка за историјат клипборда</translation>
     </message>
     <message>
-        <location filename="../src/qlippersystray.cpp" line="105"/>
+        <location filename="../src/qlippersystray.cpp" line="116"/>
         <source>Yes</source>
         <translation>Да</translation>
     </message>
     <message>
-        <location filename="../src/qlippersystray.cpp" line="107"/>
+        <location filename="../src/qlippersystray.cpp" line="118"/>
+        <location filename="../src/qlippersystray.cpp" line="124"/>
         <source>No</source>
         <translation>Не</translation>
     </message>
     <message>
-        <location filename="../src/qlippersystray.cpp" line="114"/>
+        <location filename="../src/qlippersystray.cpp" line="122"/>
+        <source>Yes (experimental)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qlippersystray.cpp" line="131"/>
         <source>About Qlipper</source>
         <translation>О Кјулиперу</translation>
     </message>
     <message>
-        <location filename="../src/qlippersystray.cpp" line="116"/>
-        <source>Lightweight, cross-platform clipboard history applet.&lt;p&gt;(c)&amp;nbsp;2010-2011&amp;nbsp;Petr&amp;nbsp;Vanek&amp;nbsp;&amp;lt;petr@scribus.info&amp;gt;&lt;p&gt;&lt;a href=&quot;http://code.google.com/p/qlipper/&quot;&gt;http://code.google.com/p/qlipper/&lt;/a&gt;&lt;p&gt;Support for global keyboard shortcut: %1</source>
-        <translation>Лагана међуплатформска алатка за историјат клипборда.&lt;p&gt;©&amp;nbsp;2010-2011&amp;nbsp;Петр&amp;nbsp;Ванек&amp;nbsp;&amp;lt;petr@scribus.info&amp;gt;&lt;p&gt;&lt;a href=&quot;http://code.google.com/p/qlipper/&quot;&gt;http://code.google.com/p/qlipper/&lt;/a&gt;&lt;p&gt;Подршка за глобалну пречицу тастатуре: %1</translation>
+        <location filename="../src/qlippersystray.cpp" line="133"/>
+        <source>Lightweight, cross-platform clipboard history applet.&lt;p&gt;(c)&amp;nbsp;2010-2011&amp;nbsp;Petr&amp;nbsp;Vanek&amp;nbsp;&amp;lt;petr@scribus.info&amp;gt;&lt;p&gt;&lt;a href=&quot;http://code.google.com/p/qlipper/&quot;&gt;http://code.google.com/p/qlipper/&lt;/a&gt;&lt;p&gt;Support for global keyboard shortcut: %1&lt;br&gt;Support for network clipboard sharing: %2</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
