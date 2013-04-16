@@ -45,13 +45,31 @@ CMAKE_MINIMUM_REQUIRED(VERSION 2.8.0)
 project(qlipper)
 
 
-set(QLIPPER_VERSION 2.0.1)
+set(QLIPPER_VERSION 2.0.2)
 
 option(ENABLE_NETWORK_CLIPBOARD_SHARING "Enables experimental network support for clipboard sharing" OFF)
+option(USE_SYSTEM_QXT "Use system Qxt Library for global shortcuts" ON)
+option(USE_SYSTEM_QTSA "Use system QtSingleApplication" ON)
+
+
+LIST(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
 
 find_package(Qt4 REQUIRED QtCore QtGui QtNetwork)
 include(${QT_USE_FILE})
+
+find_package(Qxt)
+message(STATUS "Use system Qxt Library: " ${USE_SYSTEM_QXT})
+if (USE_SYSTEM_QXT AND NOT QXT_FOUND)
+    message(FATAL_ERROR "System Qxt not found")
+endif ()
+
+find_package (QtSingleApplication)
+message(STATUS "Use system QtSA Library: " ${USE_SYSTEM_QTSA})
+if (USE_SYSTEM_QTSA AND NOT QTSINGLEAPPLICATION_FOUND)
+    message(FATAL_ERROR "System QtSingleApplication not found")
+endif ()
+
 
 
 set(EXE_NAME "qlipper")
@@ -68,9 +86,18 @@ endif (ENABLE_NETWORK_CLIPBOARD_SHARING)
 
 
 # source code and compilation
+set (QLIPPER_HEADERS
+    qkeysequencewidget/qkeysequencewidget.h
+    qkeysequencewidget/qkeysequencewidget_p.h
+    qmenuview/qmenuview.h
+    qmenuview/qmenuview_p.h
+    src/qlippermenuview.h
+    src/qlippermodel.h
+    src/qlipperpreferencesdialog.h
+    src/qlippersystray.h
+    src/qlippernetwork.h
+)
 set (QLIPPER_SOURCES 
-    qtsingleapplication/qtsingleapplication.cpp
-    qtsingleapplication/qtlocalpeer.cpp
     qkeysequencewidget/qkeysequencewidget.cpp
     qmenuview/qmenuview.cpp
     src/main.cpp
@@ -82,57 +109,54 @@ set (QLIPPER_SOURCES
     src/qlippersystray.cpp
     src/qlippernetwork.cpp
 )
+if (NOT QTSINGLEAPPLICATION_FOUND)
+    set(QLIPPER_SOURCES ${QLIPPER_SOURCES}
+        qtsingleapplication/qtsingleapplication.cpp
+        qtsingleapplication/qtlocalpeer.cpp
+    )
+    set(QLIPPER_HEADERS ${QLIPPER_HEADERS}
+        qtsingleapplication/qtsingleapplication.h
+        qtsingleapplication/qtlocalpeer.h
+    )
+endif (NOT QTSINGLEAPPLICATION_FOUND)
+
+
 set (HAVE_QXT 1)
-if (APPLE)
-    set (QLIPPER_SOURCES ${QLIPPER_SOURCES} macosx/qlipper.icns)
-    set (QLIPPER_SOURCES ${QLIPPER_SOURCES} qxt/qxtglobalshortcut_mac.cpp)
-    message(STATUS "Global shortcut for MAC")
+if (NOT QXT_FOUND)
 
-    FIND_LIBRARY(CARBON_LIBRARY Carbon REQURED)
-    MESSAGE(STATUS "CARBON_LIBRARY: ${CARBON_LIBRARY}")
-elseif (WIN32)
-    set (QLIPPER_SOURCES ${QLIPPER_SOURCES} qxt/qxtglobalshortcut_win.cpp)
-    message(STATUS "Global shortcut for WIN")
-elseif (UNIX)
-    FIND_PACKAGE(X11 REQUIRED)
-    MESSAGE(STATUS "X11_X11_LIB: ${X11_X11_LIB}")
+    set (HAVE_QXT 1)
+    if (APPLE)
+        set (QLIPPER_SOURCES ${QLIPPER_SOURCES} qxt/qxtglobalshortcut_mac.cpp)
+    elseif (WIN32)
+        set (QLIPPER_SOURCES ${QLIPPER_SOURCES} qxt/qxtglobalshortcut_win.cpp)
+    elseif (UNIX)
+        set (QLIPPER_SOURCES ${QLIPPER_SOURCES} qxt/qxtglobalshortcut_x11.cpp)
+    else ()
+        set (HAVE_QXT 0)
+        add_definitions(-DNO_QXT)
+    endif ()
 
-    set (QLIPPER_SOURCES ${QLIPPER_SOURCES} qxt/qxtglobalshortcut_x11.cpp)
-    message(STATUS "Global shortcut for X11")
-else ()
-    set (HAVE_QXT 0)
-    message (WARNING "Support for global keyboard shortcut is disabled")
-endif ()
-
-if (HAVE_QXT)
-    set (QLIPPER_SOURCES ${QLIPPER_SOURCES}
+    if (HAVE_QXT)
+        set (QLIPPER_SOURCES ${QLIPPER_SOURCES}
             qxt/qxtglobal.cpp
             qxt/qxtglobalshortcut.cpp
         )
-endif (HAVE_QXT)
-
-
-set (QLIPPER_HEADERS
-    qtsingleapplication/qtsingleapplication.h
-    qtsingleapplication/qtlocalpeer.h
-    qkeysequencewidget/qkeysequencewidget.h
-    qkeysequencewidget/qkeysequencewidget_p.h
-    qmenuview/qmenuview.h
-    qmenuview/qmenuview_p.h
-    src/qlippermenuview.h
-    src/qlippermodel.h
-    src/qlipperpreferencesdialog.h
-    src/qlippersystray.h
-    src/qlippernetwork.h
-)
-
-if (HAVE_QXT)
-    set (QLIPPER_HEADERS ${QLIPPER_HEADERS}
+        set (QLIPPER_HEADERS ${QLIPPER_HEADERS}
             qxt/qxtglobalshortcut.h
         )
-else (HAVE_QXT)
-    add_definitions(-DNO_QXT)
-endif (HAVE_QXT)
+    endif (HAVE_QXT)
+
+endif (NOT QXT_FOUND)
+
+if (APPLE)
+    set (QLIPPER_SOURCES ${QLIPPER_SOURCES} macosx/qlipper.icns)
+    FIND_LIBRARY(CARBON_LIBRARY Carbon REQURED)
+    MESSAGE(STATUS "CARBON_LIBRARY: ${CARBON_LIBRARY}")
+elseif (UNIX)
+    FIND_PACKAGE(X11 REQUIRED)
+    MESSAGE(STATUS "X11_X11_LIB: ${X11_X11_LIB}")
+endif ()
+
 
 set (QLIPPER_FORMS
     src/qlipperpreferencesdialog.ui
@@ -160,8 +184,14 @@ include_directories (
     ${CMAKE_CURRENT_SOURCE_DIR}/qkeysequencewidget
     ${CMAKE_CURRENT_SOURCE_DIR}/qxt
     ${CMAKE_CURRENT_SOURCE_DIR}/qmenuview
-    ${CMAKE_CURRENT_SOURCE_DIR}/qtsingleapplication
 )
+if (NOT QTSINGLEAPPLICATION_FOUND)
+    include_directories(${CMAKE_CURRENT_SOURCE_DIR}/qtsingleapplication)
+endif (NOT QTSINGLEAPPLICATION_FOUND)
+if (NOT QXT_FOUND)
+    include_directories(${CMAKE_CURRENT_SOURCE_DIR}/qxt)
+endif (NOT QXT_FOUND)
+
 
 add_executable( ${EXE_NAME} WIN32 MACOSX_BUNDLE 
     ${QLIPPER_SOURCES}
@@ -177,15 +207,22 @@ target_link_libraries( ${EXE_NAME}
     ${QT_QTMAIN_LIBRARY}
 )
 
-target_link_libraries( ${EXE_NAME}
-    ${QT_QTNETWORK_LIBRARY}
-)
+# single app and optional network features
+target_link_libraries( ${EXE_NAME} ${QT_QTNETWORK_LIBRARY})
 
 if (APPLE)
     target_link_libraries(${EXE_NAME} ${CARBON_LIBRARY})
 elseif (UNIX)
     target_link_libraries(${EXE_NAME} ${X11_X11_LIB})
 endif ()
+
+if (QTSINGLEAPPLICATION_FOUND)
+    target_link_libraries(${EXE_NAME} ${QTSINGLEAPPLICATION_LIBRARIES})
+endif (QTSINGLEAPPLICATION_FOUND)
+
+if (QXT_FOUND)
+    target_link_libraries(${EXE_NAME} ${QXT_CORE_LIB} ${QXT_GUI_LIB})
+endif (QXT_FOUND)
 
 
 # installation
