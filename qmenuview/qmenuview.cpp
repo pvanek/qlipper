@@ -42,7 +42,7 @@ QAction * QMenuViewPrivate::makeAction(const QModelIndex &index)
 	QIcon icon = qvariant_cast<QIcon>(index.data(Qt::DecorationRole));
 	QAction * action = new QAction(icon, index.data().toString(), this);
 	action->setEnabled(index.flags().testFlag(Qt::ItemIsEnabled));
-	// improvements for Qlipper (petr vanek <petr@scribus.info>
+	// improvements for Qlipper (petr vanek <petr@yarpen.cz>
 	action->setFont(qvariant_cast<QFont>(index.data(Qt::FontRole)));
 	action->setToolTip(index.data(Qt::ToolTipRole).toString());
 	// end of qlipper improvements

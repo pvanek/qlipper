@@ -1,6 +1,6 @@
 /*
 Qlipper - clipboard history manager
-Copyright (C) 2012 Petr Vanek <petr@scribus.info>
+Copyright (C) 2012 Petr Vanek <petr@yarpen.cz>
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -131,7 +131,7 @@ void QlipperSystray::showAbout()
     msgBox.setWindowTitle(tr("About Qlipper"));
     msgBox.setText(QString("<h1>Qlipper</strong> %1</h1>").arg(qApp->applicationVersion()));
     msgBox.setInformativeText(tr("Lightweight, cross-platform clipboard history applet.<p>"
-                                  "(c)&nbsp;2010-2011&nbsp;Petr&nbsp;Vanek&nbsp;&lt;petr@scribus.info&gt;<p>"
+                                  "(c)&nbsp;2010-2011&nbsp;Petr&nbsp;Vanek&nbsp;&lt;petr@yarpen.cz&gt;<p>"
                                   "<a href=\"http://code.google.com/p/qlipper/\">http://code.google.com/p/qlipper/</a>"
                                   "<p>"
                                   "Support for global keyboard shortcut: %1<br>"
