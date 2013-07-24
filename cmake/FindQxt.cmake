@@ -21,6 +21,7 @@ IF (WIN32)
 ELSE (WIN32)
     FIND_PATH( QXT_INCLUDE_PATH QxtCore
         /usr/include
+        /usr/include/qxt
         /usr/local/include
         /sw/include
         /opt/local/include
