@@ -187,6 +187,8 @@ include_directories (
 )
 if (NOT QTSINGLEAPPLICATION_FOUND)
     include_directories(${CMAKE_CURRENT_SOURCE_DIR}/qtsingleapplication)
+else (NOT QTSINGLEAPPLICATION_FOUND)
+    include_directories(${QTSINGLEAPPLICATION_INCLUDE_DIR})
 endif (NOT QTSINGLEAPPLICATION_FOUND)
 if (NOT QXT_FOUND)
     include_directories(${CMAKE_CURRENT_SOURCE_DIR}/qxt)
