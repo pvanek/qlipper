@@ -3,6 +3,6 @@ Type=Application
 Name=Qlipper
 TryExec=qlipper
 Exec=qlipper
-OnlyShowIn=Razor;
+OnlyShowIn=LXQt;
 
 #TRANSLATIONS_DIR=translations

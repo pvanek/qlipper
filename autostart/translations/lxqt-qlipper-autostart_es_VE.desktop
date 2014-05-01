@@ -1,12 +1,2 @@
-[Desktop Entry]
-Type=Application
-Name=Qlipper
-TryExec=qlipper
-Exec=qlipper
-OnlyShowIn=LxQt;
-
-#TRANSLATIONS_DIR=translations
-
-
 # Translations
 Name[es_VE]=Qlipper
