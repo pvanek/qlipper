@@ -40,36 +40,36 @@
 #    It will copy all dependecies (libs/resources) into bundle tree
 # -------------------------------------------------------
 
-CMAKE_MINIMUM_REQUIRED(VERSION 2.8.0)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.0.0)
 
 project(qlipper)
 
 
-set(QLIPPER_VERSION 2.0.2)
+set(QLIPPER_VERSION 5.0.0)
 
 option(ENABLE_NETWORK_CLIPBOARD_SHARING "Enables experimental network support for clipboard sharing" OFF)
-option(USE_SYSTEM_QXT "Use system Qxt Library for global shortcuts" ON)
-option(USE_SYSTEM_QTSA "Use system QtSingleApplication" ON)
+option(USE_SYSTEM_QXT "Use system Qxt Library for global shortcuts; off for Qt5" OFF)
+option(USE_SYSTEM_QTSA "Use system QtSingleApplication; off for Qt5" OFF)
 
 
 LIST(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
 
-find_package(Qt4 REQUIRED QtCore QtGui QtNetwork)
-include(${QT_USE_FILE})
+find_package(Qt5Widgets REQUIRED)
+
+include_directories(${Qt5Widgets_INCLUDE_DIRS})
+add_definitions(${Qt5Core_DEFINITIONS})
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${Qt5Widgets_EXECUTABLE_COMPILE_FLAGS}")
+set(QTERMWIDGET_QT_LIBRARIES ${Qt5Widgets_LIBRARIES})
+
+include_directories(${Qit5Widgets_INCLUDE_DIRS})
+
 
 find_package(Qxt)
 message(STATUS "Use system Qxt Library: " ${USE_SYSTEM_QXT})
 if (USE_SYSTEM_QXT AND NOT QXT_FOUND)
     message(FATAL_ERROR "System Qxt not found")
 endif ()
-
-find_package (QtSingleApplication)
-message(STATUS "Use system QtSA Library: " ${USE_SYSTEM_QTSA})
-if (USE_SYSTEM_QTSA AND NOT QTSINGLEAPPLICATION_FOUND)
-    message(FATAL_ERROR "System QtSingleApplication not found")
-endif ()
-
 
 
 set(EXE_NAME "qlipper")
@@ -109,17 +109,6 @@ set (QLIPPER_SOURCES
     src/qlippersystray.cpp
     src/qlippernetwork.cpp
 )
-if (NOT QTSINGLEAPPLICATION_FOUND)
-    set(QLIPPER_SOURCES ${QLIPPER_SOURCES}
-        qtsingleapplication/qtsingleapplication.cpp
-        qtsingleapplication/qtlocalpeer.cpp
-    )
-    set(QLIPPER_HEADERS ${QLIPPER_HEADERS}
-        qtsingleapplication/qtsingleapplication.h
-        qtsingleapplication/qtlocalpeer.h
-    )
-endif (NOT QTSINGLEAPPLICATION_FOUND)
-
 
 set (HAVE_QXT 1)
 if (NOT QXT_FOUND)
@@ -171,10 +160,10 @@ set (QLIPPER_TRANSLATIONS
 #    ts/qlipper.sr.ts
 )
 
-QT4_WRAP_UI( QLIPPER_UI ${QLIPPER_FORMS} )
-QT4_WRAP_CPP( QLIPPER_MOC ${QLIPPER_HEADERS} )
-QT4_ADD_RESOURCES( QLIPPER_RCC ${QLIPPER_RESOURCES} )
-QT4_ADD_TRANSLATION( QLIPPER_QM ${QLIPPER_TRANSLATIONS} )
+QT5_WRAP_UI( QLIPPER_UI ${QLIPPER_FORMS} )
+QT5_WRAP_CPP( QLIPPER_MOC ${QLIPPER_HEADERS} )
+QT5_ADD_RESOURCES( QLIPPER_RCC ${QLIPPER_RESOURCES} )
+#QT5_ADD_TRANSLATION( QLIPPER_QM ${QLIPPER_TRANSLATIONS} )
 
 
 include_directories (
@@ -185,11 +174,6 @@ include_directories (
     ${CMAKE_CURRENT_SOURCE_DIR}/qxt
     ${CMAKE_CURRENT_SOURCE_DIR}/qmenuview
 )
-if (NOT QTSINGLEAPPLICATION_FOUND)
-    include_directories(${CMAKE_CURRENT_SOURCE_DIR}/qtsingleapplication)
-else (NOT QTSINGLEAPPLICATION_FOUND)
-    include_directories(${QTSINGLEAPPLICATION_INCLUDE_DIR})
-endif (NOT QTSINGLEAPPLICATION_FOUND)
 if (NOT QXT_FOUND)
     include_directories(${CMAKE_CURRENT_SOURCE_DIR}/qxt)
 endif (NOT QXT_FOUND)
@@ -218,9 +202,6 @@ elseif (UNIX)
     target_link_libraries(${EXE_NAME} ${X11_X11_LIB})
 endif ()
 
-if (QTSINGLEAPPLICATION_FOUND)
-    target_link_libraries(${EXE_NAME} ${QTSINGLEAPPLICATION_LIBRARIES})
-endif (QTSINGLEAPPLICATION_FOUND)
 
 if (QXT_FOUND)
     target_link_libraries(${EXE_NAME} ${QXT_CORE_LIB} ${QXT_GUI_LIB})
@@ -233,12 +214,12 @@ if (APPLE)
     SET_TARGET_PROPERTIES(${EXE_NAME} PROPERTIES MACOSX_BUNDLE_INFO_PLIST "${CMAKE_SOURCE_DIR}/macosx/Info.plist.in")
     SET(MACOSX_BUNDLE_ICON_FILE qlipper.icns)
     SET(MACOSX_BUNDLE_INFO_STRING "${EXE_NAME} ${QLIPPER_VERSION}")
-    SET(MACOSX_BUNDLE_GUI_IDENTIFIER "com.googlecode.qlipper")
+    SET(MACOSX_BUNDLE_GUI_IDENTIFIER "cz.yarpen.qlipper")
     SET(MACOSX_BUNDLE_LONG_VERSION_STRING "${QLIPPER_VERSION}")
     SET(MACOSX_BUNDLE_BUNDLE_NAME "${EXE_NAME}")
     SET(MACOSX_BUNDLE_SHORT_VERSION_STRING "${QLIPPER_VERSION}")
     SET(MACOSX_BUNDLE_BUNDLE_VERSION "${QLIPPER_VERSION}")
-    SET(MACOSX_BUNDLE_COPYRIGHT "(c) Martin Rotter")
+    SET(MACOSX_BUNDLE_COPYRIGHT "(c) Petr Vanek")
     SET_SOURCE_FILES_PROPERTIES(${CMAKE_SOURCE_DIR}/macosx/qlipper.icns PROPERTIES MACOSX_PACKAGE_LOCATION Resources)
 
     INSTALL(TARGETS ${EXE_NAME} BUNDLE DESTINATION ${CMAKE_INSTALL_PREFIX})

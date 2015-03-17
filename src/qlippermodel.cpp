@@ -17,10 +17,10 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
-#include <QtGui/QApplication>
-#include <QtGui/QIcon>
-#include <QtGui/QFont>
-#include <QtCore/QTimer>
+#include <QApplication>
+#include <QIcon>
+#include <QFont>
+#include <QTimer>
 
 #include "qlippermodel.h"
 #include "qlipperpreferences.h"
@@ -46,7 +46,6 @@ QlipperModel::QlipperModel(QObject *parent) :
             clearHistory();
         }
     }
-    reset();
 
 #ifdef Q_WS_MAC
     m_timer = new QTimer(this);
@@ -71,7 +70,8 @@ void QlipperModel::resetPreferences()
     m_sticky.clear();
     m_sticky = QlipperPreferences::Instance()->getStickyItems();
 
-    reset();
+    beginResetModel();
+    endResetModel();
 }
 
 int QlipperModel::rowCount(const QModelIndex&) const
@@ -175,7 +175,8 @@ void QlipperModel::clipboard_changed(QClipboard::Mode mode)
     // TODO/FIXME: optimize it somehow... it can be too brutal for HDD
     QlipperPreferences::Instance()->saveDynamicItems(m_dynamic);
 
-    reset();
+    beginResetModel();
+    endResetModel();
 }
 
 void QlipperModel::clearHistory()
@@ -186,7 +187,9 @@ void QlipperModel::clearHistory()
     QlipperItem item(QClipboard::Clipboard, QlipperItem::PlainText, tmp);
     m_dynamic.append(item);
     m_currentItem = item;
-    reset();
+
+    beginResetModel();
+    endResetModel();
 }
 
 void QlipperModel::indexTriggered(const QModelIndex & index)

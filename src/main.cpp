@@ -17,23 +17,25 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
-#include <QtSingleApplication>
-#include <QtCore/QSettings>
-#include <QtCore/QTranslator>
-#include <QtCore/QTextCodec>
+#include <QApplication>
+#include <QSettings>
+#include <QTranslator>
+#include <QTextCodec>
 #include <QtDebug>
 
 #include "qlippersystray.h"
 
 int main(int argc, char **argv)
 {
-    QtSingleApplication a(argc, argv);
+    QApplication a(argc, argv);
 
+#if 0
     if (a.isRunning())
     {
         qWarning("An instance of qlipper is already running!");
         return 0;
     }
+#endif
 
     a.setApplicationName("qlipper");
     a.setApplicationVersion(QLIPPER_VERSION);
@@ -43,7 +45,7 @@ int main(int argc, char **argv)
     QSettings::setDefaultFormat(QSettings::IniFormat);
 
     // for QByteArray to QString constructors
-    QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));
+//    QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));
 
     a.setQuitOnLastWindowClosed(false);
 

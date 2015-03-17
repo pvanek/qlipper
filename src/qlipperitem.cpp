@@ -17,13 +17,13 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
-#include <QtGui/QApplication>
-#include <QtGui/QImage>
-#include <QtGui/QIcon>
-#include <QtGui/QPainter>
-#include <QtGui/QPixmapCache>
-#include <QtCore/QMimeData>
-#include <QtCore/QUrl>
+#include <QApplication>
+#include <QImage>
+#include <QIcon>
+#include <QPainter>
+#include <QPixmapCache>
+#include <QMimeData>
+#include <QUrl>
 #include <QtDebug>
 
 #include "qlipperpreferences.h"

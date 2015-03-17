@@ -129,7 +129,7 @@ QList<QlipperItem> QlipperPreferences::getDynamicItems()
 //        qDebug() << "R" << qVariantValue<ClipboardContent>(value("content"));
         QlipperItem item(static_cast<QClipboard::Mode>(value("mode").toUInt()),//value("mode").value<QClipboard::Mode>(),
                          static_cast<QlipperItem::ContentType>(value("contentType").toUInt()), // value("contentType").value<QlipperItem::ContentType>(),
-                         qVariantValue<ClipboardContent>(value("content"))
+                         value("content").value<ClipboardContent>()
                         );
         if (item.isValid())
             l.append(item);
