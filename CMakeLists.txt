@@ -127,7 +127,6 @@ if (NOT QXT_FOUND)
 
     if (HAVE_QXT)
         set (QLIPPER_SOURCES ${QLIPPER_SOURCES}
-            qxt/qxtglobal.cpp
             qxt/qxtglobalshortcut.cpp
         )
         set (QLIPPER_HEADERS ${QLIPPER_HEADERS}
