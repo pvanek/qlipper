@@ -57,19 +57,13 @@ LIST(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
 find_package(Qt5Widgets REQUIRED)
 
-include_directories(${Qt5Widgets_INCLUDE_DIRS})
-add_definitions(${Qt5Core_DEFINITIONS})
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${Qt5Widgets_EXECUTABLE_COMPILE_FLAGS}")
-set(QTERMWIDGET_QT_LIBRARIES ${Qt5Widgets_LIBRARIES})
-
-include_directories(${Qit5Widgets_INCLUDE_DIRS})
-
-
-find_package(Qxt)
-message(STATUS "Use system Qxt Library: " ${USE_SYSTEM_QXT})
-if (USE_SYSTEM_QXT AND NOT QXT_FOUND)
-    message(FATAL_ERROR "System Qxt not found")
-endif ()
+if (USE_SYSTEM_QXT)
+    find_package(Qxt)
+    message(STATUS "Use system Qxt Library: " ${USE_SYSTEM_QXT})
+    if (USE_SYSTEM_QXT AND NOT QXT_FOUND)
+        message(FATAL_ERROR "System Qxt not found")
+    endif ()
+endif()
 
 
 set(EXE_NAME "qlipper")
@@ -120,6 +114,7 @@ if (NOT QXT_FOUND)
         set (QLIPPER_SOURCES ${QLIPPER_SOURCES} qxt/qxtglobalshortcut_win.cpp)
     elseif (UNIX)
         set (QLIPPER_SOURCES ${QLIPPER_SOURCES} qxt/qxtglobalshortcut_x11.cpp)
+        include_directories(${Qt5Gui_PRIVATE_INCLUDE_DIRS})
     else ()
         set (HAVE_QXT 0)
         add_definitions(-DNO_QXT)
@@ -187,13 +182,11 @@ add_executable( ${EXE_NAME} WIN32 MACOSX_BUNDLE
 )
 
 target_link_libraries( ${EXE_NAME}
-    ${QT_QTCORE_LIBRARY}
-    ${QT_QTGUI_LIBRARY}
-    ${QT_QTMAIN_LIBRARY}
+    Qt5::Widgets
 )
 
 # single app and optional network features
-target_link_libraries( ${EXE_NAME} ${QT_QTNETWORK_LIBRARY})
+#target_link_libraries( ${EXE_NAME} ${QT_QTNETWORK_LIBRARY})
 
 if (APPLE)
     target_link_libraries(${EXE_NAME} ${CARBON_LIBRARY})
