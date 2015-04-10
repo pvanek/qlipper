@@ -21,7 +21,6 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 #define QLIPPERSYSTRAY_H
 
 #include <QSystemTrayIcon>
-#include "config.h"
 
 
 class QlipperModel;

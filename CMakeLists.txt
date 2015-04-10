@@ -104,7 +104,6 @@ set (QLIPPER_SOURCES
     src/qlippernetwork.cpp
 )
 
-set (HAVE_QXT 1)
 if (NOT QXT_FOUND)
 
     set (HAVE_QXT 1)
