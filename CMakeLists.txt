@@ -56,6 +56,7 @@ LIST(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
 
 find_package(Qt5Widgets REQUIRED)
+find_package(Qt5LinguistTools REQUIRED)
 
 if (USE_SYSTEM_QXT)
     find_package(Qxt)
@@ -149,15 +150,14 @@ set (QLIPPER_RESOURCES
 )
 
 set (QLIPPER_TRANSLATIONS
-#    ts/qlipper.cs.ts
-#    ts/qlipper.sr.ts
+    ts/qlipper_cs.ts
+    ts/qlipper_sr.ts
 )
 
 QT5_WRAP_UI( QLIPPER_UI ${QLIPPER_FORMS} )
 QT5_WRAP_CPP( QLIPPER_MOC ${QLIPPER_HEADERS} )
 QT5_ADD_RESOURCES( QLIPPER_RCC ${QLIPPER_RESOURCES} )
-#QT5_ADD_TRANSLATION( QLIPPER_QM ${QLIPPER_TRANSLATIONS} )
-
+QT5_ADD_TRANSLATION( QLIPPER_QM ${QLIPPER_TRANSLATIONS} )
 
 include_directories (
     ${CMAKE_CURRENT_SOURCE_DIR}/src

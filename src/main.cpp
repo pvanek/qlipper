@@ -51,14 +51,13 @@ int main(int argc, char **argv)
 
 
     // potentially load translator
-    QString fname(a.applicationName() + "." +  QLocale::system().name());
-    qDebug() << fname;
+    QString fname(a.applicationName() + "_" +  QLocale::system().name());
 
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN32
     QString location = a.applicationDirPath() + "/translations";
-#elif defined Q_WS_MAC
+#elif defined Q_OS_MAC
     QString location = a.applicationDirPath() + "../Resources/translations";
-#elif defined Q_WS_X11
+#elif defined Q_OS_UNIX
     QString location = TRANSLATION_DIR;
 #else
     // fallback
