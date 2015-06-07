@@ -35,6 +35,7 @@ QlipperPreferencesDialog::QlipperPreferencesDialog(QWidget *parent) :
     trimCheckBox->setChecked(s->trim());
     shortcutWidget->setKeySequence(QKeySequence(s->shortcut()));
     platformExtensionsCheckBox->setChecked(s->platformExtensions());
+    clearItemsOnExit->setChecked(s->clearItemsOnExit());
 
     networkSendCheckBox->setChecked(s->networkSend());
     networkReceiveCheckBox->setChecked(s->networkReceive());
@@ -79,6 +80,7 @@ void QlipperPreferencesDialog::accept()
     s->setValue("trim", trimCheckBox->isChecked());
     s->setValue("platformExtensions", platformExtensionsCheckBox->isChecked());
     s->setValue("shortcut", shortcutWidget->keySequence().toString());
+    s->setValue("clearItemsOnExit", clearItemsOnExit->isChecked());
 
     s->setValue("networkReceive", networkReceiveCheckBox->isChecked());
     s->setValue("networkSend", networkSendCheckBox->isChecked());

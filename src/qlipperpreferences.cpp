@@ -142,21 +142,26 @@ QList<QlipperItem> QlipperPreferences::getDynamicItems()
 
 void QlipperPreferences::saveDynamicItems(QList<QlipperItem> list)
 {
+    bool clearOnExit = clearItemsOnExit();
+
     beginGroup("dynamic");
     int i = 0;
     remove("items");
-    beginWriteArray("items");
-    foreach (QlipperItem item, list)
+    if (!clearOnExit)
     {
-        setArrayIndex(i);
-        i++;
-        setValue("mode", item.clipBoardMode());
-        setValue("contentType", item.contentType());
-//        qDebug() << "W" << qVariantFromValue(item.content()) << qVariantFromValue(item.content()).value<ClipboardContent>();
-        setValue("content", qVariantFromValue(item.content()));
+        beginWriteArray("items");
+        foreach (QlipperItem item, list)
+        {
+            setArrayIndex(i);
+            i++;
+            setValue("mode", item.clipBoardMode());
+            setValue("contentType", item.contentType());
+            setValue("content", qVariantFromValue(item.content()));
+        }
+        endArray();
     }
-    endArray();
     endGroup();
+    sync();
 }
 
 bool QlipperPreferences::trim()
@@ -182,6 +187,11 @@ int QlipperPreferences::historyCount()
 bool QlipperPreferences::platformExtensions()
 {
     return value("platformExtensions", false).toBool();
+}
+
+bool QlipperPreferences::clearItemsOnExit()
+{
+    return value("clearItemsOnExit", false).toBool();
 }
 
 bool QlipperPreferences::networkSend()

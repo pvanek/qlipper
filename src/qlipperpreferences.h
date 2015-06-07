@@ -41,6 +41,7 @@ public:
     QString shortcut();
     int historyCount();
     bool platformExtensions();
+    bool clearItemsOnExit();
 
     bool networkSend();
     bool networkReceive();
