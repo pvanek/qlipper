@@ -51,7 +51,6 @@ protected:
 private:
     QList<QlipperItem> m_sticky;
     QList<QlipperItem> m_dynamic;
-    QClipboard *m_clipboard;
     QlipperItem m_currentItem;
     QlipperNetwork *m_network;
 

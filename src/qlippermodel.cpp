@@ -25,12 +25,12 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 #include "qlippermodel.h"
 #include "qlipperpreferences.h"
 #include "qlippernetwork.h"
+#include "clipboardwrap.h"
 
 
 QlipperModel::QlipperModel(QObject *parent) :
     QAbstractListModel(parent)
 {
-    m_clipboard = QApplication::clipboard();
     m_network = new QlipperNetwork(this);
 
     m_boldFont.setBold(true);
@@ -53,8 +53,7 @@ QlipperModel::QlipperModel(QObject *parent) :
     m_timer->start(1000);
 #endif
 
-    connect(m_clipboard, SIGNAL(changed(QClipboard::Mode)),
-            this, SLOT(clipboard_changed(QClipboard::Mode)));
+    connect(ClipboardWrap::Instance(), &ClipboardWrap::changed, this, &QlipperModel::clipboard_changed);
 }
 
 QlipperModel::~QlipperModel()
@@ -137,10 +136,14 @@ void QlipperModel::clipboard_changed(QClipboard::Mode mode)
         // See QlipperItem constructor: On X11 clipboard content is owned by the
         //    application, so naturally closing the application drops
         //    clipboard content. In this case the latest item should be set again.
-        if (item.enforceHistory() && m_dynamic.count())
+        for (QList<QlipperItem>::const_iterator i = m_dynamic.begin(), i_e = m_dynamic.end(); i_e != i; ++i)
         {
-            m_dynamic.at(0).toClipboard();
-            m_currentItem = m_dynamic.at(0);
+            if (i->clipBoardMode() == item.clipBoardMode())
+            {
+                i->toClipboard(false);
+                m_currentItem = *i;
+                break;
+            }
         }
         return;
     }
@@ -199,7 +202,7 @@ void QlipperModel::indexTriggered(const QModelIndex & index)
 
     int row = index.row();
     QList<QlipperItem> list = getList(row);
-    list.at(row).toClipboard();
+    list.at(row).toClipboard(true);
 }
 
 void QlipperModel::timer_timeout()
