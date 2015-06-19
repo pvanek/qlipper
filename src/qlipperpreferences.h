@@ -37,15 +37,18 @@ public:
     void saveDynamicItems(QList<QlipperItem> list);
 
     bool trim();
-    int displaySize();
-    QString shortcut();
-    int historyCount();
-    bool platformExtensions();
-    bool clearItemsOnExit();
+    int displaySize() const;
+    QString shortcut() const;
+    int historyCount() const;
+    bool platformExtensions() const;
+    bool synchronizePSE() const;
+    bool clearItemsOnExit() const;
 
-    bool networkSend();
-    bool networkReceive();
-    int networkPort();
+    bool networkSend() const;
+    bool networkReceive() const;
+    int networkPort() const;
+
+    bool shouldSynchronizeClipboards() const;
 
 private:
     QlipperPreferences();
