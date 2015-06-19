@@ -34,7 +34,10 @@ QlipperPreferencesDialog::QlipperPreferencesDialog(QWidget *parent) :
     displaySizeComboBox->setValue(s->displaySize());
     trimCheckBox->setChecked(s->trim());
     shortcutWidget->setKeySequence(QKeySequence(s->shortcut()));
-    platformExtensionsCheckBox->setChecked(s->platformExtensions());
+    const bool pse = s->platformExtensions();
+    platformExtensionsCheckBox->setChecked(pse);
+    synchronizePSE->setEnabled(pse);
+    synchronizePSE->setChecked(s->synchronizePSE());
     clearItemsOnExit->setChecked(s->clearItemsOnExit());
 
     networkSendCheckBox->setChecked(s->networkSend());
@@ -79,6 +82,7 @@ void QlipperPreferencesDialog::accept()
     s->setValue("displaySize", displaySizeComboBox->value());
     s->setValue("trim", trimCheckBox->isChecked());
     s->setValue("platformExtensions", platformExtensionsCheckBox->isChecked());
+    s->setValue("synchronizePSE", synchronizePSE->isChecked());
     s->setValue("shortcut", shortcutWidget->keySequence().toString());
     s->setValue("clearItemsOnExit", clearItemsOnExit->isChecked());
 

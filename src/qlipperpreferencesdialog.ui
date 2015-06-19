@@ -60,7 +60,7 @@
          </item>
         </layout>
        </item>
-       <item row="7" column="1">
+       <item row="8" column="1">
         <spacer name="verticalSpacer">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
@@ -149,6 +149,13 @@
         </widget>
        </item>
        <item row="6" column="0" colspan="2">
+        <widget class="QCheckBox" name="synchronizePSE">
+         <property name="text">
+          <string>Synchronize clipboard &amp;&amp; PSE when item selected</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0" colspan="2">
         <widget class="QCheckBox" name="clearItemsOnExit">
          <property name="text">
           <string>Clear Items on Exit</string>
@@ -358,6 +365,12 @@
      <y>274</y>
     </hint>
    </hints>
+  </connection>
+  <connection>
+   <sender>platformExtensionsCheckBox</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>synchronizePSE</receiver>
+   <slot>setEnabled(bool)</slot>
   </connection>
  </connections>
 </ui>

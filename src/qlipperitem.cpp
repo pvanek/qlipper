@@ -133,6 +133,8 @@ void QlipperItem::toClipboard() const
     }
 
     clipboard->setMimeData(mime, m_mode);
+    if (QlipperPreferences::Instance()->shouldSynchronizeClipboards())
+        clipboard->setMimeData(mime, QClipboard::Clipboard == m_mode ? QClipboard::Selection : QClipboard::Clipboard);
 }
 
 QString QlipperItem::displayRole() const

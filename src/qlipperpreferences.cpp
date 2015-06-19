@@ -169,44 +169,52 @@ bool QlipperPreferences::trim()
     return value("trim", true).toBool();
 }
 
-int QlipperPreferences::displaySize()
+int QlipperPreferences::displaySize() const
 {
     return value("displaySize", 30).toInt();
 }
 
-QString QlipperPreferences::shortcut()
+QString QlipperPreferences::shortcut() const
 {
     return value("shortcut", "CTRL+ALT+V").toString();
 }
 
-int QlipperPreferences::historyCount()
+int QlipperPreferences::historyCount() const
 {
     return value("historyCount", 10).toInt();
 }
 
-bool QlipperPreferences::platformExtensions()
+bool QlipperPreferences::platformExtensions() const
 {
     return value("platformExtensions", false).toBool();
 }
 
-bool QlipperPreferences::clearItemsOnExit()
+bool QlipperPreferences::synchronizePSE() const
+{
+    return value("synchronizePSE", false).toBool();
+}
+
+bool QlipperPreferences::clearItemsOnExit() const
 {
     return value("clearItemsOnExit", false).toBool();
 }
 
-bool QlipperPreferences::networkSend()
+bool QlipperPreferences::networkSend() const
 {
     return value("networkSend", false).toBool();
 }
 
-bool QlipperPreferences::networkReceive()
+bool QlipperPreferences::networkReceive() const
 {
     return value("networkReceive", false).toBool();
 }
 
-int QlipperPreferences::networkPort()
+int QlipperPreferences::networkPort() const
 {
     return value("networkPort", 6666).toInt();
 }
 
-
+bool QlipperPreferences::shouldSynchronizeClipboards() const
+{
+    return platformExtensions() && synchronizePSE();
+}
