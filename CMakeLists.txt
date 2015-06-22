@@ -91,6 +91,7 @@ set (QLIPPER_HEADERS
     src/qlipperpreferencesdialog.h
     src/qlippersystray.h
     src/qlippernetwork.h
+    src/clipboardwrap.h
 )
 set (QLIPPER_SOURCES 
     qkeysequencewidget/qkeysequencewidget.cpp
@@ -103,6 +104,7 @@ set (QLIPPER_SOURCES
     src/qlipperpreferencesdialog.cpp
     src/qlippersystray.cpp
     src/qlippernetwork.cpp
+    src/clipboardwrap.cpp
 )
 
 if (NOT QXT_FOUND)

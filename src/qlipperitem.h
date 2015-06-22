@@ -50,7 +50,7 @@ public:
     bool isValid() const { return m_valid; }
     bool enforceHistory() const { return m_enforceHistory; }
 
-    void toClipboard() const;
+    void toClipboard(bool synchronize) const;
 
     QString displayRole() const;
     QIcon decorationRole() const;

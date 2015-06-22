@@ -28,6 +28,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 
 #include "qlipperpreferences.h"
 #include "qlipperitem.h"
+#include "clipboardwrap.h"
 
 
 QlipperItem::QlipperItem()
@@ -119,9 +120,9 @@ QClipboard::Mode QlipperItem::clipBoardMode() const
     return m_mode;
 }
 
-void QlipperItem::toClipboard() const
+void QlipperItem::toClipboard(bool synchronize) const
 {
-    QClipboard * clipboard = QApplication::clipboard();
+    ClipboardWrap * clipboard = ClipboardWrap::Instance();
 
     QMimeData *mime = new QMimeData();
 
@@ -131,9 +132,8 @@ void QlipperItem::toClipboard() const
         it.next();
         mime->setData(it.key(), it.value());
     }
-
     clipboard->setMimeData(mime, m_mode);
-    if (QlipperPreferences::Instance()->shouldSynchronizeClipboards())
+    if (synchronize && QlipperPreferences::Instance()->shouldSynchronizeClipboards())
         clipboard->setMimeData(mime, QClipboard::Clipboard == m_mode ? QClipboard::Selection : QClipboard::Clipboard);
 }
 
