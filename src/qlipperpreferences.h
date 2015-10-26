@@ -21,7 +21,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 #define QLIPPERPREFERENCES_H
 
 #include <QtCore/QSettings>
-
+#include <QDataStream>
 #include "qlipperitem.h"
 
 
