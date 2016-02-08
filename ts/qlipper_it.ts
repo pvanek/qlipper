@@ -210,7 +210,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="254"/>
         <source>Network</source>
-        <translation> ts/qlipper_it.tsRete</translation>
+        <translation>Rete</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="260"/>
