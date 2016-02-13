@@ -106,6 +106,9 @@ set (QLIPPER_SOURCES
     src/qlippernetwork.cpp
     src/clipboardwrap.cpp
 )
+if (WIN32)
+    set(QLIPPER_SOURCES ${QLIPPER_SOURCES} src/icons/qlipper.rc)
+endif (WIN32)
 
 if (NOT QXT_FOUND)
 
