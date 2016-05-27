@@ -59,10 +59,16 @@ QlipperItem::QlipperItem(QClipboard::Mode mode)
         m_enforceHistory = true;
     }
 
+    //Note: reading all provided image/.*bmp data can make gimp crash
+    //  workadound until someone fixes this in gimp -> just read/store only the image/bmp
+    //  and don't care about other bmps
+    const bool has_bmp = mimeData->hasFormat(QStringLiteral("image/bmp"));
+    const QRegExp re_bmp(QStringLiteral("^image/.+-bmp$"));
     foreach (QString format, mimeData->formats())
     {
         //qDebug() << format << mimeData->data(format);
-        m_content[format] = mimeData->data(format);
+        if (!has_bmp || !re_bmp.exactMatch(format))
+            m_content[format] = mimeData->data(format);
     }
 
     m_display = mimeData->text();
