@@ -67,7 +67,22 @@ QlipperItem::QlipperItem(QClipboard::Mode mode)
     foreach (QString format, mimeData->formats())
     {
         //qDebug() << format << mimeData->data(format);
-        if (!has_bmp || !re_bmp.exactMatch(format))
+
+        // For a simple text copy in Emacs, a lot of formats are stored:
+        // "TIMESTAMP", "MULTIPLE", "text/plain", "COMPOUND_TEXT", "TARGETS",
+        // "LENGTH", "DELETE", "FILE_NAME", "CHARACTER_POSITION", "LINE_NUMBER",
+        // "COLUMN_NUMBER", "OWNER_OS", "HOST_NAME", "USER", "CLASS", "NAME",
+        // "ATOM", "INTEGER", "SAVE_TARGETS".
+        // When mimeData->data("MULTIPLE") is called, Emacs is no longer able to
+        // copy to the clipboard and complains with
+        // "Selection owner couldn't convert: MULTIPLE".
+        // When mimeData->data("DELETE") is called, "Binary:" will be displayed
+        // in the clipboard history instead of the copied text.
+        // Since mimeData->data() seems to have such side effects and is not
+        // cheap at all, it is better to call it just for the real MIME types,
+        // i.e. those containing a '/'.
+        if (format.contains(QLatin1Char('/'))
+            && (!has_bmp || !re_bmp.exactMatch(format)))
             m_content[format] = mimeData->data(format);
     }
 
