@@ -131,7 +131,7 @@ void QlipperSystray::showAbout()
     msgBox.setWindowTitle(tr("About Qlipper"));
     msgBox.setText(QString("<h1>Qlipper</strong> %1</h1>").arg(qApp->applicationVersion()));
     msgBox.setInformativeText(tr("Lightweight, cross-platform clipboard history applet.<p>"
-                                  "(c)&nbsp;2010-2015&nbsp;Petr&nbsp;Vanek&nbsp;&lt;petr@yarpen.cz&gt;<p>"
+                                  "(c)&nbsp;2010-2016&nbsp;Petr&nbsp;Vanek&nbsp;&lt;petr@yarpen.cz&gt;<p>"
                                   "<a href=\"https://github.com/pvanek/qlipper/\">https://github.com/pvanek/qlipper/</a>"
                                   "<p>"
                                   "Support for global keyboard shortcut: %1<br>"
