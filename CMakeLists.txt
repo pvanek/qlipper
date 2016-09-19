@@ -109,6 +109,10 @@ set (QLIPPER_SOURCES
 if (WIN32)
     set(QLIPPER_SOURCES ${QLIPPER_SOURCES} src/icons/qlipper.rc)
 endif (WIN32)
+if (UNIX)
+    list(APPEND QLIPPER_HEADERS src/signalhandler.h)
+    list(APPEND QLIPPER_SOURCES src/signalhandler.cpp)
+endif (UNIX)
 
 if (NOT QXT_FOUND)
 
