@@ -1,0 +1,16 @@
+language: cpp
+os:
+    - linux
+addons:
+    apt:
+        sources:
+            - george-edison55-precise-backports # for cmake 3.2.3
+        packages:
+            - cmake
+            - cmake-data
+sudo: true
+before_install:
+    - yes | sudo sudo add-apt-repository ppa:beineri/opt-qt561
+    - sudo apt-get update
+    - sudo apt-get install qt56base qt56tools --force-yes
+script: cmake -DCMAKE_PREFIX_PATH=/opt/qt56 . && make
