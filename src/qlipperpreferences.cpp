@@ -199,6 +199,12 @@ bool QlipperPreferences::clearItemsOnExit() const
     return value("clearItemsOnExit", false).toBool();
 }
 
+bool QlipperPreferences::synchronizeHistory() const
+{
+    return value("synchronizeHistory", true).toBool();
+}
+
+
 bool QlipperPreferences::networkSend() const
 {
     return value("networkSend", false).toBool();

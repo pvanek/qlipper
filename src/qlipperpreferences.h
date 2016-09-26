@@ -43,6 +43,7 @@ public:
     bool platformExtensions() const;
     bool synchronizePSE() const;
     bool clearItemsOnExit() const;
+    bool synchronizeHistory() const;
 
     bool networkSend() const;
     bool networkReceive() const;

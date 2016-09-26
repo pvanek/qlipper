@@ -191,8 +191,10 @@ void QlipperModel::setCurrentDynamic(int ix)
     m_currentIndex = index(m_sticky.count());
     m_network->sendData(m_dynamic.at(0).content());
 
-    // TODO/FIXME: optimize it somehow... it can be too brutal for HDD
-    QlipperPreferences::Instance()->saveDynamicItems(m_dynamic);
+    if (QlipperPreferences::Instance()->synchronizeHistory())
+    {
+        QlipperPreferences::Instance()->saveDynamicItems(m_dynamic);
+    }
 }
 
 
