@@ -51,7 +51,7 @@ protected:
 private:
     QList<QlipperItem> m_sticky;
     QList<QlipperItem> m_dynamic;
-    QlipperItem m_currentItem;
+    QPersistentModelIndex m_currentIndex;
     QlipperNetwork *m_network;
 
     QFont m_normalFont;

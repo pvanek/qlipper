@@ -110,7 +110,7 @@ QVariant QlipperModel::data(const QModelIndex& index, int role) const
     case Qt::ToolTipRole:
         return list.at(row).tooltipRole();
     case Qt::FontRole:
-        return list.at(row) == m_currentItem ? m_boldFont : m_normalFont;
+        return m_currentIndex == index ? m_boldFont : m_normalFont;
     }
 
     return "";
@@ -141,7 +141,7 @@ void QlipperModel::clipboard_changed(QClipboard::Mode mode)
             if (i->clipBoardMode() == item.clipBoardMode())
             {
                 i->toClipboard(false);
-                m_currentItem = *i;
+                m_currentIndex = index(m_sticky.count() + (i - m_dynamic.begin()));
                 break;
             }
         }
@@ -149,9 +149,10 @@ void QlipperModel::clipboard_changed(QClipboard::Mode mode)
     }
 
     // evaluate sticky items...
-    if (m_sticky.contains(item))
+    int i = m_sticky.indexOf(item);
+    if (i != -1)
     {
-        m_currentItem = m_sticky.at(m_sticky.indexOf(item));
+        m_currentIndex = index(i);
         return;
     }
 
@@ -172,8 +173,8 @@ void QlipperModel::clipboard_changed(QClipboard::Mode mode)
             m_dynamic.removeLast();
     }
 
-    m_currentItem = m_dynamic.at(0);
-    m_network->sendData(m_currentItem.content());
+    m_currentIndex = index(m_sticky.count());
+    m_network->sendData(m_dynamic.at(0).content());
 
     // TODO/FIXME: optimize it somehow... it can be too brutal for HDD
     QlipperPreferences::Instance()->saveDynamicItems(m_dynamic);
@@ -189,7 +190,7 @@ void QlipperModel::clearHistory()
     tmp["text/plain"] = tr("Welcome to the Qlipper clipboard history applet").toUtf8();
     QlipperItem item(QClipboard::Clipboard, QlipperItem::PlainText, tmp);
     m_dynamic.append(item);
-    m_currentItem = item;
+    m_currentIndex = index(m_sticky.count());
 
     beginResetModel();
     endResetModel();
@@ -203,6 +204,7 @@ void QlipperModel::indexTriggered(const QModelIndex & index)
     int row = index.row();
     QList<QlipperItem> list = getList(row);
     list.at(row).toClipboard(true);
+    m_currentIndex = index;
 }
 
 void QlipperModel::timer_timeout()
