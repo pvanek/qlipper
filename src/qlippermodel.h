@@ -63,6 +63,7 @@ private:
 #endif
 
     QList<QlipperItem> getList(int &row) const;
+    void setCurrentDynamic(int ix);
 
 private slots:
     void clipboard_changed(QClipboard::Mode);

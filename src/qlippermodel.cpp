@@ -66,11 +66,13 @@ QlipperModel::~QlipperModel()
 
 void QlipperModel::resetPreferences()
 {
+    beginRemoveRows(QModelIndex(), 0, m_sticky.count() - 1);
     m_sticky.clear();
-    m_sticky = QlipperPreferences::Instance()->getStickyItems();
-
-    beginResetModel();
-    endResetModel();
+    endRemoveRows();
+    QList<QlipperItem> sticky = QlipperPreferences::Instance()->getStickyItems();
+    beginInsertRows(QModelIndex(), 0, sticky.count() - 1);
+    m_sticky = sticky;
+    endInsertRows();
 }
 
 int QlipperModel::rowCount(const QModelIndex&) const
@@ -157,20 +159,33 @@ void QlipperModel::clipboard_changed(QClipboard::Mode mode)
     }
 
     int ix = m_dynamic.indexOf(item);
-    if (ix == 0)
+    if (ix == -1)
     {
-        // already on top
-        return;
-    }
-    if (ix != -1)
-    {
-        m_dynamic.move(ix, 0);
-    }
-    else
-    {
+        const int sticky_count = m_sticky.count();
+        beginInsertRows(QModelIndex(), sticky_count, sticky_count);
         m_dynamic.prepend(item);
-        if (m_dynamic.count() > QlipperPreferences::Instance()->historyCount())
-            m_dynamic.removeLast();
+        endInsertRows();
+        const int max_history = QlipperPreferences::Instance()->historyCount();
+        if (m_dynamic.count() > max_history)
+        {
+            beginRemoveRows(QModelIndex(), sticky_count + max_history - 1, sticky_count + m_dynamic.count() - 1);
+            m_dynamic.erase(m_dynamic.begin() + (max_history - 1), m_dynamic.end());
+            endRemoveRows();
+        }
+        ix = 0;
+    }
+    setCurrentDynamic(ix);
+}
+
+void QlipperModel::setCurrentDynamic(int ix)
+{
+    // move if not already on top
+    if (ix != 0)
+    {
+        const int sticky_count = m_sticky.count();
+        beginMoveRows(QModelIndex(), sticky_count + ix, sticky_count + ix, QModelIndex(), sticky_count);
+        m_dynamic.move(ix, 0);
+        endMoveRows();
     }
 
     m_currentIndex = index(m_sticky.count());
@@ -178,22 +193,22 @@ void QlipperModel::clipboard_changed(QClipboard::Mode mode)
 
     // TODO/FIXME: optimize it somehow... it can be too brutal for HDD
     QlipperPreferences::Instance()->saveDynamicItems(m_dynamic);
-
-    beginResetModel();
-    endResetModel();
 }
+
 
 void QlipperModel::clearHistory()
 {
+    const int sticky_count = m_sticky.count();
+    beginRemoveRows(QModelIndex(), sticky_count, sticky_count + m_dynamic.count() - 1);
     m_dynamic.clear();
+    endRemoveRows();
     ClipboardContent tmp;
     tmp["text/plain"] = tr("Welcome to the Qlipper clipboard history applet").toUtf8();
     QlipperItem item(QClipboard::Clipboard, QlipperItem::PlainText, tmp);
+    beginInsertRows(QModelIndex(), sticky_count, sticky_count);
     m_dynamic.append(item);
-    m_currentIndex = index(m_sticky.count());
-
-    beginResetModel();
-    endResetModel();
+    endInsertRows();
+    m_currentIndex = index(sticky_count);
 }
 
 void QlipperModel::indexTriggered(const QModelIndex & index)
@@ -205,6 +220,10 @@ void QlipperModel::indexTriggered(const QModelIndex & index)
     QList<QlipperItem> list = getList(row);
     list.at(row).toClipboard(true);
     m_currentIndex = index;
+    if (m_sticky.size() <= index.row())
+    {
+        setCurrentDynamic(row);
+    }
 }
 
 void QlipperModel::timer_timeout()
