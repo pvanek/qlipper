@@ -1,0 +1,106 @@
+
+5.0.0 / 2016-11-02
+==================
+
+  * Added CHANGELOG
+  * Make history items synchronization configurable
+  * model: Update model behaviour
+  * model: Fix setting current item
+  * Travis: Adds Clang to the compiler list
+  * signalhandler: Quit gracefully on unix signals
+  * travis-ci: Initial configuration file
+  * Bump copyright year in about to 2016
+  * Merge pull request #37 from ufleisch/emacs
+  * Do not prevent Emacs from using clipboard, only store mime data, #35.
+  * Merge pull request #33 from palinek/gimp_crash_fix
+  * item: Workaround possible gimp crash
+  * windows: executable icon
+  * compilation fix on windows. QXT_GUI_EXPORT commented out
+  * Merge pull request #29 from stefonarch/patch-1
+  * Merge pull request #28 from pmattern/transl-de
+  * Update qlipper_it.ts
+  * Add German translation
+  * Merge pull request #27 from agaida/patch-1
+  * Fix Qt5.5 compilation
+  * Merge pull request #23 from palinek/clip_wrap_gtk_fix
+  * use QClipboard wrapper to fix multiple issues
+  * Merge pull request #21 from palinek/prim_synchr
+  * added option to synchronize primary selection & clipboard
+  * Merge branch 'master' of github.com:pvanek/qlipper
+  * implemented #14 Option to flush the list when closing the session
+  * Merge pull request #18 from stefonarch/master
+  * prova
+  * Merge pull request #16 from paulolieuthier/master
+  * change the adress in prefrences dialog to github
+  * translation loading fixed (ts files use underscore in names)
+  * increase max-items-count in the config
+  * Install the app icon to the hicolor theme
+  * fixed missing global keyboard shortcut in Qt5
+  * Merge pull request #11 from luis-pereira/make-it-compile
+  * Make it build
+  * Remove reference to non existent source file
+  * qt5 migration initial changes (broken, uncompilable)
+  * larger icon for #16 Please ship a larger icon for Qlipper
+  * Merge pull request #3 from kensington/master
+  * Include system QtSingleApplication headers when using external build.
+
+2.0.2 / 2013-07-29
+==================
+
+  * version bump
+  * Merge pull request #1 from siduction/master
+  * Added qxt search path for debian based systems
+  * mail address changed
+  * fixed: #13:	please use libxqt from system, not bundled
+  * Czech language file update.
+  * fix build on new linuxes
+  * build fixes
+  * Moc only Q_OBJECT classes
+  * Replaces QApplication by QtSingleApplication
+  * Adds qtsingleapplications files to the build system
+  * Refactors ENABLE_NETWORK stuff
+  * Adds QtSolutions LICENSE
+  * Import  part of qtsingleapplication from QtSolutions
+  * fix for prefs gui (init showcase)
+  * make network support optional (and experimental)
+  * Merge branch 'master' of gitorious.org:qlipper/qlipper
+  * fix non-ascii characters restoring from saved history
+  * compilation fixes for linux
+  * accept only data from differen machines (not own broadcasts)
+  * optional network broadcast implemented
+  * cmake build based now; so long qmake
+  * Merge branch 'master' of gitorious.org:qlipper/qlipper
+  * fixed #8:	Left mouse menu is hidden behind systray.
+  * fixes for "platform specific" features (missing mode)
+  * icon displaying and storage
+  * version bump
+  * another os2 try
+  * another fixes for os2
+  * qxt fixes for OS2
+  * reimplementation of clipboard handling and backend storage - it can keep all mimetypes now (office, media...)
+  * install fix
+  * make release for buggy qmake
+  * bold font optimization
+  * highlight current clipboard fix; do not copy sticky to dynamic is it's not necessary
+  * highlight current item
+  * fix for trimmed vs trim only end of lines
+  * serbian translations by Mladen Pejaković <pejakm@gmail.com>
+  * fixed Issue 6: 	qlipper won't paste copied text after application exits
+  * don't display window decoration for standalone menu
+  * fix for empty models for free window
+  * potential fix for Issue 7:	Does not compile under Windows XP
+  * licensing
+  * fix for settings to enum reading
+  * proper image/url handling
+  * size prefs window on mac
+  * better src code organization
+  * translations; mac files; etc.
+  * show menu on all mouse clicks
+  * tooltips
+  * version mark; TODO resolved
+  * close shortcut window too
+  * preferences simplified; icon drawing
+  * prefs; tunning
+  * progress: sticky and dynamic save/restore; mac timer; preferences
+  * progress in implementation: sticky, icons...
+  * initial revision of qlipper rework
