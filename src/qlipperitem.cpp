@@ -255,8 +255,11 @@ QString QlipperItem::tooltipRole() const
 
 bool QlipperItem::operator==(const QlipperItem &other) const {
     // do not check contentType here as we need to compare sticky vs. rest of the world
+    // Note2: If we're synchronizing clipboards, clipboard type/mode don't need to match
     return this->isValid() == other.isValid()
-            && this->clipBoardMode() == other.clipBoardMode()
+            && (this->clipBoardMode() == other.clipBoardMode()
+                    || QlipperPreferences::Instance()->shouldSynchronizeClipboards()
+                    )
             && this->content() == other.content();
 }
 
