@@ -21,7 +21,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 #define QLIPPERNETWORK_H
 
 #include <QtCore/QObject>
-#ifndef ENABLE_NETWORK_CLIPBOARD_SHARING
+#ifdef ENABLE_NETWORK_CLIPBOARD_SHARING
 #include <QtNetwork/QUdpSocket>
 #endif
 #include "qlippertypes.h"
@@ -38,7 +38,7 @@ public slots:
     void sendData(const ClipboardContent &value);
 
 private:
-#ifndef ENABLE_NETWORK_CLIPBOARD_SHARING
+#ifdef ENABLE_NETWORK_CLIPBOARD_SHARING
     QUdpSocket *m_socket;
     QString m_id;
 #endif
