@@ -37,6 +37,15 @@ public:
         Sticky
     };
 
+    enum Action
+    {
+        NoAction = 0
+            , ToCurrent = 1
+            , ToOther = 1 << 1
+    };
+    Q_DECLARE_FLAGS(Actions, Action)
+
+
     QlipperItem();
     QlipperItem(QClipboard::Mode mode);
     QlipperItem(QClipboard::Mode mode, ContentType contentType, const ClipboardContent &content);
@@ -50,7 +59,7 @@ public:
     bool isValid() const { return m_valid; }
     bool enforceHistory() const { return m_enforceHistory; }
 
-    void toClipboard(bool synchronize) const;
+    void toClipboard(const Actions & actions) const;
 
     QString displayRole() const;
     QIcon decorationRole() const;

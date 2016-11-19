@@ -37,7 +37,7 @@ QlipperPreferencesDialog::QlipperPreferencesDialog(QWidget *parent) :
     const bool pse = s->platformExtensions();
     platformExtensionsCheckBox->setChecked(pse);
     synchronizePSE->setEnabled(pse);
-    synchronizePSE->setChecked(s->synchronizePSE());
+    synchronizePSE->setCurrentIndex(s->synchronizePSE());
     clearItemsOnExit->setChecked(s->clearItemsOnExit());
     synchronizeHistory->setChecked(s->synchronizeHistory());
 
@@ -83,7 +83,7 @@ void QlipperPreferencesDialog::accept()
     s->setValue("displaySize", displaySizeComboBox->value());
     s->setValue("trim", trimCheckBox->isChecked());
     s->setValue("platformExtensions", platformExtensionsCheckBox->isChecked());
-    s->setValue("synchronizePSE", synchronizePSE->isChecked());
+    s->setValue("synchronizePSE", synchronizePSE->currentIndex());
     s->setValue("shortcut", shortcutWidget->keySequence().toString());
     s->setValue("clearItemsOnExit", clearItemsOnExit->isChecked());
     s->setValue("synchronizeHistory", synchronizeHistory->isChecked());

@@ -28,6 +28,14 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 class QlipperPreferences : public QSettings
 {
 public:
+    enum PSESynchronization
+    {
+        PSE_NO_SYNC = 0
+            , PSE_SYNC_ON_SELECTION = 1
+            , PSE_SYNC_INSTANTLY = 2
+    };
+
+public:
     static QlipperPreferences *Instance();
     ~QlipperPreferences();
 
@@ -41,7 +49,7 @@ public:
     QString shortcut() const;
     int historyCount() const;
     bool platformExtensions() const;
-    bool synchronizePSE() const;
+    PSESynchronization synchronizePSE() const;
     bool clearItemsOnExit() const;
     bool synchronizeHistory() const;
 
@@ -50,6 +58,7 @@ public:
     int networkPort() const;
 
     bool shouldSynchronizeClipboards() const;
+    bool shouldSynchronizeClipboardsInstantly() const;
 
 private:
     QlipperPreferences();

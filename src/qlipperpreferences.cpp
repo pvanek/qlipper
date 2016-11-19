@@ -189,9 +189,9 @@ bool QlipperPreferences::platformExtensions() const
     return value("platformExtensions", false).toBool();
 }
 
-bool QlipperPreferences::synchronizePSE() const
+QlipperPreferences::PSESynchronization QlipperPreferences::synchronizePSE() const
 {
-    return value("synchronizePSE", false).toBool();
+    return static_cast<PSESynchronization>(value("synchronizePSE", PSE_NO_SYNC).toInt());
 }
 
 bool QlipperPreferences::clearItemsOnExit() const
@@ -222,5 +222,10 @@ int QlipperPreferences::networkPort() const
 
 bool QlipperPreferences::shouldSynchronizeClipboards() const
 {
-    return platformExtensions() && synchronizePSE();
+    return platformExtensions() && PSE_NO_SYNC != synchronizePSE();
+}
+
+bool QlipperPreferences::shouldSynchronizeClipboardsInstantly() const
+{
+    return platformExtensions() && PSE_SYNC_INSTANTLY == synchronizePSE();
 }

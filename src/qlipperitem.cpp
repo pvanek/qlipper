@@ -141,8 +141,13 @@ QClipboard::Mode QlipperItem::clipBoardMode() const
     return m_mode;
 }
 
-void QlipperItem::toClipboard(bool synchronize) const
+void QlipperItem::toClipboard(const Actions & actions) const
 {
+    if (!(actions & (ToCurrent | ToOther)))
+    {
+        return;
+    }
+
     ClipboardWrap * clipboard = ClipboardWrap::Instance();
 
     QMimeData *mime = new QMimeData();
@@ -153,9 +158,14 @@ void QlipperItem::toClipboard(bool synchronize) const
         it.next();
         mime->setData(it.key(), it.value());
     }
-    clipboard->setMimeData(mime, m_mode);
-    if (synchronize && QlipperPreferences::Instance()->shouldSynchronizeClipboards())
+    if (actions.testFlag(ToCurrent))
+    {
+        clipboard->setMimeData(mime, m_mode);
+    }
+    if (actions.testFlag(ToOther))
+    {
         clipboard->setMimeData(mime, QClipboard::Clipboard == m_mode ? QClipboard::Selection : QClipboard::Clipboard);
+    }
 }
 
 QString QlipperItem::displayRole() const

@@ -148,13 +148,6 @@
          </property>
         </widget>
        </item>
-       <item row="6" column="0" colspan="2">
-        <widget class="QCheckBox" name="synchronizePSE">
-         <property name="text">
-          <string>Synchronize clipboard &amp;&amp; PSE when item selected</string>
-         </property>
-        </widget>
-       </item>
        <item row="7" column="0" colspan="2">
         <widget class="QCheckBox" name="clearItemsOnExit">
          <property name="text">
@@ -167,6 +160,25 @@
          <property name="text">
           <string>Synchronize history to storage instantly</string>
          </property>
+        </widget>
+       </item>
+       <item row="6" column="0" colspan="2">
+        <widget class="QComboBox" name="synchronizePSE">
+         <item>
+          <property name="text">
+           <string>No synchronization of clipboard &amp; PSE</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Synchronize clipboard &amp; PSE when item selected</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Synchronize clipboard &amp; PSE instantly</string>
+          </property>
+         </item>
         </widget>
        </item>
       </layout>

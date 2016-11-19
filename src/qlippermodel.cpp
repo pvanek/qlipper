@@ -142,12 +142,17 @@ void QlipperModel::clipboard_changed(QClipboard::Mode mode)
         {
             if (i->clipBoardMode() == item.clipBoardMode())
             {
-                i->toClipboard(false);
+                i->toClipboard(QlipperItem::ToCurrent);
                 m_currentIndex = index(m_sticky.count() + (i - m_dynamic.begin()));
                 break;
             }
         }
         return;
+    }
+
+    if (QlipperPreferences::Instance()->shouldSynchronizeClipboardsInstantly())
+    {
+        item.toClipboard(QlipperItem::ToOther);
     }
 
     // evaluate sticky items...
@@ -220,7 +225,9 @@ void QlipperModel::indexTriggered(const QModelIndex & index)
 
     int row = index.row();
     QList<QlipperItem> list = getList(row);
-    list.at(row).toClipboard(true);
+    QlipperItem::Actions actions(QlipperItem::ToCurrent);
+    actions |= QlipperPreferences::Instance()->shouldSynchronizeClipboards() ? QlipperItem::ToOther : QlipperItem::NoAction;
+    list.at(row).toClipboard(actions);
     m_currentIndex = index;
     if (m_sticky.size() <= index.row())
     {
