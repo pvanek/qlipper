@@ -22,6 +22,8 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 #include <QTranslator>
 #include <QTextCodec>
 #include <QtDebug>
+#include <QSharedMemory>
+#include <QTimer>
 
 #include "qlippersystray.h"
 
@@ -29,13 +31,37 @@ int main(int argc, char **argv)
 {
     QApplication a(argc, argv);
 
-#if 0
-    if (a.isRunning())
+    // Note1: Allow only one instance of qlipper.
+    // Note2: We can't use QSystemSemaphore as it doesn't provide
+    //        non-blocking API.
+    // Note2: On unix the underlying memory segment can outlive the
+    //        QSharedMemory object(s) if the application crashes.
+    //        So we're refreshing the "alive" timestamp each 5 sec.
+    QSharedMemory single(QStringLiteral("qlipper"));
+    if (single.attach())
     {
-        qWarning("An instance of qlipper is already running!");
-        return 0;
+        single.lock();
+        time_t refresh = *static_cast<const time_t *>(single.data());
+        single.unlock();
+        if (refresh > time(nullptr) - 10)
+        {
+            qWarning("An instance of qlipper is already running!");
+            return 0;
+        }
+    } else
+    {
+        single.create(sizeof(time_t));
     }
-#endif
+    auto refresh_lambda = [&single] {
+        single.lock();
+        time(static_cast<time_t *>(single.data()));
+        single.unlock();
+    };
+    refresh_lambda();
+    QTimer refresh_timer;
+    refresh_timer.setSingleShot(false);
+    QObject::connect(&refresh_timer, &QTimer::timeout, refresh_lambda);
+    refresh_timer.start(5000);
 
     a.setApplicationName("qlipper");
     a.setApplicationVersion(QLIPPER_VERSION);
