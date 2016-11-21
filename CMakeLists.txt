@@ -40,7 +40,7 @@
 #    It will copy all dependecies (libs/resources) into bundle tree
 # -------------------------------------------------------
 
-CMAKE_MINIMUM_REQUIRED(VERSION 3.0.0)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.1.0)
 
 project(qlipper)
 
@@ -190,6 +190,8 @@ add_executable( ${EXE_NAME} WIN32 MACOSX_BUNDLE
     ${QLIPPER_RCC}
     ${QLIPPER_QM}
 )
+set_property(TARGET ${EXE_NAME} PROPERTY CXX_STANDARD 11)
+set_property(TARGET ${EXE_NAME} PROPERTY CXX_STANDARD_REQUIRED ON)
 
 target_link_libraries( ${EXE_NAME}
     Qt5::Widgets
