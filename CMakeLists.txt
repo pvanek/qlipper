@@ -49,7 +49,6 @@ set(QLIPPER_VERSION 5.0.0)
 
 option(ENABLE_NETWORK_CLIPBOARD_SHARING "Enables experimental network support for clipboard sharing" OFF)
 option(USE_SYSTEM_QXT "Use system Qxt Library for global shortcuts; off for Qt5" OFF)
-option(USE_SYSTEM_QTSA "Use system QtSingleApplication; off for Qt5" OFF)
 
 
 LIST(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
