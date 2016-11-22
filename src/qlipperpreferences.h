@@ -24,7 +24,6 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 #include <QDataStream>
 #include "qlipperitem.h"
 
-
 class QlipperPreferences : public QSettings
 {
 public:
@@ -36,6 +35,8 @@ public:
     };
 
 public:
+    static const QString DEFAULT_ICON_PATH;
+
     static QlipperPreferences *Instance();
     ~QlipperPreferences();
 
@@ -43,6 +44,9 @@ public:
     void saveStickyItems(QList<QlipperItem> list);
     QList<QlipperItem> getDynamicItems();
     void saveDynamicItems(QList<QlipperItem> list);
+
+    QString getPathToIcon() const;
+    void savePathToIcon(const QString &path);
 
     bool trim();
     int displaySize() const;

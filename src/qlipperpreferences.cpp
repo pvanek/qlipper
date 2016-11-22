@@ -19,6 +19,9 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 
 #include "qlipperpreferences.h"
 
+const QString QlipperPreferences::DEFAULT_ICON_PATH = QStringLiteral(":/icons/qlipper.png");
+
+
 // allow to store ClipboardContent in the QSettings variant
 QDataStream &operator<<(QDataStream &out, const ClipboardContent &obj)
 {
@@ -164,6 +167,17 @@ void QlipperPreferences::saveDynamicItems(QList<QlipperItem> list)
     sync();
 }
 
+QString QlipperPreferences::getPathToIcon() const
+{
+    return value(QLatin1String("tray_icon_file"), DEFAULT_ICON_PATH).toString();
+}
+
+void QlipperPreferences::savePathToIcon(const QString &path)
+{
+    setValue(QLatin1String("tray_icon_file"), path);
+    sync();
+}
+
 bool QlipperPreferences::trim()
 {
     return value("trim", true).toBool();
@@ -203,7 +217,6 @@ bool QlipperPreferences::synchronizeHistory() const
 {
     return value("synchronizeHistory", true).toBool();
 }
-
 
 bool QlipperPreferences::networkSend() const
 {

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>358</width>
-    <height>347</height>
+    <height>430</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -35,44 +35,13 @@
         <x>0</x>
         <y>0</y>
         <width>340</width>
-        <height>217</height>
+        <height>302</height>
        </rect>
       </property>
       <attribute name="label">
        <string>Preferences</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout">
-       <item row="4" column="0" colspan="2">
-        <layout class="QHBoxLayout" name="horizontalLayout">
-         <item>
-          <widget class="QLabel" name="keyboardShortcutLabel">
-           <property name="text">
-            <string>Keyboard Shortcut:</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QKeySequenceWidget" name="shortcutWidget" native="true">
-           <property name="toolTip">
-            <string>Change global keyboard shortcut to invoke the menu on screen</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item row="9" column="1">
-        <spacer name="verticalSpacer">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>96</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
        <item row="0" column="0">
         <widget class="QLabel" name="label">
          <property name="text">
@@ -128,17 +97,7 @@
          </property>
         </widget>
        </item>
-       <item row="5" column="0" colspan="2">
-        <widget class="QCheckBox" name="platformExtensionsCheckBox">
-         <property name="toolTip">
-          <string>Use clipboard extensions (X11 Selections, OS X Find Buffer) when it's supported</string>
-         </property>
-         <property name="text">
-          <string>Use Platform Specific Extensions (Advanced)</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0" colspan="2">
+       <item row="2" column="0" colspan="2">
         <widget class="QCheckBox" name="trimCheckBox">
          <property name="toolTip">
           <string>Useful for bigger text blocks copied for example from dummy terminals (minicom, etc.)</string>
@@ -148,21 +107,17 @@
          </property>
         </widget>
        </item>
-       <item row="7" column="0" colspan="2">
-        <widget class="QCheckBox" name="clearItemsOnExit">
+       <item row="4" column="0" colspan="2">
+        <widget class="QCheckBox" name="platformExtensionsCheckBox">
+         <property name="toolTip">
+          <string>Use clipboard extensions (X11 Selections, OS X Find Buffer) when it's supported</string>
+         </property>
          <property name="text">
-          <string>Clear Items on Exit</string>
+          <string>Use Platform Specific Extensions (Advanced)</string>
          </property>
         </widget>
        </item>
-       <item row="8" column="0" colspan="2">
-        <widget class="QCheckBox" name="synchronizeHistory">
-         <property name="text">
-          <string>Synchronize history to storage instantly</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="0" colspan="2">
+       <item row="5" column="0" colspan="2">
         <widget class="QComboBox" name="synchronizePSE">
          <item>
           <property name="text">
@@ -181,6 +136,87 @@
          </item>
         </widget>
        </item>
+       <item row="6" column="0">
+        <widget class="QCheckBox" name="clearItemsOnExit">
+         <property name="text">
+          <string>Clear Items on Exit</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0" colspan="2">
+        <widget class="QCheckBox" name="synchronizeHistory">
+         <property name="text">
+          <string>Synchronize history to storage instantly</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="0" colspan="2">
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>96</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="8" column="0" colspan="2">
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>Tray icon image:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="buttonIconImage">
+           <property name="minimumSize">
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="popupMode">
+            <enum>QToolButton::InstantPopup</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="3" column="0" colspan="2">
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QLabel" name="keyboardShortcutLabel">
+           <property name="text">
+            <string>Keyboard Shortcut:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QKeySequenceWidget" name="shortcutWidget" native="true">
+           <property name="toolTip">
+            <string>Change global keyboard shortcut to invoke the menu on screen</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
       </layout>
      </widget>
      <widget class="QWidget" name="page_2">
@@ -188,8 +224,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>174</width>
-        <height>136</height>
+        <width>340</width>
+        <height>302</height>
        </rect>
       </property>
       <attribute name="label">
@@ -279,8 +315,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>232</width>
-        <height>99</height>
+        <width>340</width>
+        <height>302</height>
        </rect>
       </property>
       <attribute name="label">
@@ -390,6 +426,16 @@
    <signal>clicked(bool)</signal>
    <receiver>synchronizePSE</receiver>
    <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
   </connection>
  </connections>
 </ui>
