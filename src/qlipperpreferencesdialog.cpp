@@ -89,8 +89,8 @@ QlipperPreferencesDialog::QlipperPreferencesDialog(QWidget *parent) :
 
     buttonIconImage->setMenu(iconMenu);
 
-    connect(actLoadFromFile, SIGNAL(triggered()), this, SLOT(selectIconFromFile()));
-    connect(actUseDefault, SIGNAL(triggered()), this, SLOT(useDefaultIcon()));
+    connect(actLoadFromFile, &QAction::triggered, this, &QlipperPreferencesDialog::selectIconFromFile);
+    connect(actUseDefault, &QAction::triggered, this, &QlipperPreferencesDialog::useDefaultIcon);
 
     resize(sizeHint());
 }
