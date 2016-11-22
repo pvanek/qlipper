@@ -19,7 +19,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 
 #include "qlipperpreferences.h"
 
-QString DEFAULT_ICON_PATH = ":/icons/qlipper.png";
+const QString QlipperPreferences::DEFAULT_ICON_PATH = QStringLiteral(":/icons/qlipper.png");
 
 
 // allow to store ClipboardContent in the QSettings variant

@@ -24,9 +24,6 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 #include <QDataStream>
 #include "qlipperitem.h"
 
-extern QString DEFAULT_ICON_PATH;
-
-
 class QlipperPreferences : public QSettings
 {
 public:
@@ -38,6 +35,8 @@ public:
     };
 
 public:
+    static const QString DEFAULT_ICON_PATH;
+
     static QlipperPreferences *Instance();
     ~QlipperPreferences();
 

@@ -80,7 +80,7 @@ QlipperPreferencesDialog::QlipperPreferencesDialog(QWidget *parent) :
     // Setup menu & actions for icon selection.
     QMenu *iconMenu = new QMenu(tr("Icon selection"), this);
     QAction *actLoadFromFile = new QAction(tr("Load icon from file..."), this);
-    QAction *actUseDefault = new QAction(QIcon(DEFAULT_ICON_PATH), tr("Use default icon"), this);
+    QAction *actUseDefault = new QAction(QIcon(QlipperPreferences::DEFAULT_ICON_PATH), tr("Use default icon"), this);
 
     iconMenu->addAction(actLoadFromFile);
     iconMenu->addAction(actUseDefault);
@@ -147,7 +147,7 @@ void QlipperPreferencesDialog::selectIconFromFile()
 
 void QlipperPreferencesDialog::useDefaultIcon()
 {
-  temporarilyRembemberNewTrayIcon(DEFAULT_ICON_PATH);
+  temporarilyRembemberNewTrayIcon(QlipperPreferences::DEFAULT_ICON_PATH);
 }
 
 void QlipperPreferencesDialog::stickyAddButton_clicked()
