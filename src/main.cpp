@@ -24,24 +24,9 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 #include <QtDebug>
 #include <QSharedMemory>
 #include <QTimer>
+#include <mutex>
 
 #include "qlippersystray.h"
-
-template <typename Lockable> class Locker
-{
-public:
-    Locker(Lockable & lock)
-        : mLock(lock)
-    {
-        mLock.lock();
-    }
-    ~Locker()
-    {
-        mLock.unlock();
-    }
-protected:
-    Lockable & mLock;
-};
 
 int main(int argc, char **argv)
 {
@@ -57,15 +42,15 @@ int main(int argc, char **argv)
     QTimer refresh_timer;
     refresh_timer.setSingleShot(false);
     refresh_timer.setInterval(5000);
-    QObject::connect(&refresh_timer, &QTimer::timeout, [&single] { Locker<QSharedMemory> guard(single); time(static_cast<time_t *>(single.data())); });
+    QObject::connect(&refresh_timer, &QTimer::timeout, [&single] { std::lock_guard<QSharedMemory> guard(single); time(static_cast<time_t *>(single.data())); });
     if (single.create(sizeof(time_t)))
     {
-        Locker<QSharedMemory> guard(single);
+        std::lock_guard<QSharedMemory> guard(single);
         time(static_cast<time_t *>(single.data()));
         refresh_timer.start();
     } else if (single.attach())
     {
-        Locker<QSharedMemory> guard(single);
+        std::lock_guard<QSharedMemory> guard(single);
         time_t refresh = *static_cast<const time_t *>(single.data());
         if (refresh > time(nullptr) - 10)
         {
