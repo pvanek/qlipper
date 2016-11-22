@@ -32,11 +32,18 @@ public:
 private slots:
     void accept();
 
+    void selectIconFromFile();
+    void useDefaultIcon();
+
     void stickyAddButton_clicked();
     void stickyRemoveButton_clicked();
     void stickyUpButton_clicked();
     void stickyDownButton_clicked();
     void listWidget_currentRowChanged(int);
+
+  private:
+    void temporarilyRembemberNewTrayIcon(const QString &path);
+    QString getNewTrayIcon() const;
 };
 
 #endif // QLIPPERPREFERENCESDIALOG_H

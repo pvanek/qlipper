@@ -19,6 +19,9 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 
 #include <QInputDialog>
 
+#include <QFileDialog>
+#include <QMenu>
+
 #include "qlipperitem.h"
 #include "qlipperpreferences.h"
 #include "qlipperpreferencesdialog.h"
@@ -73,6 +76,22 @@ QlipperPreferencesDialog::QlipperPreferencesDialog(QWidget *parent) :
         stickyRemoveButton->setEnabled(false);
     }
 
+    // Setup icon image machinery.
+    // Setup menu & actions for icon selection.
+    QMenu *iconMenu = new QMenu(tr("Icon selection"), this);
+    QAction *actLoadFromFile = new QAction(tr("Load icon from file..."), this);
+    QAction *actUseDefault = new QAction(QIcon(QlipperPreferences::DEFAULT_ICON_PATH), tr("Use default icon"), this);
+
+    iconMenu->addAction(actLoadFromFile);
+    iconMenu->addAction(actUseDefault);
+
+    temporarilyRembemberNewTrayIcon(s->getPathToIcon());
+
+    buttonIconImage->setMenu(iconMenu);
+
+    connect(actLoadFromFile, &QAction::triggered, this, &QlipperPreferencesDialog::selectIconFromFile);
+    connect(actUseDefault, &QAction::triggered, this, &QlipperPreferencesDialog::useDefaultIcon);
+
     resize(sizeHint());
 }
 
@@ -100,7 +119,35 @@ void QlipperPreferencesDialog::accept()
     }
     QlipperPreferences::Instance()->saveStickyItems(list);
 
+    QlipperPreferences::Instance()->savePathToIcon(getNewTrayIcon());
+
     QDialog::accept();
+}
+
+void QlipperPreferencesDialog::selectIconFromFile()
+{
+  QScopedPointer<QFileDialog> dialog(new QFileDialog(this,
+                                                     tr("Select icon file"),
+                                                     QString(),
+                                                     tr("Images (*.bmp *.jpg *.jpeg *.png *.svg *.tga)")));
+  dialog->setFileMode(QFileDialog::ExistingFile);
+  dialog->setOptions(QFileDialog::ReadOnly);
+  dialog->setViewMode(QFileDialog::Detail);
+  dialog->setLabelText(QFileDialog::Accept, tr("Select icon"));
+  dialog->setLabelText(QFileDialog::Reject, tr("Cancel"));
+  //: Label to describe the folder for icon file selection dialog.
+  dialog->setLabelText(QFileDialog::LookIn, tr("Look in:"));
+  dialog->setLabelText(QFileDialog::FileName, tr("Icon name:"));
+  dialog->setLabelText(QFileDialog::FileType, tr("Icon type:"));
+
+  if (dialog->exec() == QDialog::Accepted && !dialog->selectedFiles().isEmpty()) {
+    temporarilyRembemberNewTrayIcon(dialog->selectedFiles().value(0));
+  }
+}
+
+void QlipperPreferencesDialog::useDefaultIcon()
+{
+  temporarilyRembemberNewTrayIcon(QlipperPreferences::DEFAULT_ICON_PATH);
 }
 
 void QlipperPreferencesDialog::stickyAddButton_clicked()
@@ -156,4 +203,14 @@ void QlipperPreferencesDialog::listWidget_currentRowChanged(int row)
     stickyUpButton->setEnabled(count && row != 0);
     stickyDownButton->setEnabled(count && row != count-1);
     stickyRemoveButton->setEnabled(count);
+}
+
+void QlipperPreferencesDialog::temporarilyRembemberNewTrayIcon(const QString &path) {
+  buttonIconImage->setIcon(QIcon(path));
+  buttonIconImage->setProperty("tray_icon", path);
+}
+
+QString QlipperPreferencesDialog::getNewTrayIcon() const
+{
+  return buttonIconImage->property("tray_icon").toString();
 }

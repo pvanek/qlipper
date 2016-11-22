@@ -35,7 +35,7 @@ QlipperSystray::QlipperSystray(QObject *parent)
       , m_shortcutMenu(0)
 #endif
 {
-    setIcon(QIcon(":/icons/qlipper.png"));
+    setIcon(QIcon(QlipperPreferences::Instance()->getPathToIcon()));
 
     m_model = new QlipperModel(this);
 
@@ -108,6 +108,10 @@ void QlipperSystray::editPreferences()
     m_shortcut->setShortcut(QlipperPreferences::Instance()->shortcut());
 #endif
     m_model->resetPreferences();
+
+    // Set new icon.
+    const QString icon_path = QlipperPreferences::Instance()->getPathToIcon();
+    setIcon(QIcon(icon_path));
 }
 
 void QlipperSystray::showAbout()
