@@ -22,20 +22,63 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 #include <QTranslator>
 #include <QTextCodec>
 #include <QtDebug>
+#include <QSharedMemory>
+#include <QTimer>
 
 #include "qlippersystray.h"
+
+template <typename Lockable> class Locker
+{
+public:
+    Locker(Lockable & lock)
+        : mLock(lock)
+    {
+        mLock.lock();
+    }
+    ~Locker()
+    {
+        mLock.unlock();
+    }
+protected:
+    Lockable & mLock;
+};
 
 int main(int argc, char **argv)
 {
     QApplication a(argc, argv);
 
-#if 0
-    if (a.isRunning())
+    // Note1: Allow only one instance of qlipper.
+    // Note2: We can't use QSystemSemaphore as it doesn't provide
+    //        non-blocking API.
+    // Note2: On unix the underlying memory segment can outlive the
+    //        QSharedMemory object(s) if the application crashes.
+    //        So we're refreshing the "alive" timestamp each 5 sec.
+    QSharedMemory single(QStringLiteral("qlipper"));
+    QTimer refresh_timer;
+    refresh_timer.setSingleShot(false);
+    refresh_timer.setInterval(5000);
+    QObject::connect(&refresh_timer, &QTimer::timeout, [&single] { Locker<QSharedMemory> guard(single); time(static_cast<time_t *>(single.data())); });
+    if (single.create(sizeof(time_t)))
     {
-        qWarning("An instance of qlipper is already running!");
-        return 0;
+        Locker<QSharedMemory> guard(single);
+        time(static_cast<time_t *>(single.data()));
+        refresh_timer.start();
+    } else if (single.attach())
+    {
+        Locker<QSharedMemory> guard(single);
+        time_t refresh = *static_cast<const time_t *>(single.data());
+        if (refresh > time(nullptr) - 10)
+        {
+            qWarning("An instance of qlipper is already running!");
+            return 0;
+        }
+        time(static_cast<time_t *>(single.data()));
+        refresh_timer.start();
+    } else
+    {
+        qWarning().noquote() << "Unable to create/attach shared memory(" << single.errorString()
+            << "), singleinstance behaviour will not work";
     }
-#endif
 
     a.setApplicationName("qlipper");
     a.setApplicationVersion(QLIPPER_VERSION);
