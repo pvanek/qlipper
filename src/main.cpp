@@ -27,6 +27,22 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 
 #include "qlippersystray.h"
 
+template <typename Lockable> class Locker
+{
+public:
+    Locker(Lockable & lock)
+        : mLock(lock)
+    {
+        mLock.lock();
+    }
+    ~Locker()
+    {
+        mLock.unlock();
+    }
+protected:
+    Lockable & mLock;
+};
+
 int main(int argc, char **argv)
 {
     QApplication a(argc, argv);
@@ -38,30 +54,31 @@ int main(int argc, char **argv)
     //        QSharedMemory object(s) if the application crashes.
     //        So we're refreshing the "alive" timestamp each 5 sec.
     QSharedMemory single(QStringLiteral("qlipper"));
-    if (single.attach())
+    QTimer refresh_timer;
+    refresh_timer.setSingleShot(false);
+    refresh_timer.setInterval(5000);
+    QObject::connect(&refresh_timer, &QTimer::timeout, [&single] { Locker<QSharedMemory> guard(single); time(static_cast<time_t *>(single.data())); });
+    if (single.create(sizeof(time_t)))
     {
-        single.lock();
+        Locker<QSharedMemory> guard(single);
+        time(static_cast<time_t *>(single.data()));
+        refresh_timer.start();
+    } else if (single.attach())
+    {
+        Locker<QSharedMemory> guard(single);
         time_t refresh = *static_cast<const time_t *>(single.data());
-        single.unlock();
         if (refresh > time(nullptr) - 10)
         {
             qWarning("An instance of qlipper is already running!");
             return 0;
         }
+        time(static_cast<time_t *>(single.data()));
+        refresh_timer.start();
     } else
     {
-        single.create(sizeof(time_t));
+        qWarning().noquote() << "Unable to create/attach shared memory(" << single.errorString()
+            << "), singleinstance behaviour will not work";
     }
-    auto refresh_lambda = [&single] {
-        single.lock();
-        time(static_cast<time_t *>(single.data()));
-        single.unlock();
-    };
-    refresh_lambda();
-    QTimer refresh_timer;
-    refresh_timer.setSingleShot(false);
-    QObject::connect(&refresh_timer, &QTimer::timeout, refresh_lambda);
-    refresh_timer.start(5000);
 
     a.setApplicationName("qlipper");
     a.setApplicationVersion(QLIPPER_VERSION);
