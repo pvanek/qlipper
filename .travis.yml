@@ -15,7 +15,7 @@ addons:
             - cmake-data
 sudo: true
 before_install:
-    - yes | sudo sudo add-apt-repository ppa:beineri/opt-qt561
+    - yes | sudo sudo add-apt-repository ppa:beineri/opt-qt562
     - sudo apt-get update
     - sudo apt-get install qt56base qt56tools --force-yes
 script: cmake -DCMAKE_PREFIX_PATH=/opt/qt56 . && make
