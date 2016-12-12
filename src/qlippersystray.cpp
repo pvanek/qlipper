@@ -21,7 +21,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 #include <QMessageBox>
 #include <QtDebug>
 
-#include "qlippermenuview.h"
+#include "qmenuview.h"
 #include "qlippermodel.h"
 #include "qxtglobalshortcut.h"
 #include "qlipperpreferences.h"
@@ -39,11 +39,16 @@ QlipperSystray::QlipperSystray(QObject *parent)
 
     m_model = new QlipperModel(this);
 
-    m_contextMenu = new QlipperMenuView();
-    m_contextMenu->setModel(m_model);
-    connect(m_contextMenu, SIGNAL(showAbout()), this, SLOT(showAbout()));
-    connect(m_contextMenu, SIGNAL(editPreferences()), this, SLOT(editPreferences()));
-    connect(m_contextMenu, SIGNAL(triggered(QModelIndex)), m_model, SLOT(indexTriggered(QModelIndex)));
+    m_contextMenu = new QMenu();
+    m_contextMenu->addAction(QIcon::fromTheme("edit-clear-hstory", QIcon(":/icons/edit-clear-history.png")), tr("C&lear clipboard history")
+            , m_model, &QlipperModel::clearHistory);
+    m_contextMenu->addAction(QIcon::fromTheme("configure", QIcon(":/icons/configure.png")), tr("&Configure...")
+            , this, &QlipperSystray::editPreferences);
+    m_contextMenu->addSeparator();
+    m_contextMenu->addAction(QIcon::fromTheme("help-about", QIcon(":/icons/help-about.png")), tr("&About Qlipper...")
+            , this, &QlipperSystray::showAbout);
+    m_contextMenu->addAction(QIcon::fromTheme("application-exit", QIcon(":/icons/application-exit.png")), tr("&Quit")
+            , qApp, &QCoreApplication::quit);
     setContextMenu(m_contextMenu);
 
 #ifndef NO_QXT

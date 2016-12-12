@@ -85,7 +85,6 @@ set (QLIPPER_HEADERS
     qkeysequencewidget/qkeysequencewidget_p.h
     qmenuview/qmenuview.h
     qmenuview/qmenuview_p.h
-    src/qlippermenuview.h
     src/qlippermodel.h
     src/qlipperpreferencesdialog.h
     src/qlippersystray.h
@@ -97,7 +96,6 @@ set (QLIPPER_SOURCES
     qmenuview/qmenuview.cpp
     src/main.cpp
     src/qlipperitem.cpp
-    src/qlippermenuview.cpp
     src/qlippermodel.cpp
     src/qlipperpreferences.cpp
     src/qlipperpreferencesdialog.cpp

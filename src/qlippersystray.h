@@ -25,7 +25,6 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 
 class QlipperModel;
 class QMenuView;
-class QlipperMenuView;
 #ifndef NO_QXT
 class QxtGlobalShortcut;
 #endif
@@ -39,7 +38,7 @@ public:
 
 private:
     QlipperModel *m_model;
-    QlipperMenuView *m_contextMenu;
+    QMenu *m_contextMenu;
 #ifndef NO_QXT
     QMenuView *m_shortcutMenu;
     QxtGlobalShortcut *m_shortcut;
