@@ -156,6 +156,7 @@ set (QLIPPER_RESOURCES
 )
 
 set (QLIPPER_TRANSLATIONS
+    ts/qlipper_ca.ts
     ts/qlipper_cs.ts
     ts/qlipper_de.ts
     ts/qlipper_sr.ts
