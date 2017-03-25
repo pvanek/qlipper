@@ -271,3 +271,6 @@ add_custom_target(lrelease
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
 )
 
+
+# merged from lxqt-common
+add_subdirectory(autostart)
