@@ -48,6 +48,7 @@ project(qlipper)
 set(QLIPPER_VERSION 5.0.0)
 
 option(ENABLE_NETWORK_CLIPBOARD_SHARING "Enables experimental network support for clipboard sharing" OFF)
+option(ENABLE_LXQT_AUTOSTART "Enables autostart for LXQt" OFF)
 option(USE_SYSTEM_QXT "Use system Qxt Library for global shortcuts; off for Qt5" OFF)
 
 
@@ -272,3 +273,11 @@ add_custom_target(lrelease
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
 )
 
+# merged from lxqt-common
+if (ENABLE_LXQT_AUTOSTART)
+    set(LXQTBT_MINIMUM_VERSION "0.3.2")
+    find_package(lxqt-build-tools ${LXQTBT_MINIMUM_VERSION} REQUIRED)
+    include(LXQtConfigVars)
+    include(LXQtTranslateDesktop)
+    add_subdirectory(lxqt-autostart)
+endif ()
