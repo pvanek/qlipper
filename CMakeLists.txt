@@ -159,6 +159,7 @@ set (QLIPPER_TRANSLATIONS
     ts/qlipper_ca.ts
     ts/qlipper_cs.ts
     ts/qlipper_de.ts
+    ts/qlipper_pl.ts
     ts/qlipper_sr.ts
     ts/qlipper_it.ts
     ts/qlipper_zh_CN.ts
