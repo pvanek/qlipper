@@ -32,6 +32,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 int main(int argc, char **argv)
 {
     QApplication a(argc, argv);
+    a.setAttribute(Qt::AA_UseHighDpiPixmaps, true);    
 
     // Note1: Allow only one instance of qlipper.
     // Note2: We can't use QSystemSemaphore as it doesn't provide
