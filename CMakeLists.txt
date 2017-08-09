@@ -55,7 +55,7 @@ option(USE_SYSTEM_QXT "Use system Qxt Library for global shortcuts; off for Qt5"
 LIST(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
 
-find_package(Qt5Widgets REQUIRED)
+find_package(Qt5Widgets "5.6" REQUIRED)
 find_package(Qt5LinguistTools REQUIRED)
 
 if (USE_SYSTEM_QXT)
