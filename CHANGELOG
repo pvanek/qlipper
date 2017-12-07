@@ -1,3 +1,46 @@
+5.1.0 / 2017-12-07
+==================
+
+  * Updated CHANGELOG
+  * Added .gitignore and .gitattributes
+  * build: Require Qt v5.6
+  * Added Lithuanian translation
+  * added Polish translation to CMakeLists
+  * added Polish translation
+  * Make LXQt-Autostart optional
+  * Added merged autostart to CMakeLists.txt
+  * Added Catalan translation to CMake list
+  * Add Catalan translation
+  * Synchronized Chinese (simplified) translation from latest source
+  * Added Chinese (simplified) translation to CMake list
+  * Added Chinese (simplified) translation
+  * Updated *_da.desktop files and removed *_da_DK.desktop files
+  * systray: Don't display clipboard items in context menu
+  * travis-ci: Update the PPA for pulling Qt
+  * Add ability to change tray icon.
+  * preferences: Cleanup&sort items in preferences dialog
+  * main: Use std::lock_guard
+  * fixup...do the locking correctly
+  * build: Require C++11
+  * Allow only one instance of application
+  * build: Remove QtSingleApplication as not used
+  * Add instant clipboards synchronization
+  * Fix build with ENABLE_NETWORK_CLIPBOARD_SHARING enabled.
+  * qlipperitem: Handle different type as equal
+  * Update desktop entries and Replace fr_FR by fr
+  * Update Greek translation (el) Remove country variant from language code
+  * CMake: Adds Runtime and Devel install COMPONENTs
+  * Coding style changes
+  * Updates the build system to use the Targets infrastructure
+  * lxqt-qlipper-autostart: added X-LXQt-Need-Tray key
+  * Drops hardcoded /etc/xdg paths
+  * Updated german translation, replaced Qt4 by Qt in all xsession/translations
+  * Renames some .desktop files
+  * Updates translations infrastructure
+  * Update the required minimum cmake version
+  * remove dead template lines switch OnlyShowIn from Razor -> LXQt stringchanges LxQt -> LXQt
+  * Support lxqt-session and add necessary xdg autostart desktop entry files.
+  * Add default configuration files for lxde-qt session
 
 5.0.0 / 2016-11-02
 ==================
