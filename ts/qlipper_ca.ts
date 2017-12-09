@@ -264,11 +264,11 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="133"/>
         <source>Lightweight, cross-platform clipboard history applet.&lt;p&gt;(c)&amp;nbsp;2010-2016&amp;nbsp;Petr&amp;nbsp;Vanek&amp;nbsp;&amp;lt;petr@yarpen.cz&amp;gt;&lt;p&gt;&lt;a href=&quot;https://github.com/pvanek/qlipper/&quot;&gt;https://github.com/pvanek/qlipper/&lt;/a&gt;&lt;p&gt;Support for global keyboard shortcut: %1&lt;br&gt;Support for network clipboard sharing: %2</source>
-        <translation>Miniaplicació de l&apos;historial del porta-retalls, lleugera i de plataforma creuada.&lt;p&gt;(c)&amp;nbsp;2010-2016&amp;nbsp;Petr&amp;nbsp;Vanek&amp;nbsp;&amp;lt;petr@yarpen.cz&amp;gt;&lt;p&gt;&lt;a href=&quot;https://github.com/pvanek/qlipper/&quot;&gt;https://github.com/pvanek/qlipper/&lt;/a&gt;&lt;p&gt;Compatibilitat per a la drecera de teclat global: %1&lt;br&gt;Compatibilitat per a la compartició del porta-retalls de xarxa: %2</translation>
+        <translation>Miniaplicació de l&apos;historial del porta-retalls, lleugera i de plataforma creuada.&lt;p&gt;(c)&amp;nbsp;2010-2016&amp;nbsp;Petr&amp;nbsp;Vanek&amp;nbsp;&amp;lt;petr@yarpen.cz&amp;gt;&lt;p&gt;&lt;a href=&quot;https://github.com/pvanek/qlipper/&quot;&gt;https://github.com/pvanek/qlipper/&lt;/a&gt;&lt;p&gt;Admet la drecera de teclat global: %1&lt;br&gt;Admet compartició del porta-retalls de xarxa: %2</translation>
     </message>
     <message>
         <source>Lightweight, cross-platform clipboard history applet.&lt;p&gt;(c)&amp;nbsp;2010-2011&amp;nbsp;Petr&amp;nbsp;Vanek&amp;nbsp;&amp;lt;petr@scribus.info&amp;gt;&lt;p&gt;&lt;a href=&quot;http://code.google.com/p/qlipper/&quot;&gt;http://code.google.com/p/qlipper/&lt;/a&gt;&lt;p&gt;Support for global keyboard shortcut: %1&lt;br&gt;Support for network clipboard sharing: %2</source>
-        <translation>Miniaplicació de l&apos;historial del porta-retalls, lleugera i de plataforma creuada.&lt;p&gt;(c)&amp;nbsp;2010-2011&amp;nbsp;Petr&amp;nbsp;Vanek&amp;nbsp;&amp;lt;petr@scribus.info&amp;gt;&lt;p&gt;&lt;a href=&quot;http://code.google.com/p/qlipper/&quot;&gt;http://code.google.com/p/qlipper/&lt;/a&gt;&lt;p&gt;Compatibilitat per a la drecera de teclat global: %1&lt;br&gt;Compatibilitat per a la compartició del porta-retalls de xarxa: %2</translation>
+        <translation>Miniaplicació de l&apos;historial del porta-retalls, lleugera i de plataforma creuada.&lt;p&gt;(c)&amp;nbsp;2010-2011&amp;nbsp;Petr&amp;nbsp;Vanek&amp;nbsp;&amp;lt;petr@scribus.info&amp;gt;&lt;p&gt;&lt;a href=&quot;http://code.google.com/p/qlipper/&quot;&gt;http://code.google.com/p/qlipper/&lt;/a&gt;&lt;p&gt;Admet la drecera de teclat global: %1&lt;br&gt;Admet compartició del porta-retalls de xarxa: %2</translation>
     </message>
 </context>
 </TS>
