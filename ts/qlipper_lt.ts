@@ -137,32 +137,32 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="127"/>
         <source>Tray icon image:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dėklo piktogramos paveikslas:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="164"/>
         <source>No synchronization of clipboard &amp; PSE</source>
-        <translation type="unfinished"></translation>
+        <translation>Jokio iškarpinės ir PSP sinchronizavimo</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="169"/>
         <source>Synchronize clipboard &amp; PSE when item selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Sinchronizuoti iškarpinę ir PSP, pažymėjus elementą</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="174"/>
         <source>Synchronize clipboard &amp; PSE instantly</source>
-        <translation type="unfinished"></translation>
+        <translation>Sinchronizuoti iškarpinę ir PSP nedelsiant</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="182"/>
         <source>Clear Items on Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Išeinant, išvalyti elementus</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="189"/>
         <source>Synchronize history to storage instantly</source>
-        <translation type="unfinished"></translation>
+        <translation>Sinchronizuoti istoriją į kaupiklį nedelsiant</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="218"/>
@@ -237,53 +237,53 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="81"/>
         <source>Icon selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Piktogramos pasirinkimas</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="82"/>
         <source>Load icon from file...</source>
-        <translation type="unfinished"></translation>
+        <translation>Įkelti piktogramą iš failo...</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="83"/>
         <source>Use default icon</source>
-        <translation type="unfinished"></translation>
+        <translation>Naudoti numatytąją piktogramą</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="130"/>
         <source>Select icon file</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasirinkti piktogramos failą</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="132"/>
         <source>Images (*.bmp *.jpg *.jpeg *.png *.svg *.tga)</source>
-        <translation type="unfinished"></translation>
+        <translation>Paveikslai (*.bmp *.jpg *.jpeg *.png *.svg *.tga)</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="136"/>
         <source>Select icon</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasirinkti piktogramą</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="137"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Atsisakyti</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="139"/>
         <source>Look in:</source>
         <extracomment>Label to describe the folder for icon file selection dialog.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ieškoti:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="140"/>
         <source>Icon name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Piktogramos pavadinimas:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="141"/>
         <source>Icon type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Piktogramos tipas:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="156"/>
@@ -296,22 +296,22 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="43"/>
         <source>C&amp;lear clipboard history</source>
-        <translation type="unfinished">&amp;Išvalyti iškarpinės istoriją</translation>
+        <translation>Išva&amp;lyti iškarpinės istoriją</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="45"/>
         <source>&amp;Configure...</source>
-        <translation type="unfinished">&amp;Konfigūruoti...</translation>
+        <translation>&amp;Konfigūruoti...</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="48"/>
         <source>&amp;About Qlipper...</source>
-        <translation type="unfinished">&amp;Apie Qlipper...</translation>
+        <translation>&amp;Apie Qlipper...</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="50"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished">&amp;Išeiti</translation>
+        <translation>&amp;Išeiti</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="57"/>
