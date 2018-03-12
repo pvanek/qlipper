@@ -237,7 +237,7 @@ QString QlipperItem::tooltipRole() const
         m = QObject::tr("Selection");
         break;
     case QClipboard::FindBuffer:
-        m = QObject::tr("Find Bufer");
+        m = QObject::tr("Find Buffer");
         break;
     }
 
