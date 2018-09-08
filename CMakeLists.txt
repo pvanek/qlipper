@@ -47,16 +47,16 @@ project(qlipper)
 
 set(QLIPPER_VERSION 5.1.1)
 
-option(ENABLE_NETWORK_CLIPBOARD_SHARING "Enables experimental network support for clipboard sharing" OFF)
+option(ENABLE_NETWORK_CLIPBOARD_SHARING "Enables experimental network support for clipboard sharing" ON)
 option(ENABLE_LXQT_AUTOSTART "Enables autostart for LXQt" OFF)
 option(USE_SYSTEM_QXT "Use system Qxt Library for global shortcuts; off for Qt5" OFF)
 
 
 LIST(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
-
 find_package(Qt5Widgets "5.6" REQUIRED)
 find_package(Qt5LinguistTools REQUIRED)
+find_package(Qt5Network       REQUIRED)
 
 if (USE_SYSTEM_QXT)
     find_package(Qxt)
@@ -198,6 +198,7 @@ set_property(TARGET ${EXE_NAME} PROPERTY CXX_STANDARD_REQUIRED ON)
 
 target_link_libraries( ${EXE_NAME}
     Qt5::Widgets
+    Qt5::Network
 )
 
 # single app and optional network features

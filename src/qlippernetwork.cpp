@@ -101,7 +101,12 @@ void QlipperNetwork::readData()
         ds >> c;
         qDebug() << "RECEIVED:" << c;
         QlipperItem item(QClipboard::Clipboard, QlipperItem::PlainText, c);
-        item.toClipboard();
+
+        // Manually create an action, and then pass it through.
+        QlipperItem::Actions action;
+        action |= QlipperItem::ToCurrent;
+        action |= QlipperItem::ToOther;
+        item.toClipboard(action);
     }
 #endif
 }
