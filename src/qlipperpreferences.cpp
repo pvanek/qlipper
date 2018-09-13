@@ -218,6 +218,11 @@ bool QlipperPreferences::synchronizeHistory() const
     return value("synchronizeHistory", true).toBool();
 }
 
+bool QlipperPreferences::confirmOnClear() const
+{
+    return value("confirmClear", true).toBool();
+}
+
 bool QlipperPreferences::networkSend() const
 {
     return value("networkSend", false).toBool();

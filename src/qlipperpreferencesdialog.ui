@@ -34,8 +34,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>340</width>
-        <height>302</height>
+        <width>371</width>
+        <height>305</height>
        </rect>
       </property>
       <attribute name="label">
@@ -190,7 +190,7 @@
          </property>
         </widget>
        </item>
-       <item row="9" column="0" colspan="2">
+       <item row="10" column="0" colspan="2">
         <spacer name="verticalSpacer">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
@@ -203,6 +203,13 @@
          </property>
         </spacer>
        </item>
+       <item row="9" column="0">
+        <widget class="QCheckBox" name="confirmOnClear">
+         <property name="text">
+          <string>Confirm Clear History</string>
+         </property>
+        </widget>
+       </item>
       </layout>
      </widget>
      <widget class="QWidget" name="page_2">
@@ -211,7 +218,7 @@
         <x>0</x>
         <y>0</y>
         <width>340</width>
-        <height>302</height>
+        <height>292</height>
        </rect>
       </property>
       <attribute name="label">
@@ -302,7 +309,7 @@
         <x>0</x>
         <y>0</y>
         <width>340</width>
-        <height>302</height>
+        <height>292</height>
        </rect>
       </property>
       <attribute name="label">

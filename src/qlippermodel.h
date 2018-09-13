@@ -78,6 +78,8 @@ private slots:
       See m_timer, m_previousContent
      */
     void timer_timeout();
+
+    bool confirm_clear();
 };
 
 #endif // QLIPPERMODEL_H

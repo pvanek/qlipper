@@ -21,6 +21,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 #include <QIcon>
 #include <QFont>
 #include <QTimer>
+#include <QMessageBox>
 
 #include "qlippermodel.h"
 #include "qlipperpreferences.h"
@@ -205,6 +206,8 @@ void QlipperModel::setCurrentDynamic(int ix)
 
 void QlipperModel::clearHistory()
 {
+    if (!this->confirm_clear()) return;
+
     const int sticky_count = m_sticky.count();
     beginRemoveRows(QModelIndex(), sticky_count, sticky_count + m_dynamic.count() - 1);
     m_dynamic.clear();
@@ -242,4 +245,23 @@ void QlipperModel::timer_timeout()
     clipboard_changed(QClipboard::Clipboard);
     m_timer->start();
 #endif
+}
+
+bool QlipperModel::confirm_clear()
+{
+    if (!QlipperPreferences::Instance()->confirmOnClear())
+        return true;
+
+   QMessageBox mbox;
+   mbox.setWindowTitle("Confirm");
+   mbox.setText("You are about to clear clipboard history");
+   mbox.setInformativeText("Are you sure that you want to do this?");
+   mbox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
+   mbox.setDefaultButton(QMessageBox::Cancel);
+
+   int ret = mbox.exec();
+   if (ret == QMessageBox::Ok)
+       return true;
+   else
+       return false;
 }

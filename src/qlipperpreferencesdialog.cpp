@@ -43,6 +43,7 @@ QlipperPreferencesDialog::QlipperPreferencesDialog(QWidget *parent) :
     synchronizePSE->setCurrentIndex(s->synchronizePSE());
     clearItemsOnExit->setChecked(s->clearItemsOnExit());
     synchronizeHistory->setChecked(s->synchronizeHistory());
+    confirmOnClear->setChecked(s->confirmOnClear());
 
     networkSendCheckBox->setChecked(s->networkSend());
     networkReceiveCheckBox->setChecked(s->networkReceive());
@@ -106,6 +107,7 @@ void QlipperPreferencesDialog::accept()
     s->setValue("shortcut", shortcutWidget->keySequence().toString());
     s->setValue("clearItemsOnExit", clearItemsOnExit->isChecked());
     s->setValue("synchronizeHistory", synchronizeHistory->isChecked());
+    s->setValue("confirmClear", confirmOnClear->isChecked());
 
     s->setValue("networkReceive", networkReceiveCheckBox->isChecked());
     s->setValue("networkSend", networkSendCheckBox->isChecked());

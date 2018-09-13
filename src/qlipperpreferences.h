@@ -56,6 +56,7 @@ public:
     PSESynchronization synchronizePSE() const;
     bool clearItemsOnExit() const;
     bool synchronizeHistory() const;
+    bool confirmOnClear() const;
 
     bool networkSend() const;
     bool networkReceive() const;
