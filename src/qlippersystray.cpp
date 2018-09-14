@@ -41,7 +41,7 @@ QlipperSystray::QlipperSystray(QObject *parent)
 
     m_contextMenu = new QMenu();
     m_contextMenu->addAction(QIcon::fromTheme("edit-clear-hstory", QIcon(":/icons/edit-clear-history.png")), tr("C&lear clipboard history")
-            , m_model, &QlipperModel::clearHistory);
+            , this, SLOT(clear_history()));
     m_contextMenu->addAction(QIcon::fromTheme("configure", QIcon(":/icons/configure.png")), tr("&Configure...")
             , this, &QlipperSystray::editPreferences);
     m_contextMenu->addSeparator();
@@ -157,4 +157,18 @@ void QlipperSystray::systray_activated(QSystemTrayIcon::ActivationReason reason)
 #else
     Q_UNUSED(reason);
 #endif
+}
+
+void QlipperSystray::clear_history()
+{
+    if (!QlipperPreferences::Instance()->confirmOnClear())
+    {
+        m_model->clearHistory();
+        return;
+    }
+
+    int ret = QMessageBox::question(nullptr, tr("Confirm"), tr("Are you sure that you want to clear your clipboard history?"),
+                                    QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel);
+    if (ret == QMessageBox::Ok)
+        m_model->clearHistory();
 }

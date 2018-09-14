@@ -21,7 +21,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 #define QLIPPERSYSTRAY_H
 
 #include <QSystemTrayIcon>
-
+#include <QMessageBox>
 
 class QlipperModel;
 class QMenuView;
@@ -49,6 +49,7 @@ private slots:
     void editPreferences();
     void showAbout();
     void systray_activated(QSystemTrayIcon::ActivationReason reason);
+    void clear_history();
 };
 
 #endif // QLIPPERSYSTRAY_H
