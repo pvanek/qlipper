@@ -26,7 +26,7 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="240"/>
         <source>Find Bufer</source>
-        <translation>Find bufer</translation>
+        <translation>Find buffer</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="247"/>
@@ -122,7 +122,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="156"/>
         <source>Use Platform Specific Extensions (Advanced)</source>
-        <translation>Brug platformspecifikke udvidelser (avanceret)</translation>
+        <translation>Brug platformsspecifikke udvidelser (avanceret)</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="103"/>
@@ -132,7 +132,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="106"/>
         <source>Trim Whitespaces for Every Line</source>
-        <translation>Beskær blanktegn for linje</translation>
+        <translation>Beskær blanktegn på hver linje</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="127"/>
@@ -342,7 +342,7 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="142"/>
         <source>Lightweight, cross-platform clipboard history applet.&lt;p&gt;(c)&amp;nbsp;2010-2016&amp;nbsp;Petr&amp;nbsp;Vanek&amp;nbsp;&amp;lt;petr@yarpen.cz&amp;gt;&lt;p&gt;&lt;a href=&quot;https://github.com/pvanek/qlipper/&quot;&gt;https://github.com/pvanek/qlipper/&lt;/a&gt;&lt;p&gt;Support for global keyboard shortcut: %1&lt;br&gt;Support for network clipboard sharing: %2</source>
-        <translation>Letvægts, platformsuafhængig udklipsholderhistorik-applet.&lt;p&gt;(c)&amp;nbsp;2010-2016&amp;nbsp;Petr&amp;nbsp;Vanek&amp;nbsp;&amp;lt;petr@yarpen.cz&amp;gt;&lt;p&gt;&lt;a href=&quot;https://github.com/pvanek/qlipper/&quot;&gt;https://github.com/pvanek/qlipper/&lt;/a&gt;&lt;p&gt;Understøttelse for globale tastaturgenveje: %1&lt;br&gt;Understøttelse for netværkdeling af udklipsholder: %2</translation>
+        <translation>Letvægts, platformsuafhængig udklipsholderhistorik-applet.&lt;p&gt;(c)&amp;nbsp;2010-2016&amp;nbsp;Petr&amp;nbsp;Vanek&amp;nbsp;&amp;lt;petr@yarpen.cz&amp;gt;&lt;p&gt;&lt;a href=&quot;https://github.com/pvanek/qlipper/&quot;&gt;https://github.com/pvanek/qlipper/&lt;/a&gt;&lt;p&gt;Understøttelse af globale tastaturgenveje: %1&lt;br&gt;Understøttelse af netværkdeling for udklipsholder: %2</translation>
     </message>
 </context>
 </TS>
