@@ -54,7 +54,6 @@ option(USE_SYSTEM_QXT "Use system Qxt Library for global shortcuts; off for Qt5"
 
 LIST(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
-
 find_package(Qt5Widgets "5.6" REQUIRED)
 find_package(Qt5LinguistTools REQUIRED)
 
@@ -77,6 +76,7 @@ add_definitions(-DIS_CMAKE)
 add_definitions(-DQLIPPER_VERSION="${QLIPPER_VERSION}")
 if (ENABLE_NETWORK_CLIPBOARD_SHARING)
     add_definitions(-DENABLE_NETWORK_CLIPBOARD_SHARING)
+    find_package(Qt5Network REQUIRED)
 endif (ENABLE_NETWORK_CLIPBOARD_SHARING)
 
 
@@ -199,6 +199,12 @@ set_property(TARGET ${EXE_NAME} PROPERTY CXX_STANDARD_REQUIRED ON)
 target_link_libraries( ${EXE_NAME}
     Qt5::Widgets
 )
+
+if (ENABLE_NETWORK_CLIPBOARD_SHARING)
+    target_link_libraries( ${EXE_NAME}
+        Qt5::Network
+    )
+endif(ENABLE_NETWORK_CLIPBOARD_SHARING)
 
 # single app and optional network features
 #target_link_libraries( ${EXE_NAME} ${QT_QTNETWORK_LIBRARY})
