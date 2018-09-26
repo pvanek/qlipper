@@ -25,7 +25,7 @@
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="240"/>
-        <source>Find Bufer</source>
+        <source>Find Buffer</source>
         <translation>Find buffer</translation>
     </message>
     <message>
