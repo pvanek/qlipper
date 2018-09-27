@@ -21,7 +21,6 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 #include <QIcon>
 #include <QFont>
 #include <QTimer>
-#include <QMessageBox>
 
 #include "qlippermodel.h"
 #include "qlipperpreferences.h"

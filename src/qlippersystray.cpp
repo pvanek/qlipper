@@ -41,7 +41,7 @@ QlipperSystray::QlipperSystray(QObject *parent)
 
     m_contextMenu = new QMenu();
     m_contextMenu->addAction(QIcon::fromTheme("edit-clear-hstory", QIcon(":/icons/edit-clear-history.png")), tr("C&lear clipboard history")
-            , this, SLOT(clear_history()));
+            , this, &QlipperSystray::clear_history);
     m_contextMenu->addAction(QIcon::fromTheme("configure", QIcon(":/icons/configure.png")), tr("&Configure...")
             , this, &QlipperSystray::editPreferences);
     m_contextMenu->addSeparator();
