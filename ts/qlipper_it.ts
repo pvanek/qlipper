@@ -102,7 +102,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="77"/>
         <source>Maximum Display Size:</source>
-        <translation type="unfinished">Mostra i primi </translation>
+        <translation>Mostra i primi:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="84"/>
@@ -117,12 +117,12 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="153"/>
         <source>Use clipboard extensions (X11 Selections, OS X Find Buffer) when it&apos;s supported</source>
-        <translation></translation>
+        <translation>Usa estensioni degli appunti se supportate (Selezioni X11, OS X Trova Buffer)</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="156"/>
         <source>Use Platform Specific Extensions (Advanced)</source>
-        <translation></translation>
+        <translation>Usa estensione specifiche della piattaforma (avanzato)</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="103"/>
@@ -137,32 +137,32 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="127"/>
         <source>Tray icon image:</source>
-        <translation type="unfinished"></translation>
+        <translation>Icona nel vassoio:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="164"/>
         <source>No synchronization of clipboard &amp; PSE</source>
-        <translation type="unfinished"></translation>
+        <translation>Nessuna sincronizzazione tra apunti &amp; PSE</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="169"/>
         <source>Synchronize clipboard &amp; PSE when item selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Sincronizza appunti &amp; PSE quando la voce è selezionata</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="174"/>
         <source>Synchronize clipboard &amp; PSE instantly</source>
-        <translation type="unfinished"></translation>
+        <translation>Sincronizza appunti &amp; PSE immediatamente</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="182"/>
         <source>Clear Items on Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Pulisci all&apos;uscita</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="189"/>
         <source>Synchronize history to storage instantly</source>
-        <translation type="unfinished"></translation>
+        <translation>Salva cronologia immediatamente</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="218"/>
@@ -237,53 +237,53 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="81"/>
         <source>Icon selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleziona icona</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="82"/>
         <source>Load icon from file...</source>
-        <translation type="unfinished"></translation>
+        <translation>Carica icona da file...</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="83"/>
         <source>Use default icon</source>
-        <translation type="unfinished"></translation>
+        <translation>Usa icona predefinita</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="130"/>
         <source>Select icon file</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleziona file icona</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="132"/>
         <source>Images (*.bmp *.jpg *.jpeg *.png *.svg *.tga)</source>
-        <translation type="unfinished"></translation>
+        <translation>Immagini (*.bmp *.jpg *.jpeg *.png *.svg *.tga)</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="136"/>
         <source>Select icon</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleziona icona</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="137"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancella</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="139"/>
         <source>Look in:</source>
         <extracomment>Label to describe the folder for icon file selection dialog.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Cerca in:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="140"/>
         <source>Icon name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome dell&apos;icona:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="141"/>
         <source>Icon type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo dell&apos;icona:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="156"/>
@@ -296,22 +296,22 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="43"/>
         <source>C&amp;lear clipboard history</source>
-        <translation type="unfinished">&amp;Pulisci cronologia</translation>
+        <translation>&amp;Pulisci cronologia</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="45"/>
         <source>&amp;Configure...</source>
-        <translation type="unfinished">&amp;Configura...</translation>
+        <translation>&amp;Configura...</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="48"/>
         <source>&amp;About Qlipper...</source>
-        <translation type="unfinished">&amp;A proposito di Qlipper...</translation>
+        <translation>&amp;Informazioni su Qlipper...</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="50"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished">&amp;Esci</translation>
+        <translation>&amp;Esci</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="57"/>
