@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="it">
+<TS version="2.1" language="sv">
 <context>
     <name>QObject</name>
     <message>
@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="182"/>
         <source>Binary: %1</source>
-        <translation>Bin&auml;rt: %1</translation>
+        <translation>Binärt: %1</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="234"/>
@@ -41,7 +41,7 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="253"/>
         <source>Binary Content</source>
-        <translation>Bin&auml;rt inneh&aring;ll</translation>
+        <translation>Binärt innehåll</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="256"/>
@@ -51,7 +51,7 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="259"/>
         <source>Sticky Item (Plain Text)</source>
-        <translation>Fast text (Oformatterad)</translation>
+        <translation>Låst text (Oformatterad)</translation>
     </message>
 </context>
 <context>
@@ -59,7 +59,7 @@
     <message>
         <location filename="../src/qlippermodel.cpp" line="213"/>
         <source>Welcome to the Qlipper clipboard history applet</source>
-        <translation>V&auml;lkommen till Qlipper, en app f&ouml;r urklippshistoria</translation>
+        <translation>Välkommen till Qlipper, en app för urklippshistoria</translation>
     </message>
 </context>
 <context>
@@ -67,12 +67,12 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="14"/>
         <source>Qlipper Preferences</source>
-        <translation>Qlippers inst&auml;llningar</translation>
+        <translation>Qlippers inställningar</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="42"/>
         <source>Preferences</source>
-        <translation>Inst&auml;llningar</translation>
+        <translation>Inställningar</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="113"/>
@@ -82,7 +82,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="120"/>
         <source>Change global keyboard shortcut to invoke the menu on screen</source>
-        <translation>&auml;ndra snabbtangentval f&ouml;r att visa menyn p&aring; sk&auml;rmen</translation>
+        <translation>Ändra snabbtangentval för att visa menyn på skärmen</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="48"/>
@@ -107,7 +107,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="84"/>
         <source>How long is the preview text in the menu</source>
-        <translation>Hur l&aring;ng &auml;r f&ouml;rvisningstexten i menyn</translation>
+        <translation>Hur lång är förvisningstexten i menyn</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="90"/>
@@ -117,17 +117,17 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="153"/>
         <source>Use clipboard extensions (X11 Selections, OS X Find Buffer) when it&apos;s supported</source>
-        <translation>Anv&auml;nd ut&ouml;kat urklipp n&auml;r det finns (Urval f&ouml;r X11, OS X Hitta Buffer)</translation>
+        <translation>Använd utökat urklipp när det finns (Urval för X11, OS X Hitta Buffer)</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="156"/>
         <source>Use Platform Specific Extensions (Advanced)</source>
-        <translation>Anv&auml;nd specifika ut&ouml;kningar (avancerat)</translation>
+        <translation>Använd specifika utökningar (avancerat)</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="103"/>
         <source>Useful for bigger text blocks copied for example from dummy terminals (minicom, etc.)</source>
-        <translation>Bra till st&ouml;rre textblock fr&aring;n exvis terminal (minicom etc)</translation>
+        <translation>Bra till större textblock från exvis terminal (minicom etc)</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="106"/>
@@ -157,7 +157,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="182"/>
         <source>Clear Items on Exit</source>
-        <translation>Rensa listan vid st&auml;ngning</translation>
+        <translation>Rensa listan vid stängning</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="189"/>
@@ -167,22 +167,22 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="218"/>
         <source>Sticky Items</source>
-        <translation>Fasta urklipp</translation>
+        <translation>Låsta urklipp</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="224"/>
         <source>Sticky items are unchanged, always on top snippets in the menu</source>
-        <translation>L&aring;sta urklipp &auml;r alltid p&aring; topp i menyn</translation>
+        <translation>Låsta urklipp är alltid på topp i menyn</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="247"/>
         <source>Add new item to the end of the list</source>
-        <translation>L&auml;gg till nytt i slutet p&aring; listan</translation>
+        <translation>Lägg till nytt i slutet på listan</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="250"/>
         <source>&amp;Add</source>
-        <translation>&amp;L&auml;gg till</translation>
+        <translation>&amp;Lägg till</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="257"/>
@@ -217,17 +217,17 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="309"/>
         <source>Network</source>
-        <translation>N&auml;tverk</translation>
+        <translation>Nätverk</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="315"/>
         <source>Send Content to Network</source>
-        <translation>Skicka till n&auml;tverket</translation>
+        <translation>Skicka till nätverket</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="322"/>
         <source>Receive Content from Network</source>
-        <translation>Ta emot fr&aring;n n&auml;tverket</translation>
+        <translation>Ta emot från nätverket</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="329"/>
@@ -242,17 +242,17 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="82"/>
         <source>Load icon from file...</source>
-        <translation>H&auml;mta ikon fr&aring;n fil...</translation>
+        <translation>Hämta ikon från fil...</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="83"/>
         <source>Use default icon</source>
-        <translation>Anv&auml;nd standardikon</translation>
+        <translation>Använd standardikon</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="130"/>
         <source>Select icon file</source>
-        <translation>V&auml;lj ikonfil</translation>
+        <translation>Välj ikonfil</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="132"/>
@@ -262,7 +262,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="136"/>
         <source>Select icon</source>
-        <translation>V&auml;lj ikon</translation>
+        <translation>Välj ikon</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="137"/>
@@ -278,7 +278,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="140"/>
         <source>Icon name:</source>
-        <translation>Namn p&aring; ikon:</translation>
+        <translation>Namn på ikon:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="141"/>
@@ -288,7 +288,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="156"/>
         <source>Add New Sticky Item</source>
-        <translation>L&auml;gg till nytt fast urklipp</translation>
+        <translation>Lägg till nytt låst urklipp</translation>
     </message>
 </context>
 <context>
@@ -296,12 +296,12 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="43"/>
         <source>C&amp;lear clipboard history</source>
-        <translation>&amp;T&ouml;m urklippshistorik</translation>
+        <translation>&amp;Töm urklippshistorik</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="45"/>
         <source>&amp;Configure...</source>
-        <translation>&amp;Inst&auml;llningar...</translation>
+        <translation>&amp;Inställningar...</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="48"/>
@@ -316,7 +316,7 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="57"/>
         <source>Qlipper - a clipboard history applet</source>
-        <translation>Qlipper - en app f&ouml;r urklippshistorik</translation>
+        <translation>Qlipper - en app för urklippshistorik</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="125"/>
@@ -342,7 +342,7 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="142"/>
         <source>Lightweight, cross-platform clipboard history applet.&lt;p&gt;(c)&amp;nbsp;2010-2016&amp;nbsp;Petr&amp;nbsp;Vanek&amp;nbsp;&amp;lt;petr@yarpen.cz&amp;gt;&lt;p&gt;&lt;a href=&quot;https://github.com/pvanek/qlipper/&quot;&gt;https://github.com/pvanek/qlipper/&lt;/a&gt;&lt;p&gt;Support for global keyboard shortcut: %1&lt;br&gt;Support for network clipboard sharing: %2</source>
-        <translation>L&auml;ttviktig app f&ouml;r urklippshistorik.&lt;p&gt;(c)&amp;nbsp;2010-2016&amp;nbsp;Petr&amp;nbsp;Vanek&amp;nbsp;&amp;lt;petr@yarpen.cz&amp;gt;&lt;p&gt;&lt;a href=&quot;https://github.com/pvanek/qlipper/&quot;&gt;https://github.com/pvanek/qlipper/&lt;/a&gt;&lt;p&gt;Support for global keyboard shortcut: %1&lt;br&gt;Support for network clipboard sharing: %2 </translation>
+        <translation>Lättviktig app för urklippshistorik.&lt;p&gt;(c)&amp;nbsp;2010-2016&amp;nbsp;Petr&amp;nbsp;Vanek&amp;nbsp;&amp;lt;petr@yarpen.cz&amp;gt;&lt;p&gt;&lt;a href=&quot;https://github.com/pvanek/qlipper/&quot;&gt;https://github.com/pvanek/qlipper/&lt;/a&gt;&lt;p&gt;Support for global keyboard shortcut: %1&lt;br&gt;Support for network clipboard sharing: %2 </translation>
     </message>
 </context>
 </TS>
