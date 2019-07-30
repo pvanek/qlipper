@@ -164,6 +164,7 @@ set (QLIPPER_TRANSLATIONS
     ts/qlipper_lt.ts
     ts/qlipper_pl.ts
     ts/qlipper_sr.ts
+    ts/qlipper_sv.ts
     ts/qlipper_it.ts
     ts/qlipper_zh_CN.ts
 )
