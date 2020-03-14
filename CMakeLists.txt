@@ -168,6 +168,7 @@ set (QLIPPER_TRANSLATIONS
     ts/qlipper_sv.ts
     ts/qlipper_it.ts
     ts/qlipper_zh_CN.ts
+    ts/qlipper_pt.ts
 )
 
 QT5_WRAP_UI( QLIPPER_UI ${QLIPPER_FORMS} )
