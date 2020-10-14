@@ -25,10 +25,14 @@
         <translation>选区</translation>
     </message>
     <message>
-        <location filename="../src/qlipperitem.cpp" line="240"/>
         <source>Find Bufer</source>
         <translatorcomment>Should be &quot;Buffer&quot; in English.</translatorcomment>
-        <translation>查找缓冲区</translation>
+        <translation type="vanished">查找缓冲区</translation>
+    </message>
+    <message>
+        <location filename="../src/qlipperitem.cpp" line="240"/>
+        <source>Find Buffer</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="247"/>
@@ -168,128 +172,133 @@
         <translation>将历史记录立即同步到存储</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="218"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="209"/>
+        <source>Confirm Clear History</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="225"/>
         <source>Sticky Items</source>
         <translation>固定条目</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="224"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="231"/>
         <source>Sticky items are unchanged, always on top snippets in the menu</source>
         <translation>固定条目固定不变, 并一直显示于菜单的最上方</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="247"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="254"/>
         <source>Add new item to the end of the list</source>
         <translation>添加新条目至列表底部</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="250"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="257"/>
         <source>&amp;Add</source>
         <translation>添加 (&amp;A)</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="257"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="264"/>
         <source>Remove current item</source>
         <translation>移除当前条目</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="260"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="267"/>
         <source>&amp;Remove</source>
         <translation>移除 (&amp;R)</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="267"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="274"/>
         <source>Move item up</source>
         <translation>向上移动条目</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="270"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="277"/>
         <source>&amp;Up</source>
         <translation>上移 (&amp;U)</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="277"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="284"/>
         <source>Move item down</source>
         <translation>向下移动条目</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="280"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="287"/>
         <source>&amp;Down</source>
         <translation>下移 (&amp;D)</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="309"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="316"/>
         <source>Network</source>
         <translation>网络</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="315"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="322"/>
         <source>Send Content to Network</source>
         <translation>将内容发送到网络</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="322"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="329"/>
         <source>Receive Content from Network</source>
         <translation>从网络接收内容</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="329"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="336"/>
         <source>Port:</source>
         <translation>端口:</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.cpp" line="81"/>
+        <location filename="../src/qlipperpreferencesdialog.cpp" line="82"/>
         <source>Icon selection</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.cpp" line="82"/>
+        <location filename="../src/qlipperpreferencesdialog.cpp" line="83"/>
         <source>Load icon from file...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.cpp" line="83"/>
+        <location filename="../src/qlipperpreferencesdialog.cpp" line="84"/>
         <source>Use default icon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.cpp" line="130"/>
+        <location filename="../src/qlipperpreferencesdialog.cpp" line="132"/>
         <source>Select icon file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.cpp" line="132"/>
+        <location filename="../src/qlipperpreferencesdialog.cpp" line="134"/>
         <source>Images (*.bmp *.jpg *.jpeg *.png *.svg *.tga)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.cpp" line="136"/>
+        <location filename="../src/qlipperpreferencesdialog.cpp" line="138"/>
         <source>Select icon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.cpp" line="137"/>
+        <location filename="../src/qlipperpreferencesdialog.cpp" line="139"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.cpp" line="139"/>
+        <location filename="../src/qlipperpreferencesdialog.cpp" line="141"/>
         <source>Look in:</source>
         <extracomment>Label to describe the folder for icon file selection dialog.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.cpp" line="140"/>
+        <location filename="../src/qlipperpreferencesdialog.cpp" line="142"/>
         <source>Icon name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.cpp" line="141"/>
+        <location filename="../src/qlipperpreferencesdialog.cpp" line="143"/>
         <source>Icon type:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.cpp" line="156"/>
+        <location filename="../src/qlipperpreferencesdialog.cpp" line="158"/>
         <source>Add New Sticky Item</source>
         <translation>添加新固定条目</translation>
     </message>
@@ -346,6 +355,16 @@
         <location filename="../src/qlippersystray.cpp" line="142"/>
         <source>Lightweight, cross-platform clipboard history applet.&lt;p&gt;(c)&amp;nbsp;2010-2016&amp;nbsp;Petr&amp;nbsp;Vanek&amp;nbsp;&amp;lt;petr@yarpen.cz&amp;gt;&lt;p&gt;&lt;a href=&quot;https://github.com/pvanek/qlipper/&quot;&gt;https://github.com/pvanek/qlipper/&lt;/a&gt;&lt;p&gt;Support for global keyboard shortcut: %1&lt;br&gt;Support for network clipboard sharing: %2</source>
         <translation>轻量级跨平台剪贴板历史记录小程序&lt;p&gt;(c)&amp;nbsp;2010-2016&amp;nbsp;Petr&amp;nbsp;Vanek&amp;nbsp;&amp;lt;petr@yarpen.cz&amp;gt;&lt;p&gt;&lt;a href=&quot;https://github.com/pvanek/qlipper/&quot;&gt;https://github.com/pvanek/qlipper/&lt;/a&gt;&lt;p&gt;全局快捷键支持: %1&lt;br&gt;网络剪贴板共享支持: %2</translation>
+    </message>
+    <message>
+        <location filename="../src/qlippersystray.cpp" line="170"/>
+        <source>Confirm</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qlippersystray.cpp" line="170"/>
+        <source>Are you sure that you want to clear your clipboard history?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

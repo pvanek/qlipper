@@ -24,9 +24,13 @@
         <translation>Selezione</translation>
     </message>
     <message>
-        <location filename="../src/qlipperitem.cpp" line="240"/>
         <source>Find Bufer</source>
-        <translation>Trova coso</translation>
+        <translation type="vanished">Trova coso</translation>
+    </message>
+    <message>
+        <location filename="../src/qlipperitem.cpp" line="240"/>
+        <source>Find Buffer</source>
+        <translation type="unfinished">Cerca Buffer</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="247"/>
@@ -165,128 +169,133 @@
         <translation>Salva cronologia immediatamente</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="218"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="209"/>
+        <source>Confirm Clear History</source>
+        <translation>Conferma cancellazione cronologia</translation>
+    </message>
+    <message>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="225"/>
         <source>Sticky Items</source>
         <translation>Voci permanenti</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="224"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="231"/>
         <source>Sticky items are unchanged, always on top snippets in the menu</source>
         <translation>Le voci permanenti rimangono invariati, sempre in cima nel menu</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="247"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="254"/>
         <source>Add new item to the end of the list</source>
         <translation>Aggiungi nuova voce in fondo alla lista</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="250"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="257"/>
         <source>&amp;Add</source>
         <translation>&amp;Aggiungi</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="257"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="264"/>
         <source>Remove current item</source>
         <translation>Rimuovi voce corrente</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="260"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="267"/>
         <source>&amp;Remove</source>
         <translation>&amp;Rimuovi</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="267"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="274"/>
         <source>Move item up</source>
         <translation>Sposta voce in su</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="270"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="277"/>
         <source>&amp;Up</source>
         <translation>&amp;Su</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="277"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="284"/>
         <source>Move item down</source>
         <translation>Sposta voce in giù</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="280"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="287"/>
         <source>&amp;Down</source>
         <translation>&amp;Giù</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="309"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="316"/>
         <source>Network</source>
         <translation>Rete</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="315"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="322"/>
         <source>Send Content to Network</source>
         <translation>Invia contenuto in rete</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="322"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="329"/>
         <source>Receive Content from Network</source>
         <translation>Ricevi contenuto dalla rete</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="329"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="336"/>
         <source>Port:</source>
         <translation>Porta:</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.cpp" line="81"/>
+        <location filename="../src/qlipperpreferencesdialog.cpp" line="82"/>
         <source>Icon selection</source>
         <translation>Seleziona icona</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.cpp" line="82"/>
+        <location filename="../src/qlipperpreferencesdialog.cpp" line="83"/>
         <source>Load icon from file...</source>
         <translation>Carica icona da file...</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.cpp" line="83"/>
+        <location filename="../src/qlipperpreferencesdialog.cpp" line="84"/>
         <source>Use default icon</source>
         <translation>Usa icona predefinita</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.cpp" line="130"/>
+        <location filename="../src/qlipperpreferencesdialog.cpp" line="132"/>
         <source>Select icon file</source>
         <translation>Seleziona file icona</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.cpp" line="132"/>
+        <location filename="../src/qlipperpreferencesdialog.cpp" line="134"/>
         <source>Images (*.bmp *.jpg *.jpeg *.png *.svg *.tga)</source>
         <translation>Immagini (*.bmp *.jpg *.jpeg *.png *.svg *.tga)</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.cpp" line="136"/>
+        <location filename="../src/qlipperpreferencesdialog.cpp" line="138"/>
         <source>Select icon</source>
         <translation>Seleziona icona</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.cpp" line="137"/>
+        <location filename="../src/qlipperpreferencesdialog.cpp" line="139"/>
         <source>Cancel</source>
         <translation>Cancella</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.cpp" line="139"/>
+        <location filename="../src/qlipperpreferencesdialog.cpp" line="141"/>
         <source>Look in:</source>
         <extracomment>Label to describe the folder for icon file selection dialog.</extracomment>
         <translation>Cerca in:</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.cpp" line="140"/>
+        <location filename="../src/qlipperpreferencesdialog.cpp" line="142"/>
         <source>Icon name:</source>
         <translation>Nome dell&apos;icona:</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.cpp" line="141"/>
+        <location filename="../src/qlipperpreferencesdialog.cpp" line="143"/>
         <source>Icon type:</source>
         <translation>Tipo dell&apos;icona:</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.cpp" line="156"/>
+        <location filename="../src/qlipperpreferencesdialog.cpp" line="158"/>
         <source>Add New Sticky Item</source>
         <translation>Aggiungi nuova voce permanente</translation>
     </message>
@@ -343,6 +352,16 @@
         <location filename="../src/qlippersystray.cpp" line="142"/>
         <source>Lightweight, cross-platform clipboard history applet.&lt;p&gt;(c)&amp;nbsp;2010-2016&amp;nbsp;Petr&amp;nbsp;Vanek&amp;nbsp;&amp;lt;petr@yarpen.cz&amp;gt;&lt;p&gt;&lt;a href=&quot;https://github.com/pvanek/qlipper/&quot;&gt;https://github.com/pvanek/qlipper/&lt;/a&gt;&lt;p&gt;Support for global keyboard shortcut: %1&lt;br&gt;Support for network clipboard sharing: %2</source>
         <translation></translation>
+    </message>
+    <message>
+        <location filename="../src/qlippersystray.cpp" line="170"/>
+        <source>Confirm</source>
+        <translation>Conferma</translation>
+    </message>
+    <message>
+        <location filename="../src/qlippersystray.cpp" line="170"/>
+        <source>Are you sure that you want to clear your clipboard history?</source>
+        <translation>Si è sicuro di voler cancellare la cronologia degli appunti?</translation>
     </message>
 </context>
 </TS>

@@ -24,9 +24,13 @@
         <translation>Markering</translation>
     </message>
     <message>
-        <location filename="../src/qlipperitem.cpp" line="240"/>
         <source>Find Bufer</source>
-        <translation>Find buffer</translation>
+        <translation type="vanished">Find buffer</translation>
+    </message>
+    <message>
+        <location filename="../src/qlipperitem.cpp" line="240"/>
+        <source>Find Buffer</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="247"/>
@@ -165,128 +169,133 @@
         <translation>Synkroniser historik til lager med det samme</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="218"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="209"/>
+        <source>Confirm Clear History</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="225"/>
         <source>Sticky Items</source>
         <translation>Fastgjorte punkter</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="224"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="231"/>
         <source>Sticky items are unchanged, always on top snippets in the menu</source>
         <translation>Fastgjorte punkter er uændrede, altid over snippets i menuen</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="247"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="254"/>
         <source>Add new item to the end of the list</source>
         <translation>Tilføj nyt punkt til slutningen af listen</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="250"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="257"/>
         <source>&amp;Add</source>
         <translation>&amp;Tilføj</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="257"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="264"/>
         <source>Remove current item</source>
         <translation>Fjern nuværende punkt</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="260"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="267"/>
         <source>&amp;Remove</source>
         <translation>&amp;Fjern</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="267"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="274"/>
         <source>Move item up</source>
         <translation>Flyt punkt op</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="270"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="277"/>
         <source>&amp;Up</source>
         <translation>&amp;Op</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="277"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="284"/>
         <source>Move item down</source>
         <translation>Flyt punkt ned</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="280"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="287"/>
         <source>&amp;Down</source>
         <translation>&amp;Ned</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="309"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="316"/>
         <source>Network</source>
         <translation>Netværk</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="315"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="322"/>
         <source>Send Content to Network</source>
         <translation>Send indhold til netværk</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="322"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="329"/>
         <source>Receive Content from Network</source>
         <translation>Modtag indhold fra netværk</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="329"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="336"/>
         <source>Port:</source>
         <translation>Port:</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.cpp" line="81"/>
+        <location filename="../src/qlipperpreferencesdialog.cpp" line="82"/>
         <source>Icon selection</source>
         <translation>Valg af ikon</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.cpp" line="82"/>
+        <location filename="../src/qlipperpreferencesdialog.cpp" line="83"/>
         <source>Load icon from file...</source>
         <translation>Indlæs ikon fra fil...</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.cpp" line="83"/>
+        <location filename="../src/qlipperpreferencesdialog.cpp" line="84"/>
         <source>Use default icon</source>
         <translation>Brug standardikon</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.cpp" line="130"/>
+        <location filename="../src/qlipperpreferencesdialog.cpp" line="132"/>
         <source>Select icon file</source>
         <translation>Vælg ikonfil</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.cpp" line="132"/>
+        <location filename="../src/qlipperpreferencesdialog.cpp" line="134"/>
         <source>Images (*.bmp *.jpg *.jpeg *.png *.svg *.tga)</source>
         <translation>Billeder (*.bmp *.jpg *.jpeg *.png *.svg *.tga)</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.cpp" line="136"/>
+        <location filename="../src/qlipperpreferencesdialog.cpp" line="138"/>
         <source>Select icon</source>
         <translation>Vælg ikon</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.cpp" line="137"/>
+        <location filename="../src/qlipperpreferencesdialog.cpp" line="139"/>
         <source>Cancel</source>
         <translation>Annuller</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.cpp" line="139"/>
+        <location filename="../src/qlipperpreferencesdialog.cpp" line="141"/>
         <source>Look in:</source>
         <extracomment>Label to describe the folder for icon file selection dialog.</extracomment>
         <translation>Kig i:</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.cpp" line="140"/>
+        <location filename="../src/qlipperpreferencesdialog.cpp" line="142"/>
         <source>Icon name:</source>
         <translation>Ikonnavn:</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.cpp" line="141"/>
+        <location filename="../src/qlipperpreferencesdialog.cpp" line="143"/>
         <source>Icon type:</source>
         <translation>Ikontype:</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.cpp" line="156"/>
+        <location filename="../src/qlipperpreferencesdialog.cpp" line="158"/>
         <source>Add New Sticky Item</source>
         <translation>Tilføj nyt fastgjort punkt</translation>
     </message>
@@ -343,6 +352,16 @@
         <location filename="../src/qlippersystray.cpp" line="142"/>
         <source>Lightweight, cross-platform clipboard history applet.&lt;p&gt;(c)&amp;nbsp;2010-2016&amp;nbsp;Petr&amp;nbsp;Vanek&amp;nbsp;&amp;lt;petr@yarpen.cz&amp;gt;&lt;p&gt;&lt;a href=&quot;https://github.com/pvanek/qlipper/&quot;&gt;https://github.com/pvanek/qlipper/&lt;/a&gt;&lt;p&gt;Support for global keyboard shortcut: %1&lt;br&gt;Support for network clipboard sharing: %2</source>
         <translation>Letvægts, platformsuafhængig udklipsholderhistorik-applet.&lt;p&gt;(c)&amp;nbsp;2010-2016&amp;nbsp;Petr&amp;nbsp;Vanek&amp;nbsp;&amp;lt;petr@yarpen.cz&amp;gt;&lt;p&gt;&lt;a href=&quot;https://github.com/pvanek/qlipper/&quot;&gt;https://github.com/pvanek/qlipper/&lt;/a&gt;&lt;p&gt;Understøttelse af globale tastaturgenveje: %1&lt;br&gt;Understøttelse af netværkdeling for udklipsholder: %2</translation>
+    </message>
+    <message>
+        <location filename="../src/qlippersystray.cpp" line="170"/>
+        <source>Confirm</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qlippersystray.cpp" line="170"/>
+        <source>Are you sure that you want to clear your clipboard history?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

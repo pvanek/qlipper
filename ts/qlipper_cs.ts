@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="180"/>
         <source>Url: %1</source>
-        <translation></translation>
+        <translation>URL: %1</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="182"/>
@@ -16,32 +16,36 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="234"/>
         <source>Clipboard</source>
-        <translation>Clipboard</translation>
+        <translation>Schránka</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="237"/>
         <source>Selection</source>
-        <translation>Selection</translation>
+        <translation>Výběr</translation>
+    </message>
+    <message>
+        <source>Find Bufer</source>
+        <translation type="vanished">Vyrovnávací paměť hledání</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="240"/>
-        <source>Find Bufer</source>
-        <translation>Find Buffer</translation>
+        <source>Find Buffer</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="247"/>
         <source>Plain Text</source>
-        <translation>Čistý Text</translation>
+        <translation>Čistý text</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="250"/>
         <source>Rich Text</source>
-        <translation>Formátovaný Text</translation>
+        <translation>Formátovaný text</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="253"/>
         <source>Binary Content</source>
-        <translation>Binární Obsah</translation>
+        <translation>Binární obsah</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="256"/>
@@ -51,7 +55,7 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="259"/>
         <source>Sticky Item (Plain Text)</source>
-        <translation>Permanentní Položka (Čistý Text)</translation>
+        <translation>Permanentní položka (čistý Text)</translation>
     </message>
 </context>
 <context>
@@ -59,7 +63,7 @@
     <message>
         <location filename="../src/qlippermodel.cpp" line="213"/>
         <source>Welcome to the Qlipper clipboard history applet</source>
-        <translation>Vítá Vás Qlipper, správce systémové schránky</translation>
+        <translation>Vítá vás Qlipper, správce systémové schránky</translation>
     </message>
 </context>
 <context>
@@ -92,7 +96,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="55"/>
         <source>The maximum count of dynamic items in the menu</source>
-        <translation>Maximální počet dynamických položek v menu</translation>
+        <translation>Největší počet dynamických položek v nabídce</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="61"/>
@@ -102,7 +106,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="77"/>
         <source>Maximum Display Size:</source>
-        <translation>Maximální Velikost Zobrazení:</translation>
+        <translation>Největší velikost zobrazení:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="84"/>
@@ -122,7 +126,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="156"/>
         <source>Use Platform Specific Extensions (Advanced)</source>
-        <translation>Použit Platformově Závislá Rozšíření (Pokročilé)</translation>
+        <translation>Použit systémově závislá rozšíření (pokročilé)</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="103"/>
@@ -137,158 +141,163 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="127"/>
         <source>Tray icon image:</source>
-        <translation type="unfinished"></translation>
+        <translation>Obrázek ikony v oznamovací oblasti panelu:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="164"/>
         <source>No synchronization of clipboard &amp; PSE</source>
-        <translation type="unfinished"></translation>
+        <translation>Žádná synchronizace schránky s PSE</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="169"/>
         <source>Synchronize clipboard &amp; PSE when item selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Synchronizovat schránku a PSE při vybrání pooložky</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="174"/>
         <source>Synchronize clipboard &amp; PSE instantly</source>
-        <translation type="unfinished"></translation>
+        <translation>Synchronizovat schránku a PSE okamžitě</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="182"/>
         <source>Clear Items on Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyprázdnit položky při ukončení</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="189"/>
         <source>Synchronize history to storage instantly</source>
+        <translation>Synchronizovat historii s úložištěm okamžitě</translation>
+    </message>
+    <message>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="209"/>
+        <source>Confirm Clear History</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="218"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="225"/>
         <source>Sticky Items</source>
-        <translation>Permanentní Položky</translation>
+        <translation>Trvalé položky</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="224"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="231"/>
         <source>Sticky items are unchanged, always on top snippets in the menu</source>
         <translation>Permanentní položky se nemění, stále se budou nacházet na vrcholu menu</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="247"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="254"/>
         <source>Add new item to the end of the list</source>
         <translation>Přidat novou položku na konec seznamu</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="250"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="257"/>
         <source>&amp;Add</source>
         <translation>Přid&amp;at</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="257"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="264"/>
         <source>Remove current item</source>
         <translation>Smazat vybranou položku</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="260"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="267"/>
         <source>&amp;Remove</source>
         <translation>S&amp;mazat</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="267"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="274"/>
         <source>Move item up</source>
         <translation>Posunout nahoru</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="270"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="277"/>
         <source>&amp;Up</source>
         <translation>&amp;Nahoru</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="277"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="284"/>
         <source>Move item down</source>
-        <translation>Posunout dolu</translation>
+        <translation>Posunout dolů</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="280"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="287"/>
         <source>&amp;Down</source>
         <translation>&amp;Dolů</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="309"/>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="316"/>
         <source>Network</source>
         <translation>Síť</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.ui" line="315"/>
-        <source>Send Content to Network</source>
-        <translation>Odeslat Obsah po Síti</translation>
-    </message>
-    <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="322"/>
-        <source>Receive Content from Network</source>
-        <translation>Přijmout Obsah ze Sítě</translation>
+        <source>Send Content to Network</source>
+        <translation>Odeslat obsah po síti</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="329"/>
-        <source>Port:</source>
-        <translation></translation>
+        <source>Receive Content from Network</source>
+        <translation>Přijmout obsah ze sítě</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.cpp" line="81"/>
-        <source>Icon selection</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/qlipperpreferencesdialog.ui" line="336"/>
+        <source>Port:</source>
+        <translation>Přípojka:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="82"/>
-        <source>Load icon from file...</source>
-        <translation type="unfinished"></translation>
+        <source>Icon selection</source>
+        <translation>Výběr ikony</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="83"/>
-        <source>Use default icon</source>
-        <translation type="unfinished"></translation>
+        <source>Load icon from file...</source>
+        <translation>Nahrát ikonu ze souboru...</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.cpp" line="130"/>
-        <source>Select icon file</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/qlipperpreferencesdialog.cpp" line="84"/>
+        <source>Use default icon</source>
+        <translation>Použít výchozí ikonu</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="132"/>
+        <source>Select icon file</source>
+        <translation>Vybrat soubor s ikonou</translation>
+    </message>
+    <message>
+        <location filename="../src/qlipperpreferencesdialog.cpp" line="134"/>
         <source>Images (*.bmp *.jpg *.jpeg *.png *.svg *.tga)</source>
-        <translation type="unfinished"></translation>
+        <translation>Obrázky (*.bmp *.jpg *.jpeg *.png *.svg *.tga)</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.cpp" line="136"/>
+        <location filename="../src/qlipperpreferencesdialog.cpp" line="138"/>
         <source>Select icon</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/qlipperpreferencesdialog.cpp" line="137"/>
-        <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Vybrat ikonu</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="139"/>
-        <source>Look in:</source>
-        <extracomment>Label to describe the folder for icon file selection dialog.</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/qlipperpreferencesdialog.cpp" line="140"/>
-        <source>Icon name:</source>
-        <translation type="unfinished"></translation>
+        <source>Cancel</source>
+        <translation>Zrušit</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="141"/>
-        <source>Icon type:</source>
-        <translation type="unfinished"></translation>
+        <source>Look in:</source>
+        <extracomment>Label to describe the folder for icon file selection dialog.</extracomment>
+        <translation>Podívejte se do:</translation>
     </message>
     <message>
-        <location filename="../src/qlipperpreferencesdialog.cpp" line="156"/>
+        <location filename="../src/qlipperpreferencesdialog.cpp" line="142"/>
+        <source>Icon name:</source>
+        <translation>Název ikony:</translation>
+    </message>
+    <message>
+        <location filename="../src/qlipperpreferencesdialog.cpp" line="143"/>
+        <source>Icon type:</source>
+        <translation>Typ ikony:</translation>
+    </message>
+    <message>
+        <location filename="../src/qlipperpreferencesdialog.cpp" line="158"/>
         <source>Add New Sticky Item</source>
-        <translation>Přidat Novou Permanentní Položku</translation>
+        <translation>Přidat novou trvalou položku</translation>
     </message>
 </context>
 <context>
@@ -296,22 +305,22 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="43"/>
         <source>C&amp;lear clipboard history</source>
-        <translation type="unfinished">&amp;Smazat historii</translation>
+        <translation>&amp;Smazat historii schránky</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="45"/>
         <source>&amp;Configure...</source>
-        <translation type="unfinished">&amp;Nastavení...</translation>
+        <translation>&amp;Nastavit...</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="48"/>
         <source>&amp;About Qlipper...</source>
-        <translation type="unfinished">&amp;O Programu...</translation>
+        <translation>&amp;O programu...</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="50"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished">&amp;Konec</translation>
+        <translation>&amp;Ukončit</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="57"/>
@@ -342,6 +351,16 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="142"/>
         <source>Lightweight, cross-platform clipboard history applet.&lt;p&gt;(c)&amp;nbsp;2010-2016&amp;nbsp;Petr&amp;nbsp;Vanek&amp;nbsp;&amp;lt;petr@yarpen.cz&amp;gt;&lt;p&gt;&lt;a href=&quot;https://github.com/pvanek/qlipper/&quot;&gt;https://github.com/pvanek/qlipper/&lt;/a&gt;&lt;p&gt;Support for global keyboard shortcut: %1&lt;br&gt;Support for network clipboard sharing: %2</source>
+        <translation>Lehký, vícesystémový program pro práci s historií schránky.&lt;p&gt;(c)&amp;nbsp;2010-2016&amp;nbsp;Petr&amp;nbsp;Vanek&amp;nbsp;&amp;lt;petr@yarpen.cz&amp;gt;&lt;p&gt;&lt;a href=&quot;https://github.com/pvanek/qlipper/&quot;&gt;https://github.com/pvanek/qlipper/&lt;/a&gt;&lt;p&gt;Podpora pro celkové klávesové zkratky: %1&lt;br&gt;Podpora pro síťové sdílení schránky: %2</translation>
+    </message>
+    <message>
+        <location filename="../src/qlippersystray.cpp" line="170"/>
+        <source>Confirm</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qlippersystray.cpp" line="170"/>
+        <source>Are you sure that you want to clear your clipboard history?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
