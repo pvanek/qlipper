@@ -30,12 +30,12 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="240"/>
         <source>Find Buffer</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyrovnávací paměť hledání</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="247"/>
         <source>Plain Text</source>
-        <translation>Čistý text</translation>
+        <translation>Prostý text</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="250"/>
@@ -91,7 +91,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="48"/>
         <source>Clipboard Entries Count:</source>
-        <translation>Počet Položek Schránky:</translation>
+        <translation>Počet položek schránky:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="55"/>
@@ -171,7 +171,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="209"/>
         <source>Confirm Clear History</source>
-        <translation type="unfinished"></translation>
+        <translation>Potvrdit vyprázdnění historie</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="225"/>
@@ -181,7 +181,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="231"/>
         <source>Sticky items are unchanged, always on top snippets in the menu</source>
-        <translation>Permanentní položky se nemění, stále se budou nacházet na vrcholu menu</translation>
+        <translation>Permanentní položky se nemění, stále se budou nacházet na vrcholu nabídky</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="254"/>
@@ -356,12 +356,12 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="170"/>
         <source>Confirm</source>
-        <translation type="unfinished"></translation>
+        <translation>Potvrdit</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="170"/>
         <source>Are you sure that you want to clear your clipboard history?</source>
-        <translation type="unfinished"></translation>
+        <translation>Opravdu chcete vyprázdnit historii schránky?</translation>
     </message>
 </context>
 </TS>
