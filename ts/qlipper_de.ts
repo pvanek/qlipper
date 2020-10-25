@@ -12,17 +12,17 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="182"/>
         <source>Binary: %1</source>
-        <translation>binäres Objekt: %1</translation>
+        <translation>Binäres Objekt: %1</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="234"/>
         <source>Clipboard</source>
-        <translation>Clipboard</translation>
+        <translation>Zwischenablage</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="237"/>
         <source>Selection</source>
-        <translation>Selection</translation>
+        <translation>Auswahl</translation>
     </message>
     <message>
         <source>Find Bufer</source>
@@ -37,7 +37,7 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="247"/>
         <source>Plain Text</source>
-        <translation>einfacher Text</translation>
+        <translation>Klartext</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="250"/>
@@ -47,7 +47,7 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="253"/>
         <source>Binary Content</source>
-        <translation>binärer Inhalt</translation>
+        <translation>Binärer Inhalt</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="256"/>
@@ -66,7 +66,7 @@
         <location filename="../src/qlippermodel.cpp" line="213"/>
         <source>Welcome to the Qlipper clipboard history applet</source>
         <translatorcomment>Translation is cropped, but full text doesn&apos;t get displayed in the list most of the time anyway.</translatorcomment>
-        <translation>Willkommen zu Qlipper</translation>
+        <translation>Willkommen beim Qlipper-Zwischenablagenverlauf-Applet</translation>
     </message>
 </context>
 <context>
@@ -74,7 +74,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="14"/>
         <source>Qlipper Preferences</source>
-        <translation>Qlipper Konfiguration</translation>
+        <translation>Qlipper-Einstellungen</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="42"/>
@@ -94,7 +94,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="48"/>
         <source>Clipboard Entries Count:</source>
-        <translation>Anzahl Listeneinträge:</translation>
+        <translation>Anzahl der Einträge in der Zwischenablage:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="55"/>
@@ -164,17 +164,17 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="182"/>
         <source>Clear Items on Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Elemente beim Beenden löschen</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="189"/>
         <source>Synchronize history to storage instantly</source>
-        <translation type="unfinished"></translation>
+        <translation>Verlauf sofort mit dem Speicher synchronisieren</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="209"/>
         <source>Confirm Clear History</source>
-        <translation type="unfinished"></translation>
+        <translation>Löschen des Verlaufs bestätigen</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="225"/>
@@ -249,58 +249,58 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="82"/>
         <source>Icon selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Symbolauswahl</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="83"/>
         <source>Load icon from file...</source>
-        <translation type="unfinished"></translation>
+        <translation>Symbol aus Datei laden...</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="84"/>
         <source>Use default icon</source>
-        <translation type="unfinished"></translation>
+        <translation>Standardsymbol verwenden</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="132"/>
         <source>Select icon file</source>
-        <translation type="unfinished"></translation>
+        <translation>Symboldatei auswählen</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="134"/>
         <source>Images (*.bmp *.jpg *.jpeg *.png *.svg *.tga)</source>
-        <translation type="unfinished"></translation>
+        <translation>Bilder (*.bmp *.jpg *.jpeg *.png *.svg *.tga)</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="138"/>
         <source>Select icon</source>
-        <translation type="unfinished"></translation>
+        <translation>Symbol auswählen</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="139"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Abbrechen</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="141"/>
         <source>Look in:</source>
         <extracomment>Label to describe the folder for icon file selection dialog.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Nachsehen in:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="142"/>
         <source>Icon name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Symbolname:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="143"/>
         <source>Icon type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Symboltyp:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="158"/>
         <source>Add New Sticky Item</source>
-        <translation>Haftnotiz hinzufügen</translation>
+        <translation>Neue Haftnotiz hinzufügen</translation>
     </message>
 </context>
 <context>
@@ -308,27 +308,27 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="43"/>
         <source>C&amp;lear clipboard history</source>
-        <translation type="unfinished">Speicher &amp;löschen</translation>
+        <translation>Zwischenablagenverlauf &amp;löschen</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="45"/>
         <source>&amp;Configure...</source>
-        <translation type="unfinished">&amp;Konfiguration...</translation>
+        <translation>&amp;Konfigurieren...</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="48"/>
         <source>&amp;About Qlipper...</source>
-        <translation type="unfinished">&amp;Über Qlipper...</translation>
+        <translation>&amp;Über Qlipper...</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="50"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished">&amp;Beenden</translation>
+        <translation>&amp;Beenden</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="57"/>
         <source>Qlipper - a clipboard history applet</source>
-        <translation>Qlipper - eine Anwendung zur Handhabung der Zwischenablage</translation>
+        <translation>Qlipper - ein Zwischenablagenverlaufs-Applet</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="125"/>
@@ -354,17 +354,17 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="142"/>
         <source>Lightweight, cross-platform clipboard history applet.&lt;p&gt;(c)&amp;nbsp;2010-2016&amp;nbsp;Petr&amp;nbsp;Vanek&amp;nbsp;&amp;lt;petr@yarpen.cz&amp;gt;&lt;p&gt;&lt;a href=&quot;https://github.com/pvanek/qlipper/&quot;&gt;https://github.com/pvanek/qlipper/&lt;/a&gt;&lt;p&gt;Support for global keyboard shortcut: %1&lt;br&gt;Support for network clipboard sharing: %2</source>
-        <translation>Ressourcenschonende, plattformübergreifend einsetzbare Anwendung zur Handhabung der Zwischenablage.&lt;p&gt;(c)&amp;nbsp;2010-2016&amp;nbsp;Petr&amp;nbsp;Vanek&amp;nbsp;&amp;lt;petr@yarpen.cz&amp;gt;&lt;p&gt;&lt;a href=&quot;https://github.com/pvanek/qlipper/&quot;&gt;https://github.com/pvanek/qlipper/&lt;/a&gt;&lt;p&gt;Tastenkürzel unterstützt: %1&lt;br&gt;Austausch der Zwischenablage via Netzwerk unterstützt: %2</translation>
+        <translation>Leichtgewichtiges, plattformübergreifendes Zwischenablagenverlaufs-Applet&lt;p&gt;(c)&amp;nbsp;2010-2016&amp;nbsp;Petr&amp;nbsp;Vanek&amp;nbsp;&amp;lt;petr@yarpen.cz&amp;gt;&lt;p&gt;&lt;a href=&quot;https://github.com/pvanek/qlipper/&quot;&gt;https://github.com/pvanek/qlipper/&lt;/a&gt;&lt;p&gt;Tastenkürzel unterstützt: %1&lt;br&gt;Austausch der Zwischenablage via Netzwerk unterstützt: %2</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="170"/>
         <source>Confirm</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestätigen</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="170"/>
         <source>Are you sure that you want to clear your clipboard history?</source>
-        <translation type="unfinished"></translation>
+        <translation>Sind Sie sicher, dass Sie Ihren Zwischenablageverlauf löschen möchten?</translation>
     </message>
 </context>
 </TS>
