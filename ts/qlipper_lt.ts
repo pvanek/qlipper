@@ -361,7 +361,7 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="170"/>
         <source>Are you sure that you want to clear your clipboard history?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ar tikrai norite išvalyti iškarpinės istoriją?</translation>
     </message>
 </context>
 </TS>
