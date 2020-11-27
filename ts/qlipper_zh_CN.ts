@@ -32,7 +32,7 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="240"/>
         <source>Find Buffer</source>
-        <translation type="unfinished"></translation>
+        <translation>查找缓冲区</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="247"/>
@@ -124,7 +124,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="127"/>
         <source>Tray icon image:</source>
-        <translation type="unfinished"></translation>
+        <translation>托盘图标图像：</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="153"/>
@@ -149,17 +149,17 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="164"/>
         <source>No synchronization of clipboard &amp; PSE</source>
-        <translation type="unfinished"></translation>
+        <translation>不要同步剪贴板和 PSE</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="169"/>
         <source>Synchronize clipboard &amp; PSE when item selected</source>
-        <translation type="unfinished"></translation>
+        <translation>当项目被选中时同步剪贴板和 PSE</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="174"/>
         <source>Synchronize clipboard &amp; PSE instantly</source>
-        <translation type="unfinished"></translation>
+        <translation>立即同步剪贴板和 PSE</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="182"/>
@@ -174,7 +174,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="209"/>
         <source>Confirm Clear History</source>
-        <translation type="unfinished"></translation>
+        <translation>确认清除历史记录</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="225"/>
@@ -249,53 +249,53 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="82"/>
         <source>Icon selection</source>
-        <translation type="unfinished"></translation>
+        <translation>图标选择</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="83"/>
         <source>Load icon from file...</source>
-        <translation type="unfinished"></translation>
+        <translation>从文件加载图标...</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="84"/>
         <source>Use default icon</source>
-        <translation type="unfinished"></translation>
+        <translation>使用默认图标</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="132"/>
         <source>Select icon file</source>
-        <translation type="unfinished"></translation>
+        <translation>选择图标文件</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="134"/>
         <source>Images (*.bmp *.jpg *.jpeg *.png *.svg *.tga)</source>
-        <translation type="unfinished"></translation>
+        <translation>图像 (*.bmp *.jpg *.jpeg *.png *.svg *.tga)</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="138"/>
         <source>Select icon</source>
-        <translation type="unfinished"></translation>
+        <translation>选择图标</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="139"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="141"/>
         <source>Look in:</source>
         <extracomment>Label to describe the folder for icon file selection dialog.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">浏览：</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="142"/>
         <source>Icon name:</source>
-        <translation type="unfinished"></translation>
+        <translation>图标名称：</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="143"/>
         <source>Icon type:</source>
-        <translation type="unfinished"></translation>
+        <translation>图标类型：</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="158"/>
@@ -308,22 +308,22 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="43"/>
         <source>C&amp;lear clipboard history</source>
-        <translation type="unfinished">清除剪贴板历史记录 (&amp;L)</translation>
+        <translation>清除剪贴板历史记录 (&amp;L)</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="45"/>
         <source>&amp;Configure...</source>
-        <translation type="unfinished">配置 (&amp;C) ...</translation>
+        <translation>配置 (&amp;C) ...</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="48"/>
         <source>&amp;About Qlipper...</source>
-        <translation type="unfinished">关于 Qlipper (&amp;A) ...</translation>
+        <translation>关于 Qlipper (&amp;A) ...</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="50"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished">退出 (&amp;Q)</translation>
+        <translation>退出 (&amp;Q)</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="57"/>
@@ -359,12 +359,12 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="170"/>
         <source>Confirm</source>
-        <translation type="unfinished"></translation>
+        <translation>确定</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="170"/>
         <source>Are you sure that you want to clear your clipboard history?</source>
-        <translation type="unfinished"></translation>
+        <translation>您确定要清除剪贴板历史记录吗？</translation>
     </message>
 </context>
 </TS>
