@@ -6,22 +6,22 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="180"/>
         <source>Url: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Url: %1</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="182"/>
         <source>Binary: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Bináris: %1</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="234"/>
         <source>Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Vágólap</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="237"/>
         <source>Selection</source>
-        <translation type="unfinished"></translation>
+        <translation>kiválasztás</translation>
     </message>
     <message>
         <source>Find Bufer</source>
@@ -35,12 +35,12 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="247"/>
         <source>Plain Text</source>
-        <translation type="unfinished"></translation>
+        <translation>Egyszerű szöveg</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="250"/>
         <source>Rich Text</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Formázott szöveg</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="253"/>
@@ -50,7 +50,7 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="256"/>
         <source>URL</source>
-        <translation type="unfinished"></translation>
+        <translation>URL</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="259"/>
@@ -63,7 +63,7 @@
     <message>
         <location filename="../src/qlippermodel.cpp" line="213"/>
         <source>Welcome to the Qlipper clipboard history applet</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Üdvözöljük a Qlipper vágólap előzménykezelő kisalkalmazásban</translation>
     </message>
 </context>
 <context>
@@ -71,17 +71,17 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="14"/>
         <source>Qlipper Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Qlipper beállítások</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="42"/>
         <source>Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Beállítások</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="113"/>
         <source>Keyboard Shortcut:</source>
-        <translation type="unfinished"></translation>
+        <translation>Gyorsbillentyű:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="120"/>
@@ -91,42 +91,42 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="48"/>
         <source>Clipboard Entries Count:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vágólap elemszáma:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="55"/>
         <source>The maximum count of dynamic items in the menu</source>
-        <translation type="unfinished"></translation>
+        <translation>A menüben megjelenő dinamikus elemek maximális száma</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="61"/>
         <source> entries</source>
-        <translation type="unfinished"></translation>
+        <translation> elem</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="77"/>
         <source>Maximum Display Size:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Maximális megjelenítési méret</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="84"/>
         <source>How long is the preview text in the menu</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Milyen hosszú az előnézet szövege a menüben</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="90"/>
         <source> characters</source>
-        <translation type="unfinished"></translation>
+        <translation> karakter</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="153"/>
         <source>Use clipboard extensions (X11 Selections, OS X Find Buffer) when it&apos;s supported</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vágólapkiterjesztések használata (X11 Kiválasztás, OS X keresés puffer), ha támogatott</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="156"/>
         <source>Use Platform Specific Extensions (Advanced)</source>
-        <translation type="unfinished"></translation>
+        <translation>Platformspecifikus kiterjesztések használata ( haladó)</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="103"/>
@@ -141,7 +141,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="127"/>
         <source>Tray icon image:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tálcaikon:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="164"/>
@@ -161,7 +161,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="182"/>
         <source>Clear Items on Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Elemet törlése bezáráskor</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="189"/>
@@ -171,7 +171,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="209"/>
         <source>Confirm Clear History</source>
-        <translation type="unfinished"></translation>
+        <translation>Előzmények törlésének megerősítése</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="225"/>
@@ -191,7 +191,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="257"/>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;hozzáadás</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="264"/>
@@ -201,7 +201,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="267"/>
         <source>&amp;Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Eltávolítás</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="274"/>
@@ -211,7 +211,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="277"/>
         <source>&amp;Up</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Fel</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="284"/>
@@ -221,27 +221,27 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="287"/>
         <source>&amp;Down</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Le</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="316"/>
         <source>Network</source>
-        <translation type="unfinished"></translation>
+        <translation>Hálózat</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="322"/>
         <source>Send Content to Network</source>
-        <translation type="unfinished"></translation>
+        <translation>Tartalom küldése hálózatra</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="329"/>
         <source>Receive Content from Network</source>
-        <translation type="unfinished"></translation>
+        <translation>Tartalom fogadása hálózatról</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="336"/>
         <source>Port:</source>
-        <translation type="unfinished"></translation>
+        <translation>Port:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="82"/>
@@ -266,33 +266,33 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="134"/>
         <source>Images (*.bmp *.jpg *.jpeg *.png *.svg *.tga)</source>
-        <translation type="unfinished"></translation>
+        <translation>Képek (*.bmp *.jpg *.jpeg *.png *.svg *.tga)</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="138"/>
         <source>Select icon</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikon kiválasztása</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="139"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Mégse</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="141"/>
         <source>Look in:</source>
         <extracomment>Label to describe the folder for icon file selection dialog.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Kiválasztás innen:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="142"/>
         <source>Icon name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikonnév:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="143"/>
         <source>Icon type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikontípus:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="158"/>
@@ -310,43 +310,43 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="45"/>
         <source>&amp;Configure...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Beállítás...</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="48"/>
         <source>&amp;About Qlipper...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Qlipper névjegye...</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="50"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Kilépés</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="57"/>
         <source>Qlipper - a clipboard history applet</source>
-        <translation type="unfinished"></translation>
+        <translation>Qlipper - vágólap előzménykezelő kisalkalmazás</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="125"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation>Igen</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="127"/>
         <location filename="../src/qlippersystray.cpp" line="133"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation>Nem</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="131"/>
         <source>Yes (experimental)</source>
-        <translation type="unfinished"></translation>
+        <translation>Igen (kísérleti)</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="140"/>
         <source>About Qlipper</source>
-        <translation type="unfinished"></translation>
+        <translation>A Qlipper névjegye</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="142"/>
@@ -356,12 +356,12 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="170"/>
         <source>Confirm</source>
-        <translation type="unfinished"></translation>
+        <translation>Megerősítés</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="170"/>
         <source>Are you sure that you want to clear your clipboard history?</source>
-        <translation type="unfinished"></translation>
+        <translation>Biztosan törölni akarja a vágólapelőzményeket?</translation>
     </message>
 </context>
 </TS>
