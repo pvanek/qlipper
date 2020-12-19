@@ -337,7 +337,7 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="131"/>
         <source>Yes (experimental)</source>
-        <translation>はい (試験的)</translation>
+        <translation>はい (実験用)</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="140"/>
