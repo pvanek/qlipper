@@ -313,7 +313,7 @@
        </rect>
       </property>
       <attribute name="label">
-       <string>Network</string>
+       <string>Network (Experimental)</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_4">
        <item row="0" column="0" colspan="2">
