@@ -6,12 +6,12 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="180"/>
         <source>Url: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>URL : %1</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="182"/>
         <source>Binary: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Binari : %1</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="234"/>
@@ -21,7 +21,7 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="237"/>
         <source>Selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccion</translation>
     </message>
     <message>
         <source>Find Bufer</source>
@@ -35,22 +35,22 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="247"/>
         <source>Plain Text</source>
-        <translation type="unfinished"></translation>
+        <translation>Tèxt brut</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="250"/>
         <source>Rich Text</source>
-        <translation type="unfinished"></translation>
+        <translation>Tèxt enriquit</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="253"/>
         <source>Binary Content</source>
-        <translation type="unfinished"></translation>
+        <translation>Contengut binari</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="256"/>
         <source>URL</source>
-        <translation type="unfinished"></translation>
+        <translation>URL</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="259"/>
@@ -76,7 +76,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="42"/>
         <source>Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Preferéncias</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="113"/>
