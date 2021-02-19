@@ -16,7 +16,7 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="234"/>
         <source>Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Quichapapièrs</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="237"/>
@@ -71,7 +71,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="14"/>
         <source>Qlipper Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Preferéncias de Qlipper</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="42"/>
@@ -81,7 +81,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="113"/>
         <source>Keyboard Shortcut:</source>
-        <translation type="unfinished"></translation>
+        <translation>Acorchis clavièr :</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="120"/>
@@ -101,7 +101,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="61"/>
         <source> entries</source>
-        <translation type="unfinished"></translation>
+        <translation> entradas</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="77"/>
