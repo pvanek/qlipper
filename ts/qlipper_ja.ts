@@ -182,7 +182,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="254"/>
         <source>Add new item to the end of the list</source>
-        <translation>リストの最後に新しいアイテムを追加します</translation>
+        <translation>新しいアイテムをリストの最後に追加します</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="257"/>
@@ -227,12 +227,12 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="322"/>
         <source>Send Content to Network</source>
-        <translation>ネットワークへ内容を送信する</translation>
+        <translation>内容をネットワークへ送信する</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="329"/>
         <source>Receive Content from Network</source>
-        <translation>ネットワークから内容を受信する</translation>
+        <translation>内容をネットワークから受信する</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="336"/>
