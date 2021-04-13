@@ -30,7 +30,7 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="240"/>
         <source>Find Buffer</source>
-        <translation type="unfinished"></translation>
+        <translation>Trobar una restanca</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="247"/>
@@ -55,7 +55,7 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="259"/>
         <source>Sticky Item (Plain Text)</source>
-        <translation type="unfinished"></translation>
+        <translation>Element permanent (tèxt brut)</translation>
     </message>
 </context>
 <context>
@@ -63,7 +63,7 @@
     <message>
         <location filename="../src/qlippermodel.cpp" line="213"/>
         <source>Welcome to the Qlipper clipboard history applet</source>
-        <translation type="unfinished"></translation>
+        <translation>La benvenguda a l’applet d’istoric del quichapapièrs Qlipper</translation>
     </message>
 </context>
 <context>
@@ -86,17 +86,17 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="120"/>
         <source>Change global keyboard shortcut to invoke the menu on screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Modificar l’acorchi clavièr global per afichar lo menú a l’ecran</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="48"/>
         <source>Clipboard Entries Count:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre d’entradas al quichapapièrs :</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="55"/>
         <source>The maximum count of dynamic items in the menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre maximal d’elements dinamics al menú</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="61"/>
@@ -106,17 +106,17 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="77"/>
         <source>Maximum Display Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Talha de l’afichatge maximal :</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="84"/>
         <source>How long is the preview text in the menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Longor maxima del tèxt d’apercebut al menú</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="90"/>
         <source> characters</source>
-        <translation type="unfinished"></translation>
+        <translation> caractèrs</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="153"/>
@@ -191,17 +191,17 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="257"/>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Apondre</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="264"/>
         <source>Remove current item</source>
-        <translation type="unfinished"></translation>
+        <translation>Suprimir l’element actual</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="267"/>
         <source>&amp;Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Sup&amp;rimir</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="274"/>
@@ -226,27 +226,27 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="316"/>
         <source>Network</source>
-        <translation type="unfinished"></translation>
+        <translation>Ret</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="322"/>
         <source>Send Content to Network</source>
-        <translation type="unfinished"></translation>
+        <translation>Enviar lo contengut a la ret</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="329"/>
         <source>Receive Content from Network</source>
-        <translation type="unfinished"></translation>
+        <translation>Recebre lo contengut de la ret</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="336"/>
         <source>Port:</source>
-        <translation type="unfinished"></translation>
+        <translation>Pòrt :</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="82"/>
         <source>Icon selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar l’icòna</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="83"/>
@@ -276,7 +276,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="139"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Anullar</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="141"/>
@@ -310,43 +310,43 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="45"/>
         <source>&amp;Configure...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Configurar...</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="48"/>
         <source>&amp;About Qlipper...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;A prepaus de Qlipper...</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="50"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Quitar</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="57"/>
         <source>Qlipper - a clipboard history applet</source>
-        <translation type="unfinished"></translation>
+        <translation>Qlipper - una applet d’istoric de quichapapièrs</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="125"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation>Òc</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="127"/>
         <location filename="../src/qlippersystray.cpp" line="133"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation>Non</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="131"/>
         <source>Yes (experimental)</source>
-        <translation type="unfinished"></translation>
+        <translation>Òc (experimental)</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="140"/>
         <source>About Qlipper</source>
-        <translation type="unfinished"></translation>
+        <translation>A prepaus de Qlipper</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="142"/>
