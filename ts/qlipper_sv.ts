@@ -30,7 +30,7 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="240"/>
         <source>Find Buffer</source>
-        <translation type="unfinished"></translation>
+        <translation>Hitta Buffer</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="247"/>
