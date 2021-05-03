@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="180"/>
         <source>Url: %1</source>
-        <translation>Url: %1</translation>
+        <translation>URL: %1</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="182"/>
@@ -55,7 +55,7 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="259"/>
         <source>Sticky Item (Plain Text)</source>
-        <translation>Elemento fijo (Texto sin formato)</translation>
+        <translation>Elemento anclado (texto sin formato)</translation>
     </message>
 </context>
 <context>
@@ -63,7 +63,7 @@
     <message>
         <location filename="../src/qlippermodel.cpp" line="213"/>
         <source>Welcome to the Qlipper clipboard history applet</source>
-        <translation>Bienvenido a la miniaplicación del historial del portapeles Qlipper</translation>
+        <translation>Le damos la bienvenida a la miniaplicación del histórico del portapapeles Qlipper</translation>
     </message>
 </context>
 <context>
@@ -171,22 +171,22 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="209"/>
         <source>Confirm Clear History</source>
-        <translation type="unfinished"></translation>
+        <translation>Confirmar vaciado de histórico</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="225"/>
         <source>Sticky Items</source>
-        <translation>Elementos fijos</translation>
+        <translation>Elementos anclados</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="231"/>
         <source>Sticky items are unchanged, always on top snippets in the menu</source>
-        <translation>Los elementos fijos son fragmentos que no cambian y siempre están en la parte de arriba del menú</translation>
+        <translation>Los elementos anclados no cambian y siempre están en la parte superior del menú</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="254"/>
         <source>Add new item to the end of the list</source>
-        <translation>Añadir un nuevo elemento al final de la lista</translation>
+        <translation>Añadir un elemento nuevo al final de la lista</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="257"/>
@@ -297,7 +297,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="158"/>
         <source>Add New Sticky Item</source>
-        <translation>Añadir un nuevo elemento fijo</translation>
+        <translation>Añadir un elemento anclado nuevo</translation>
     </message>
 </context>
 <context>
@@ -361,7 +361,7 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="170"/>
         <source>Are you sure that you want to clear your clipboard history?</source>
-        <translation>¿Seguro que quieres limpiar tu historia de portapapeles?</translation>
+        <translation>¿Confirma que quiere vaciar el histórico del portapapeles?</translation>
     </message>
 </context>
 </TS>
