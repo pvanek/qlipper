@@ -30,7 +30,7 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="240"/>
         <source>Find Buffer</source>
-        <translation type="unfinished"></translation>
+        <translation>Paieškos buferis</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="247"/>
@@ -171,7 +171,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="209"/>
         <source>Confirm Clear History</source>
-        <translation type="unfinished"></translation>
+        <translation>Klausti patvirtinimo išvalant istoriją</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="225"/>
@@ -356,7 +356,7 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="170"/>
         <source>Confirm</source>
-        <translation type="unfinished"></translation>
+        <translation>Patvirtinti</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="170"/>
