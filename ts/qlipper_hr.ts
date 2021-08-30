@@ -6,22 +6,22 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="180"/>
         <source>Url: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>URL: %1</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="182"/>
         <source>Binary: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Binarna datoteka: %1</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="234"/>
         <source>Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Međuspremnik</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="237"/>
         <source>Selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Odabir</translation>
     </message>
     <message>
         <source>Find Bufer</source>
@@ -30,32 +30,32 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="240"/>
         <source>Find Buffer</source>
-        <translation type="unfinished"></translation>
+        <translation>Pronađi tekst iz međuspremnika</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="247"/>
         <source>Plain Text</source>
-        <translation type="unfinished"></translation>
+        <translation>Neformatiran tekst</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="250"/>
         <source>Rich Text</source>
-        <translation type="unfinished"></translation>
+        <translation>Formatiran tekst</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="253"/>
         <source>Binary Content</source>
-        <translation type="unfinished"></translation>
+        <translation>Binarni sadržaj</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="256"/>
         <source>URL</source>
-        <translation type="unfinished"></translation>
+        <translation>URL</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="259"/>
         <source>Sticky Item (Plain Text)</source>
-        <translation type="unfinished"></translation>
+        <translation>Fiksiran element (neformatiran tekst)</translation>
     </message>
 </context>
 <context>
@@ -63,7 +63,7 @@
     <message>
         <location filename="../src/qlippermodel.cpp" line="213"/>
         <source>Welcome to the Qlipper clipboard history applet</source>
-        <translation type="unfinished"></translation>
+        <translation>Qlipper – programčić za povijest međuspremnika</translation>
     </message>
 </context>
 <context>
@@ -71,233 +71,233 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="14"/>
         <source>Qlipper Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Qlipper postavke</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="42"/>
         <source>Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Postavke</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="113"/>
         <source>Keyboard Shortcut:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipkovni prečac:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="120"/>
         <source>Change global keyboard shortcut to invoke the menu on screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Promijeni globalan tipkovni prečac za pozivanje izbornika na ekranu</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="48"/>
         <source>Clipboard Entries Count:</source>
-        <translation type="unfinished"></translation>
+        <translation>Broj unosa iz međuspremnika:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="55"/>
         <source>The maximum count of dynamic items in the menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Maksimalan broj dinamičkih elemenata u izborniku</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="61"/>
         <source> entries</source>
-        <translation type="unfinished"></translation>
+        <translation> unosa</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="77"/>
         <source>Maximum Display Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Maksimalna duljina teksta:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="84"/>
         <source>How long is the preview text in the menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Maksimalna duljina prikazanog teksta u izborniku</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="90"/>
         <source> characters</source>
-        <translation type="unfinished"></translation>
+        <translation> znaka</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="153"/>
         <source>Use clipboard extensions (X11 Selections, OS X Find Buffer) when it&apos;s supported</source>
-        <translation type="unfinished"></translation>
+        <translation>Koristi proširenja međuspremnika (X11 Selections, OS X Find Buffer) ako ih sustav podržava</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="156"/>
         <source>Use Platform Specific Extensions (Advanced)</source>
-        <translation type="unfinished"></translation>
+        <translation>Koristi platformska proširenja (napredno)</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="103"/>
         <source>Useful for bigger text blocks copied for example from dummy terminals (minicom, etc.)</source>
-        <translation type="unfinished"></translation>
+        <translation>Korisno za veće tekstualne blokove, kopirane na primjer iz emulatora terminala (minicom itd.)</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="106"/>
         <source>Trim Whitespaces for Every Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukloni razmake u svakom retku</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="127"/>
         <source>Tray icon image:</source>
-        <translation type="unfinished"></translation>
+        <translation>Slika za ikonu:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="164"/>
         <source>No synchronization of clipboard &amp; PSE</source>
-        <translation type="unfinished"></translation>
+        <translation>Bez sinkronizacije međuspremnika i platformskih proširenja</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="169"/>
         <source>Synchronize clipboard &amp; PSE when item selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Sinkroniziraj međuspremnik i platformska proširenja pri biranju elementa</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="174"/>
         <source>Synchronize clipboard &amp; PSE instantly</source>
-        <translation type="unfinished"></translation>
+        <translation>Sinkroniziraj međuspremnik i platformska proširenja odmah</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="182"/>
         <source>Clear Items on Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Izbriši elemente pri zatvaranju programa</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="189"/>
         <source>Synchronize history to storage instantly</source>
-        <translation type="unfinished"></translation>
+        <translation>Sinkroniziraj povijest s memorijom odmah</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="209"/>
         <source>Confirm Clear History</source>
-        <translation type="unfinished"></translation>
+        <translation>Potvrdi brisanje povijesti</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="225"/>
         <source>Sticky Items</source>
-        <translation type="unfinished"></translation>
+        <translation>Fiksirani elementi</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="231"/>
         <source>Sticky items are unchanged, always on top snippets in the menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Fiksirani elementi se ne mijenjaju, uvijek se nalaze na vrhu popisa u izborniku</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="254"/>
         <source>Add new item to the end of the list</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaj novi element na kraj popisa</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="257"/>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Dodaj</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="264"/>
         <source>Remove current item</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukloni trenutačni element</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="267"/>
         <source>&amp;Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Ukloni</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="274"/>
         <source>Move item up</source>
-        <translation type="unfinished"></translation>
+        <translation>Pomakni element prema gore</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="277"/>
         <source>&amp;Up</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Gore</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="284"/>
         <source>Move item down</source>
-        <translation type="unfinished"></translation>
+        <translation>Pomakni element prema dolje</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="287"/>
         <source>&amp;Down</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Dolje</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="316"/>
         <source>Network</source>
-        <translation type="unfinished"></translation>
+        <translation>Mreža</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="322"/>
         <source>Send Content to Network</source>
-        <translation type="unfinished"></translation>
+        <translation>Pošalji sadržaj na mrežu</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="329"/>
         <source>Receive Content from Network</source>
-        <translation type="unfinished"></translation>
+        <translation>Primi sadržaj s mreže</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="336"/>
         <source>Port:</source>
-        <translation type="unfinished"></translation>
+        <translation>Priključak:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="82"/>
         <source>Icon selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Biranje ikone</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="83"/>
         <source>Load icon from file...</source>
-        <translation type="unfinished"></translation>
+        <translation>Učitaj ikonu iz datoteke …</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="84"/>
         <source>Use default icon</source>
-        <translation type="unfinished"></translation>
+        <translation>Koristi standardnu ikonu</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="132"/>
         <source>Select icon file</source>
-        <translation type="unfinished"></translation>
+        <translation>Odaberi datoteku ikone</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="134"/>
         <source>Images (*.bmp *.jpg *.jpeg *.png *.svg *.tga)</source>
-        <translation type="unfinished"></translation>
+        <translation>Slike (*.bmp *.jpg *.jpeg *.png *.svg *.tga)</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="138"/>
         <source>Select icon</source>
-        <translation type="unfinished"></translation>
+        <translation>Odaberi ikonu</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="139"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Odustani</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="141"/>
         <source>Look in:</source>
         <extracomment>Label to describe the folder for icon file selection dialog.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Traži u:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="142"/>
         <source>Icon name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ime ikone:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="143"/>
         <source>Icon type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vrsta ikone:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="158"/>
         <source>Add New Sticky Item</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaj nov fiksirani element</translation>
     </message>
 </context>
 <context>
@@ -305,63 +305,63 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="43"/>
         <source>C&amp;lear clipboard history</source>
-        <translation type="unfinished"></translation>
+        <translation>Iz&amp;briši povijest međuspremnika</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="45"/>
         <source>&amp;Configure...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Konfiuriraj …</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="48"/>
         <source>&amp;About Qlipper...</source>
-        <translation type="unfinished"></translation>
+        <translation>Qlipper &amp;informacije …</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="50"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Zatvori program</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="57"/>
         <source>Qlipper - a clipboard history applet</source>
-        <translation type="unfinished"></translation>
+        <translation>Qlipper – programčić za povijest međuspremnika</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="125"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation>Da</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="127"/>
         <location filename="../src/qlippersystray.cpp" line="133"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation>Ne</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="131"/>
         <source>Yes (experimental)</source>
-        <translation type="unfinished"></translation>
+        <translation>Da (eksperimentalno)</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="140"/>
         <source>About Qlipper</source>
-        <translation type="unfinished"></translation>
+        <translation>Qlipper informacije</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="142"/>
         <source>Lightweight, cross-platform clipboard history applet.&lt;p&gt;(c)&amp;nbsp;2010-2016&amp;nbsp;Petr&amp;nbsp;Vanek&amp;nbsp;&amp;lt;petr@yarpen.cz&amp;gt;&lt;p&gt;&lt;a href=&quot;https://github.com/pvanek/qlipper/&quot;&gt;https://github.com/pvanek/qlipper/&lt;/a&gt;&lt;p&gt;Support for global keyboard shortcut: %1&lt;br&gt;Support for network clipboard sharing: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Jednostavan višeplatformski programčić za povijest međuspremnika.&lt;p&gt;(c)&amp;nbsp;2010.&amp;nbsp;–&amp;nbsp;2016.&amp;nbsp;Petr&amp;nbsp;Vanek&amp;nbsp;&amp;lt;petr@yarpen.cz&amp;gt;&lt;p&gt;&lt;a href=&quot;https://github.com/pvanek/qlipper/&quot;&gt;https://github.com/pvanek/qlipper/&lt;/a&gt;&lt;p&gt;Podrška za globalan tipkovni prečac: %1&lt;br&gt;Podrška za mrežno dijeljenje međuspremnika: %2</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="170"/>
         <source>Confirm</source>
-        <translation type="unfinished"></translation>
+        <translation>Potvrdi</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="170"/>
         <source>Are you sure that you want to clear your clipboard history?</source>
-        <translation type="unfinished"></translation>
+        <translation>Stvarno želiš izbrisati povijest međuspremnika?</translation>
     </message>
 </context>
 </TS>
