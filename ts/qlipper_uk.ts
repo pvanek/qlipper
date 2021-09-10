@@ -76,7 +76,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="42"/>
         <source>Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Налаштування</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="113"/>
