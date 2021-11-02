@@ -111,7 +111,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="84"/>
         <source>How long is the preview text in the menu</source>
-        <translation>Jak dlouho uchovat náhledový text v menu</translation>
+        <translation>Jak dlouho uchovat náhledový text v nabídce</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="90"/>
@@ -136,7 +136,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="106"/>
         <source>Trim Whitespaces for Every Line</source>
-        <translation>Odstranit Prázdné Znaky pro Každý Řádek</translation>
+        <translation>Odstranit prázdné znaky pro každý řádek</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="127"/>
@@ -211,7 +211,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="277"/>
         <source>&amp;Up</source>
-        <translation>&amp;Nahoru</translation>
+        <translation>Nahor&amp;u</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="284"/>
@@ -276,7 +276,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="139"/>
         <source>Cancel</source>
-        <translation>Zrušit</translation>
+        <translation>Storno</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="141"/>
@@ -315,7 +315,7 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="48"/>
         <source>&amp;About Qlipper...</source>
-        <translation>&amp;O programu...</translation>
+        <translation>O &amp;aplikaci Qlipper…</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="50"/>
@@ -325,7 +325,7 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="57"/>
         <source>Qlipper - a clipboard history applet</source>
-        <translation>Qlipper - správce historie schránky</translation>
+        <translation>Qlipper – správce historie schránky</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="125"/>
@@ -346,12 +346,12 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="140"/>
         <source>About Qlipper</source>
-        <translation>O Programu</translation>
+        <translation>O aplikaci Qlipper</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="142"/>
         <source>Lightweight, cross-platform clipboard history applet.&lt;p&gt;(c)&amp;nbsp;2010-2016&amp;nbsp;Petr&amp;nbsp;Vanek&amp;nbsp;&amp;lt;petr@yarpen.cz&amp;gt;&lt;p&gt;&lt;a href=&quot;https://github.com/pvanek/qlipper/&quot;&gt;https://github.com/pvanek/qlipper/&lt;/a&gt;&lt;p&gt;Support for global keyboard shortcut: %1&lt;br&gt;Support for network clipboard sharing: %2</source>
-        <translation>Lehký, vícesystémový program pro práci s historií schránky.&lt;p&gt;(c)&amp;nbsp;2010-2016&amp;nbsp;Petr&amp;nbsp;Vanek&amp;nbsp;&amp;lt;petr@yarpen.cz&amp;gt;&lt;p&gt;&lt;a href=&quot;https://github.com/pvanek/qlipper/&quot;&gt;https://github.com/pvanek/qlipper/&lt;/a&gt;&lt;p&gt;Podpora pro celkové klávesové zkratky: %1&lt;br&gt;Podpora pro síťové sdílení schránky: %2</translation>
+        <translation>Na systémové prostředky nenáročná miniaplikace pro práci s historií schránky, fungující ve vícero operačních systémech.&lt;p&gt;©&amp;nbsp;2010-2016&amp;nbsp;Petr&amp;nbsp;Vanek&amp;nbsp;&amp;lt;petr@yarpen.cz&amp;gt;&lt;p&gt;&lt;a href=&quot;https://github.com/pvanek/qlipper/&quot;&gt;https://github.com/pvanek/qlipper/&lt;/a&gt;&lt;p&gt;Podpora pro globální klávesové zkratky: %1&lt;br&gt;Podpora pro síťové sdílení schránky: %2</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="170"/>
