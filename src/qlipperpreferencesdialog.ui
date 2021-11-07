@@ -179,7 +179,7 @@
        <item row="7" column="0" colspan="2">
         <widget class="QCheckBox" name="clearItemsOnExit">
          <property name="text">
-          <string>Clear Items afer Exit</string>
+          <string>Clear Items after Exit</string>
          </property>
         </widget>
        </item>
