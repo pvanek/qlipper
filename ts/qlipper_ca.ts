@@ -30,7 +30,7 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="240"/>
         <source>Find Buffer</source>
-        <translation type="unfinished"></translation>
+        <translation>Cerca la memòria intermèdia</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="247"/>
@@ -166,12 +166,12 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="189"/>
         <source>Synchronize history to storage instantly</source>
-        <translation>Sincronitza instantàniament l&apos;historial  l&apos;emmagatzematge</translation>
+        <translation>Sincronitza instantàniament l&apos;historial l&apos;emmagatzematge</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="209"/>
         <source>Confirm Clear History</source>
-        <translation type="unfinished"></translation>
+        <translation>Confirma la neteja de l&apos;historial</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="225"/>
@@ -356,12 +356,12 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="170"/>
         <source>Confirm</source>
-        <translation type="unfinished"></translation>
+        <translation>Confirma</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="170"/>
         <source>Are you sure that you want to clear your clipboard history?</source>
-        <translation type="unfinished"></translation>
+        <translation>Segur que voleu esborrar l&apos;historial del porta-retalls?</translation>
     </message>
 </context>
 </TS>
