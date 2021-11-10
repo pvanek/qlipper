@@ -55,7 +55,7 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="259"/>
         <source>Sticky Item (Plain Text)</source>
-        <translation>Permanentní položka (čistý Text)</translation>
+        <translation>Trvalá položka (prostý text)</translation>
     </message>
 </context>
 <context>
@@ -86,7 +86,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="120"/>
         <source>Change global keyboard shortcut to invoke the menu on screen</source>
-        <translation>Změnit globální klávesovou zkratku na vyvolávání menu</translation>
+        <translation>Změnit globální klávesovou zkratku pro vyvolání nabídky na obrazovce</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="48"/>
@@ -96,7 +96,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="55"/>
         <source>The maximum count of dynamic items in the menu</source>
-        <translation>Největší počet dynamických položek v nabídce</translation>
+        <translation>Nejvyšší počet dynamických položek v nabídce</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="61"/>
@@ -121,7 +121,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="153"/>
         <source>Use clipboard extensions (X11 Selections, OS X Find Buffer) when it&apos;s supported</source>
-        <translation>Použít doplňková vylepšení schránky (X11 Výběry, OS X Buffer Pro Vyhledávání), je-li to možné</translation>
+        <translation>Použít doplňková vylepšení schránky (X11 Selections, OS X Find Buffer), pokud je to možné</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="156"/>
@@ -136,7 +136,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="106"/>
         <source>Trim Whitespaces for Every Line</source>
-        <translation>Odstranit prázdné znaky pro každý řádek</translation>
+        <translation>Ze všech řádků odstranit prázdné znaky</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="127"/>
@@ -151,7 +151,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="169"/>
         <source>Synchronize clipboard &amp; PSE when item selected</source>
-        <translation>Synchronizovat schránku a PSE při vybrání pooložky</translation>
+        <translation>Synchronizovat schránku a PSE při vybrání položky</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="174"/>
@@ -171,7 +171,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="209"/>
         <source>Confirm Clear History</source>
-        <translation>Potvrdit vyprázdnění historie</translation>
+        <translation>Před vyprázdněním historie si vyžádat potvrzení</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="225"/>
@@ -181,7 +181,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="231"/>
         <source>Sticky items are unchanged, always on top snippets in the menu</source>
-        <translation>Permanentní položky se nemění, stále se budou nacházet na vrcholu nabídky</translation>
+        <translation>Trvalé položky se nemění, stále se budou nacházet na vrcholu nabídky</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="254"/>
@@ -251,7 +251,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="83"/>
         <source>Load icon from file...</source>
-        <translation>Nahrát ikonu ze souboru...</translation>
+        <translation>Načíst ikonu ze souboru…</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="84"/>
@@ -282,7 +282,7 @@
         <location filename="../src/qlipperpreferencesdialog.cpp" line="141"/>
         <source>Look in:</source>
         <extracomment>Label to describe the folder for icon file selection dialog.</extracomment>
-        <translation>Podívejte se do:</translation>
+        <translation>Hledat v:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="142"/>
@@ -310,7 +310,7 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="45"/>
         <source>&amp;Configure...</source>
-        <translation>&amp;Nastavit...</translation>
+        <translation>&amp;Nastavit…</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="48"/>
@@ -351,7 +351,7 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="142"/>
         <source>Lightweight, cross-platform clipboard history applet.&lt;p&gt;(c)&amp;nbsp;2010-2016&amp;nbsp;Petr&amp;nbsp;Vanek&amp;nbsp;&amp;lt;petr@yarpen.cz&amp;gt;&lt;p&gt;&lt;a href=&quot;https://github.com/pvanek/qlipper/&quot;&gt;https://github.com/pvanek/qlipper/&lt;/a&gt;&lt;p&gt;Support for global keyboard shortcut: %1&lt;br&gt;Support for network clipboard sharing: %2</source>
-        <translation>Na systémové prostředky nenáročná miniaplikace pro práci s historií schránky, fungující ve vícero operačních systémech.&lt;p&gt;©&amp;nbsp;2010-2016&amp;nbsp;Petr&amp;nbsp;Vanek&amp;nbsp;&amp;lt;petr@yarpen.cz&amp;gt;&lt;p&gt;&lt;a href=&quot;https://github.com/pvanek/qlipper/&quot;&gt;https://github.com/pvanek/qlipper/&lt;/a&gt;&lt;p&gt;Podpora pro globální klávesové zkratky: %1&lt;br&gt;Podpora pro síťové sdílení schránky: %2</translation>
+        <translation>Na systémové prostředky nenáročná miniaplikace pro práci s historií schránky, fungující ve vícero operačních systémech.&lt;p&gt;©&amp;nbsp;2010-2016&amp;nbsp;Petr&amp;nbsp;Vanek&amp;nbsp;&amp;lt;petr@yarpen.cz&amp;gt;&lt;p&gt;&lt;a href=&quot;https://github.com/pvanek/qlipper/&quot;&gt;https://github.com/pvanek/qlipper/&lt;/a&gt;&lt;p&gt;Podpora pro globální klávesové zkratky: %1&lt;br&gt;Podpora pro sdílení schránky po síti: %2</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="170"/>
