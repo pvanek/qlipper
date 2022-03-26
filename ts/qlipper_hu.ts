@@ -63,7 +63,7 @@
     <message>
         <location filename="../src/qlippermodel.cpp" line="213"/>
         <source>Welcome to the Qlipper clipboard history applet</source>
-        <translation type="unfinished">Üdvözöljük a Qlipper vágólap előzménykezelő kisalkalmazásban</translation>
+        <translation>Üdvözöljük a Qlipper vágólapelőzmény-kezelő kisalkalmazásban</translation>
     </message>
 </context>
 <context>
