@@ -106,12 +106,12 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="77"/>
         <source>Maximum Display Size:</source>
-        <translation type="unfinished">Maximális megjelenítési méret</translation>
+        <translation>Maximális megjelenítési méret:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="84"/>
         <source>How long is the preview text in the menu</source>
-        <translation type="unfinished">Milyen hosszú az előnézet szövege a menüben</translation>
+        <translation>Milyen hosszú az előnézet szövege a menüben</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="90"/>
@@ -121,7 +121,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="153"/>
         <source>Use clipboard extensions (X11 Selections, OS X Find Buffer) when it&apos;s supported</source>
-        <translation type="unfinished">Vágólapkiterjesztések használata (X11 Kiválasztás, OS X keresés puffer), ha támogatott</translation>
+        <translation>Vágólap-kiterjesztések használata (X11 Kiválasztás, OS X keresés puffer), amikor az támogatott</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="156"/>
@@ -131,12 +131,12 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="103"/>
         <source>Useful for bigger text blocks copied for example from dummy terminals (minicom, etc.)</source>
-        <translation type="unfinished"></translation>
+        <translation>Hosszabb szövegek másolásához hasznos, például teszt terminálok (minicom, stb)</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="106"/>
         <source>Trim Whitespaces for Every Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Szóközök igazítása minden sorban</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="127"/>
@@ -146,17 +146,17 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="164"/>
         <source>No synchronization of clipboard &amp; PSE</source>
-        <translation type="unfinished"></translation>
+        <translation>Ne kapcsolja össze a vágólapot és a PSE-t</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="169"/>
         <source>Synchronize clipboard &amp; PSE when item selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Kapcsolja össze a vágólapot és a PSE-t, amikor az elem kiválasztásra került</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="174"/>
         <source>Synchronize clipboard &amp; PSE instantly</source>
-        <translation type="unfinished"></translation>
+        <translation>Azonnal kapcsolja össze a vágólapot és a PSE-t</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="182"/>
@@ -166,7 +166,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="189"/>
         <source>Synchronize history to storage instantly</source>
-        <translation type="unfinished"></translation>
+        <translation>Előzmények azonnali összehangolása az előzményekkel</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="209"/>
@@ -176,7 +176,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="225"/>
         <source>Sticky Items</source>
-        <translation type="unfinished"></translation>
+        <translation>Kényes elemek</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="231"/>
