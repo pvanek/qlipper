@@ -6,22 +6,22 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="180"/>
         <source>Url: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Url: %1</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="182"/>
         <source>Binary: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>बायनरी : %1</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="234"/>
         <source>Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>क्लिपबोर्ड</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="237"/>
         <source>Selection</source>
-        <translation type="unfinished"></translation>
+        <translation>चयन</translation>
     </message>
     <message>
         <source>Find Bufer</source>
@@ -30,32 +30,32 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="240"/>
         <source>Find Buffer</source>
-        <translation type="unfinished"></translation>
+        <translation>बफ़र ढूंढें</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="247"/>
         <source>Plain Text</source>
-        <translation type="unfinished"></translation>
+        <translation>सादा पाठ</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="250"/>
         <source>Rich Text</source>
-        <translation type="unfinished"></translation>
+        <translation>समृद्ध पाठ</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="253"/>
         <source>Binary Content</source>
-        <translation type="unfinished"></translation>
+        <translation>बाइनरी सामग्री</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="256"/>
         <source>URL</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">URL</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="259"/>
         <source>Sticky Item (Plain Text)</source>
-        <translation type="unfinished"></translation>
+        <translation>स्टिकी आइटम (सादा टेक्स्ट)</translation>
     </message>
 </context>
 <context>
@@ -63,7 +63,7 @@
     <message>
         <location filename="../src/qlippermodel.cpp" line="213"/>
         <source>Welcome to the Qlipper clipboard history applet</source>
-        <translation type="unfinished"></translation>
+        <translation>Qlipper क्लिपबोर्ड इतिहास एप्लेट में आपका स्वागत है</translation>
     </message>
 </context>
 <context>
@@ -71,52 +71,52 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="14"/>
         <source>Qlipper Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Qlipper प्राथमिकताएं</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="42"/>
         <source>Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>प्राथमिकताएं</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="113"/>
         <source>Keyboard Shortcut:</source>
-        <translation type="unfinished"></translation>
+        <translation>कीबोर्ड शॉर्टकट :</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="120"/>
         <source>Change global keyboard shortcut to invoke the menu on screen</source>
-        <translation type="unfinished"></translation>
+        <translation>स्क्रीन पर मेनू को लागू करने के लिए वैश्विक कीबोर्ड शॉर्टकट बदलें</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="48"/>
         <source>Clipboard Entries Count:</source>
-        <translation type="unfinished"></translation>
+        <translation>क्लिपबोर्ड प्रविष्टियों की संख्या :</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="55"/>
         <source>The maximum count of dynamic items in the menu</source>
-        <translation type="unfinished"></translation>
+        <translation>मेनू में गतिशील वस्तुओं की अधिकतम संख्या</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="61"/>
         <source> entries</source>
-        <translation type="unfinished"></translation>
+        <translation> प्रविष्टियाँ</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="77"/>
         <source>Maximum Display Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>अधिकतम डिस्प्ले आकार :</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="84"/>
         <source>How long is the preview text in the menu</source>
-        <translation type="unfinished"></translation>
+        <translation>मेनू में पूर्वावलोकन टेक्स्ट कितना लंबा है</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="90"/>
         <source> characters</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"> वर्ण</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="153"/>
