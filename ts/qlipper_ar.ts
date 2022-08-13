@@ -63,7 +63,7 @@
     <message>
         <location filename="../src/qlippermodel.cpp" line="213"/>
         <source>Welcome to the Qlipper clipboard history applet</source>
-        <translation>مرحبًا بك في التطبيق الصغير لسجل حافظة Qlipper</translation>
+        <translation>مرحبًا بك في التطبيق الصغير لسجل حافظة كليبر</translation>
     </message>
 </context>
 <context>
@@ -71,7 +71,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="14"/>
         <source>Qlipper Preferences</source>
-        <translation>تفضيلات Qlipper</translation>
+        <translation>تفضيلات كليبر</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="42"/>
@@ -315,7 +315,7 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="48"/>
         <source>&amp;About Qlipper...</source>
-        <translation>&amp;عن Qlipper ...</translation>
+        <translation>&amp;عن كليبر ...</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="50"/>
@@ -325,7 +325,7 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="57"/>
         <source>Qlipper - a clipboard history applet</source>
-        <translation>Qlipper - برنامج صغير لتاريخ الحافظة</translation>
+        <translation>كليبر - برنامج صغير لتاريخ الحافظة</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="125"/>
@@ -346,7 +346,7 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="140"/>
         <source>About Qlipper</source>
-        <translation>عن Qlipper</translation>
+        <translation>عن كليبر</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="142"/>
