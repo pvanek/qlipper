@@ -30,7 +30,7 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="240"/>
         <source>Find Buffer</source>
-        <translation>Buscar en el búfer</translation>
+        <translation>Buscar búfer</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="247"/>
