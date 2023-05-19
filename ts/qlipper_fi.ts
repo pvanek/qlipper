@@ -96,47 +96,47 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="55"/>
         <source>The maximum count of dynamic items in the menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Dynaamisten kohteiden määräraja valikossa</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="61"/>
         <source> entries</source>
-        <translation type="unfinished"></translation>
+        <translation> kohdetta</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="77"/>
         <source>Maximum Display Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tekstin pituusraja:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="84"/>
         <source>How long is the preview text in the menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Esikatselutekstin pituus valikossa</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="90"/>
         <source> characters</source>
-        <translation type="unfinished"></translation>
+        <translation> merkkiä</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="153"/>
         <source>Use clipboard extensions (X11 Selections, OS X Find Buffer) when it&apos;s supported</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Käytä leikepöytälaajennuksia (X11 Valinnat (Selections), OS X -hakupuskuri), jos saatavilla</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="156"/>
         <source>Use Platform Specific Extensions (Advanced)</source>
-        <translation type="unfinished"></translation>
+        <translation>Käytä alustakohtaisia laajennuksia (lisäasetus)</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="103"/>
         <source>Useful for bigger text blocks copied for example from dummy terminals (minicom, etc.)</source>
-        <translation type="unfinished"></translation>
+        <translation>Hyödyllinen kopioitaessa isompaa tekstimäärää esimerkiksi tyhmistä päätteistä (minicom, jne.)</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="106"/>
         <source>Trim Whitespaces for Every Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista tyhjemerkit jokaisesta rivistä</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="127"/>
