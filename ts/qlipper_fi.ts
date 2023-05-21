@@ -196,12 +196,12 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="264"/>
         <source>Remove current item</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista nykyinen kohde</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="267"/>
         <source>&amp;Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Poista</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="274"/>
