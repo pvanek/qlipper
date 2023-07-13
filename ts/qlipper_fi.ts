@@ -121,7 +121,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="153"/>
         <source>Use clipboard extensions (X11 Selections, OS X Find Buffer) when it&apos;s supported</source>
-        <translation type="unfinished">Käytä leikepöytälaajennuksia (X11 Valinnat (Selections), OS X -hakupuskuri), jos saatavilla</translation>
+        <translation>Käytä leikepöytälaajennuksia (X11 Valinnat (Selections), OS X -hakupuskuri), jos saatavilla</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="156"/>
