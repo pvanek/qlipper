@@ -35,12 +35,12 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="247"/>
         <source>Plain Text</source>
-        <translation>Oformatterad text</translation>
+        <translation>Oformaterad text</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="250"/>
         <source>Rich Text</source>
-        <translation>Formatterad text</translation>
+        <translation>Formaterad text</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="253"/>
