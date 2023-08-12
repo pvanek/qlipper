@@ -166,35 +166,83 @@ void QlipperModel::clipboard_changed(QClipboard::Mode mode)
     int ix = m_dynamic.indexOf(item);
     if (ix == -1)
     {
+        bool reverseOrder = QlipperPreferences::Instance()->reverseOrder();
+
         const int sticky_count = m_sticky.count();
         beginInsertRows(QModelIndex(), sticky_count, sticky_count);
-        m_dynamic.prepend(item);
+        if (reverseOrder)
+        {
+            m_dynamic.append(item);
+        }
+        else
+        {
+            m_dynamic.prepend(item);
+        }
         endInsertRows();
         const int max_history = QlipperPreferences::Instance()->historyCount();
         if (m_dynamic.count() > max_history)
         {
-            beginRemoveRows(QModelIndex(), sticky_count + max_history - 1, sticky_count + m_dynamic.count() - 1);
-            m_dynamic.erase(m_dynamic.begin() + (max_history - 1), m_dynamic.end());
-            endRemoveRows();
+            if (reverseOrder)
+            {
+                auto removeRowsBeginPosition = sticky_count;
+                auto removeRowsEndPosition = removeRowsBeginPosition + (m_dynamic.count() - max_history);
+                beginRemoveRows(QModelIndex(), removeRowsBeginPosition, removeRowsEndPosition);
+                auto dataBeginPosition = m_dynamic.begin();
+                auto dataEndPosition = dataBeginPosition + (m_dynamic.count() - max_history);
+                m_dynamic.erase(dataBeginPosition, dataEndPosition);
+                endRemoveRows();
+            }
+            else
+            {
+                auto removeRowsBeginPosition = sticky_count + max_history - 1;
+                auto removeRowsEndPosition = sticky_count + m_dynamic.count() - 1;
+                beginRemoveRows(QModelIndex(), removeRowsBeginPosition, removeRowsEndPosition);
+                auto beginPosition = m_dynamic.begin() + (max_history - 1);
+                auto endPosition = m_dynamic.end();
+                m_dynamic.erase(beginPosition, endPosition);
+                endRemoveRows();
+            }
         }
-        ix = 0;
+        ix = reverseOrder
+            ? m_dynamic.count() - 1
+            : 0;
     }
     setCurrentDynamic(ix);
 }
 
 void QlipperModel::setCurrentDynamic(int ix)
 {
-    // move if not already on top
-    if (ix != 0)
-    {
-        const int sticky_count = m_sticky.count();
-        beginMoveRows(QModelIndex(), sticky_count + ix, sticky_count + ix, QModelIndex(), sticky_count);
-        m_dynamic.move(ix, 0);
-        endMoveRows();
-    }
+    bool reverseOrder = QlipperPreferences::Instance()->reverseOrder();
+    const int sticky_count = m_sticky.count();
+    auto m_dynamic_count = m_dynamic.count();
 
-    m_currentIndex = index(m_sticky.count());
-    m_network->sendData(m_dynamic.at(0).content());
+    if (reverseOrder)
+    {
+        auto m_dynamic_lastIndex = m_dynamic_count - 1;
+
+        // move if not already on end
+        if (ix != m_dynamic_lastIndex)
+        {
+            beginMoveRows(QModelIndex(), sticky_count + ix, sticky_count + ix, QModelIndex(), sticky_count + m_dynamic_count);
+            m_dynamic.move(ix, m_dynamic_lastIndex);
+            endMoveRows();
+        }
+
+        m_currentIndex = index(m_sticky.count() + m_dynamic_lastIndex);
+        m_network->sendData(m_dynamic.at(m_dynamic_lastIndex).content());
+    }
+    else
+    {
+        // move if not already on top
+        if (ix != 0)
+        {
+            beginMoveRows(QModelIndex(), sticky_count + ix, sticky_count + ix, QModelIndex(), sticky_count);
+            m_dynamic.move(ix, 0);
+            endMoveRows();
+        }
+        m_currentIndex = index(m_sticky.count());
+        m_network->sendData(m_dynamic.at(0).content());
+    }
 
     if (QlipperPreferences::Instance()->synchronizeHistory())
     {
