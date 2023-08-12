@@ -42,6 +42,7 @@ QlipperPreferencesDialog::QlipperPreferencesDialog(QWidget *parent) :
     synchronizePSE->setEnabled(pse);
     synchronizePSE->setCurrentIndex(s->synchronizePSE());
     clearItemsOnExit->setChecked(s->clearItemsOnExit());
+    reverseOrder->setChecked(s->reverseOrder());
     synchronizeHistory->setChecked(s->synchronizeHistory());
     confirmOnClear->setChecked(s->confirmOnClear());
 
@@ -106,6 +107,7 @@ void QlipperPreferencesDialog::accept()
     s->setValue("synchronizePSE", synchronizePSE->currentIndex());
     s->setValue("shortcut", shortcutWidget->keySequence().toString());
     s->setValue("clearItemsOnExit", clearItemsOnExit->isChecked());
+    s->setValue("reverseOrder", reverseOrder->isChecked());
     s->setValue("synchronizeHistory", synchronizeHistory->isChecked());
     s->setValue("confirmClear", confirmOnClear->isChecked());
 
