@@ -66,6 +66,13 @@ QlipperModel::~QlipperModel()
 
 void QlipperModel::resetPreferences()
 {
+    // If sticky items is empty, code will crash in Debug mode for unknown reason
+    // It will not crash in Release mode
+    if (m_sticky.count() == 0)
+    {
+        return;
+    }
+
     beginRemoveRows(QModelIndex(), 0, m_sticky.count() - 1);
     m_sticky.clear();
     endRemoveRows();
