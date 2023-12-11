@@ -121,183 +121,183 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="153"/>
         <source>Use clipboard extensions (X11 Selections, OS X Find Buffer) when it&apos;s supported</source>
-        <translation type="unfinished"></translation>
+        <translation>از افزونه های کلیپ برد (گزینش های X11، جستجوی بافر OS X) در صورت پشتیبانی استفاده شود</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="156"/>
         <source>Use Platform Specific Extensions (Advanced)</source>
-        <translation type="unfinished"></translation>
+        <translation>از افزونه های مخصوص پلتفرم استفاده شود (پیشرفته)</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="103"/>
         <source>Useful for bigger text blocks copied for example from dummy terminals (minicom, etc.)</source>
-        <translation type="unfinished"></translation>
+        <translation>کاربردی برای متون بزرگی که برای مثال از ترمینال های مصنوعی کپی شده‌اند(minicom, و...)</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="106"/>
         <source>Trim Whitespaces for Every Line</source>
-        <translation type="unfinished"></translation>
+        <translation>فاصله ها را برای هر خط پاک کن</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="127"/>
         <source>Tray icon image:</source>
-        <translation type="unfinished"></translation>
+        <translation>تصویر آیکن برنامک:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="164"/>
         <source>No synchronization of clipboard &amp; PSE</source>
-        <translation type="unfinished"></translation>
+        <translation>کلیپ‌برد و PSE همگام سازی نشود</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="169"/>
         <source>Synchronize clipboard &amp; PSE when item selected</source>
-        <translation type="unfinished"></translation>
+        <translation>همگام سازی کلیپ‌برد و PSE هنگام انتخاب آیتم</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="174"/>
         <source>Synchronize clipboard &amp; PSE instantly</source>
-        <translation type="unfinished"></translation>
+        <translation>همگام سازی بلافاصله کلیپ‌برد و PSE</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="182"/>
         <source>Clear Items on Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>حذف آیتم ها هنگام خروج</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="189"/>
         <source>Synchronize history to storage instantly</source>
-        <translation type="unfinished"></translation>
+        <translation>تاریخچه را بلافاصله با حافظه همگام‌سازی کن</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="209"/>
         <source>Confirm Clear History</source>
-        <translation type="unfinished"></translation>
+        <translation>تاییدیه برای پاک کردن تاریخچه</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="225"/>
         <source>Sticky Items</source>
-        <translation type="unfinished"></translation>
+        <translation>آیتم های پین شده</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="231"/>
         <source>Sticky items are unchanged, always on top snippets in the menu</source>
-        <translation type="unfinished"></translation>
+        <translation>آیتم های پین شده تغییری نمی‌کنند، و همواره بالای منو خواهند بود</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="254"/>
         <source>Add new item to the end of the list</source>
-        <translation type="unfinished"></translation>
+        <translation>آیتم جدید به آخر لیست اضافه شود</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="257"/>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;اضافه کردن</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="264"/>
         <source>Remove current item</source>
-        <translation type="unfinished"></translation>
+        <translation>حذف این آیتم</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="267"/>
         <source>&amp;Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;حذف کردن</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="274"/>
         <source>Move item up</source>
-        <translation type="unfinished"></translation>
+        <translation>جابجایی آیتم به بالا</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="277"/>
         <source>&amp;Up</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;بالا</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="284"/>
         <source>Move item down</source>
-        <translation type="unfinished"></translation>
+        <translation>جابه‌جایی آیتم به پایین</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="287"/>
         <source>&amp;Down</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;پایین</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="316"/>
         <source>Network</source>
-        <translation type="unfinished"></translation>
+        <translation>شبکه</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="322"/>
         <source>Send Content to Network</source>
-        <translation type="unfinished"></translation>
+        <translation>ارسال محتوا به شبکه</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="329"/>
         <source>Receive Content from Network</source>
-        <translation type="unfinished"></translation>
+        <translation>دریافت محتوا از شبکه</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="336"/>
         <source>Port:</source>
-        <translation type="unfinished"></translation>
+        <translation>پورت:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="82"/>
         <source>Icon selection</source>
-        <translation type="unfinished"></translation>
+        <translation>انتخاب آیکن</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="83"/>
         <source>Load icon from file...</source>
-        <translation type="unfinished"></translation>
+        <translation>خواندن آیکن از فایل...</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="84"/>
         <source>Use default icon</source>
-        <translation type="unfinished"></translation>
+        <translation>استفاده از آیکن‌ پیش‌فرض</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="132"/>
         <source>Select icon file</source>
-        <translation type="unfinished"></translation>
+        <translation>انتخاب فایل آیکن</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="134"/>
         <source>Images (*.bmp *.jpg *.jpeg *.png *.svg *.tga)</source>
-        <translation type="unfinished"></translation>
+        <translation>تصاویر (bmp *.jpg *.jpeg *.png *.svg *.tga.*)</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="138"/>
         <source>Select icon</source>
-        <translation type="unfinished"></translation>
+        <translation>انتخاب آیکن</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="139"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>لغو</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="141"/>
         <source>Look in:</source>
         <extracomment>Label to describe the folder for icon file selection dialog.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>خواندن از:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="142"/>
         <source>Icon name:</source>
-        <translation type="unfinished"></translation>
+        <translation>نام آیکن:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="143"/>
         <source>Icon type:</source>
-        <translation type="unfinished"></translation>
+        <translation>نوع آیکن:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="158"/>
         <source>Add New Sticky Item</source>
-        <translation type="unfinished"></translation>
+        <translation>آیتم پین جدید</translation>
     </message>
 </context>
 <context>
@@ -305,63 +305,63 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="43"/>
         <source>C&amp;lear clipboard history</source>
-        <translation type="unfinished"></translation>
+        <translation>حذف تاریخچه کلیپ‌برد</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="45"/>
         <source>&amp;Configure...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;تنظیم...</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="48"/>
         <source>&amp;About Qlipper...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;درباره کلیپر...</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="50"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;خروج</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="57"/>
         <source>Qlipper - a clipboard history applet</source>
-        <translation type="unfinished"></translation>
+        <translation>کلیپر -برنامه تاریخچه کلیپ‌برد</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="125"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation>بله</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="127"/>
         <location filename="../src/qlippersystray.cpp" line="133"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation>خیر</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="131"/>
         <source>Yes (experimental)</source>
-        <translation type="unfinished"></translation>
+        <translation>بله (آزمایشی)</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="140"/>
         <source>About Qlipper</source>
-        <translation type="unfinished"></translation>
+        <translation>درباره کلیپر</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="142"/>
         <source>Lightweight, cross-platform clipboard history applet.&lt;p&gt;(c)&amp;nbsp;2010-2016&amp;nbsp;Petr&amp;nbsp;Vanek&amp;nbsp;&amp;lt;petr@yarpen.cz&amp;gt;&lt;p&gt;&lt;a href=&quot;https://github.com/pvanek/qlipper/&quot;&gt;https://github.com/pvanek/qlipper/&lt;/a&gt;&lt;p&gt;Support for global keyboard shortcut: %1&lt;br&gt;Support for network clipboard sharing: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">برنامه سبک، و چند-پلتفرمی برای تاریخچه کلیپ‌برد.&lt;p&gt;(c)&amp;nbsp;2010-2016&amp;nbsp;Petr&amp;nbsp;Vanek&amp;nbsp;&amp;lt;petr@yarpen.cz&amp;gt;&lt;p&gt;&lt;a href=&quot;https://github.com/pvanek/qlipper/&quot;&gt;https://github.com/pvanek/qlipper/&lt;/a&gt;&lt;p&gt;پشتیبانی برای میانبر کیبورد سراسری: %1&lt;br&gt;پشتیبانی برای اشتراک گذاری کلیپ‌برد از طریق شبکه: %2</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="170"/>
         <source>Confirm</source>
-        <translation type="unfinished"></translation>
+        <translation>تأیید</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="170"/>
         <source>Are you sure that you want to clear your clipboard history?</source>
-        <translation type="unfinished"></translation>
+        <translation>آیا از پاک کردن تاریخچه کلیپ‌برد خود مطمئن هستید؟</translation>
     </message>
 </context>
 </TS>
