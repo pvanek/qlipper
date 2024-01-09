@@ -365,7 +365,7 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="170"/>
         <source>Are you sure that you want to clear your clipboard history?</source>
-        <translation>Вы уверены, что хотите очистить историю буфера обмена?</translation>
+        <translation>Уверены, что хотите очистить историю буфера обмена?</translation>
     </message>
 </context>
 </TS>
