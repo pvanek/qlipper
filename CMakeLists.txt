@@ -286,8 +286,8 @@ add_custom_target(lrelease
 
 # merged from lxqt-common
 if (ENABLE_LXQT_AUTOSTART)
-    set(LXQTBT_MINIMUM_VERSION "0.3.2")
-    find_package(lxqt-build-tools ${LXQTBT_MINIMUM_VERSION} REQUIRED)
+    set(LXQTBT_MINIMUM_VERSION "2.0.0")
+    find_package(lxqt2-build-tools ${LXQTBT_MINIMUM_VERSION} REQUIRED)
     include(LXQtConfigVars)
     include(LXQtTranslateDesktop)
     add_subdirectory(lxqt-autostart)
