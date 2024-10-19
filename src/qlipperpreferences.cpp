@@ -23,44 +23,38 @@ const QString QlipperPreferences::DEFAULT_ICON_PATH = QStringLiteral(":/icons/ql
 
 
 // allow to store ClipboardContent in the QSettings variant
-QDataStream &operator<<(QDataStream &out, const ClipboardContent &obj)
-{
+QDataStream &operator<<(QDataStream &out, const ClipboardContent &obj) {
     int size = obj.size();
     out << size;
     ClipboardContentIterator it(obj);
-    while (it.hasNext())
-    {
+    while (it.hasNext()) {
         it.next();
         out << it.key() << it.value();
     }
-
     return out;
 }
+
 // allow to read ClipboardContent from QSettings
-QDataStream &operator>>(QDataStream &in, ClipboardContent &obj)
-{
+QDataStream &operator>>(QDataStream &in, ClipboardContent &obj) {
     int size;
     QString key;
     QByteArray value;
     in >> size;
-    for (int i = 0; i < size; ++i)
-    {
+    for (int i = 0; i < size; ++i) {
         in >> key >> value;
         obj[key] = value;
     }
-
     return in;
 }
 
 
-QlipperPreferences* QlipperPreferences::m_instance = 0;
+QlipperPreferences* QlipperPreferences::m_instance = nullptr;
 
 
 QlipperPreferences::QlipperPreferences()
     : QSettings()
 {
     qRegisterMetaType<ClipboardContent>("ClipboardContent");
-    qRegisterMetaTypeStreamOperators<ClipboardContent>("ClipboardContent");
 }
 
 QlipperPreferences::~QlipperPreferences()
@@ -159,7 +153,7 @@ void QlipperPreferences::saveDynamicItems(QList<QlipperItem> list)
             i++;
             setValue("mode", item.clipBoardMode());
             setValue("contentType", item.contentType());
-            setValue("content", qVariantFromValue(item.content()));
+            setValue("content", QVariant::fromValue(item.content()));
         }
         endArray();
     }

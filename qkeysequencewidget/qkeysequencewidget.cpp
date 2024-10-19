@@ -250,7 +250,7 @@ void QKeySequenceWidgetPrivate::init(const QKeySequence keySeq, const QString no
     Q_Q(QKeySequenceWidget);
     Q_UNUSED(q);
     layout = new QHBoxLayout(q_func());
-    layout->setMargin(0);
+    layout->setContentsMargins(0, 0, 0, 0);
     layout->setSpacing(1);
 
     clearButton = new QToolButton(q_func());
