@@ -49,13 +49,13 @@ set(QLIPPER_VERSION 5.1.2)
 
 option(ENABLE_NETWORK_CLIPBOARD_SHARING "Enables experimental network support for clipboard sharing" OFF)
 option(ENABLE_LXQT_AUTOSTART "Enables autostart for LXQt" OFF)
-option(USE_SYSTEM_QXT "Use system Qxt Library for global shortcuts; off for Qt5" OFF)
+option(USE_SYSTEM_QXT "Use system Qxt Library for global shortcuts; off for Qt6" OFF)
 
 
 LIST(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
-find_package(Qt5Widgets "5.6" REQUIRED)
-find_package(Qt5LinguistTools REQUIRED)
+find_package(Qt6Widgets REQUIRED)
+find_package(Qt6LinguistTools REQUIRED)
 
 if (USE_SYSTEM_QXT)
     find_package(Qxt)
@@ -76,7 +76,7 @@ add_definitions(-DIS_CMAKE)
 add_definitions(-DQLIPPER_VERSION="${QLIPPER_VERSION}")
 if (ENABLE_NETWORK_CLIPBOARD_SHARING)
     add_definitions(-DENABLE_NETWORK_CLIPBOARD_SHARING)
-    find_package(Qt5Network REQUIRED)
+    find_package(Qt6Network REQUIRED)
 endif (ENABLE_NETWORK_CLIPBOARD_SHARING)
 
 
@@ -121,7 +121,7 @@ if (NOT QXT_FOUND)
         set (QLIPPER_SOURCES ${QLIPPER_SOURCES} qxt/qxtglobalshortcut_win.cpp)
     elseif (UNIX)
         set (QLIPPER_SOURCES ${QLIPPER_SOURCES} qxt/qxtglobalshortcut_x11.cpp)
-        include_directories(${Qt5Gui_PRIVATE_INCLUDE_DIRS})
+        include_directories(${Qt6Gui_PRIVATE_INCLUDE_DIRS})
     else ()
         set (HAVE_QXT 0)
         add_definitions(-DNO_QXT)
@@ -171,10 +171,10 @@ set (QLIPPER_TRANSLATIONS
     ts/qlipper_pt.ts
 )
 
-QT5_WRAP_UI( QLIPPER_UI ${QLIPPER_FORMS} )
-QT5_WRAP_CPP( QLIPPER_MOC ${QLIPPER_HEADERS} )
-QT5_ADD_RESOURCES( QLIPPER_RCC ${QLIPPER_RESOURCES} )
-QT5_ADD_TRANSLATION( QLIPPER_QM ${QLIPPER_TRANSLATIONS} )
+QT6_WRAP_UI( QLIPPER_UI ${QLIPPER_FORMS} )
+QT6_WRAP_CPP( QLIPPER_MOC ${QLIPPER_HEADERS} )
+QT6_ADD_RESOURCES( QLIPPER_RCC ${QLIPPER_RESOURCES} )
+QT6_ADD_TRANSLATION( QLIPPER_QM ${QLIPPER_TRANSLATIONS} )
 
 include_directories (
     ${CMAKE_CURRENT_SOURCE_DIR}/src
@@ -200,12 +200,12 @@ set_property(TARGET ${EXE_NAME} PROPERTY CXX_STANDARD 11)
 set_property(TARGET ${EXE_NAME} PROPERTY CXX_STANDARD_REQUIRED ON)
 
 target_link_libraries( ${EXE_NAME}
-    Qt5::Widgets
+    Qt6::Widgets
 )
 
 if (ENABLE_NETWORK_CLIPBOARD_SHARING)
     target_link_libraries( ${EXE_NAME}
-        Qt5::Network
+        Qt6::Network
     )
 endif(ENABLE_NETWORK_CLIPBOARD_SHARING)
 
@@ -286,8 +286,8 @@ add_custom_target(lrelease
 
 # merged from lxqt-common
 if (ENABLE_LXQT_AUTOSTART)
-    set(LXQTBT_MINIMUM_VERSION "0.3.2")
-    find_package(lxqt-build-tools ${LXQTBT_MINIMUM_VERSION} REQUIRED)
+    set(LXQTBT_MINIMUM_VERSION "2.0.0")
+    find_package(lxqt2-build-tools ${LXQTBT_MINIMUM_VERSION} REQUIRED)
     include(LXQtConfigVars)
     include(LXQtTranslateDesktop)
     add_subdirectory(lxqt-autostart)

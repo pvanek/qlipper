@@ -28,23 +28,15 @@
 **
 ** <http://libqxt.org>  <foundation@libqxt.org>
 *****************************************************************************/
-
 #define QXTGLOBALSHORTCUT_P_H
 
 #include "qxtglobalshortcut.h"
 #include <QAbstractEventDispatcher>
 #include <QKeySequence>
 #include <QHash>
-
-#if QT_VERSION >= QT_VERSION_CHECK(5,0,0)
 #include <QAbstractNativeEventFilter>
-#endif
 
-
-class QxtGlobalShortcutPrivate : public QxtPrivate<QxtGlobalShortcut>
-#if QT_VERSION >= QT_VERSION_CHECK(5,0,0) && !defined(Q_OS_MAC)
-        ,public QAbstractNativeEventFilter
-#endif
+class QxtGlobalShortcutPrivate : public QxtPrivate<QxtGlobalShortcut>, public QAbstractNativeEventFilter
 {
 public:
     QXT_DECLARE_PUBLIC(QxtGlobalShortcut)
@@ -52,8 +44,7 @@ public:
     ~QxtGlobalShortcutPrivate();
 
     bool enabled;
-    Qt::Key key;
-    Qt::KeyboardModifiers mods;
+    QKeyCombination shortcutCombination;
 
     bool setShortcut(const QKeySequence& shortcut);
     bool unsetShortcut();
@@ -61,12 +52,7 @@ public:
     static bool error;
 #ifndef Q_OS_MAC
     static int ref;
-#if QT_VERSION < QT_VERSION_CHECK(5,0,0)
-    static QAbstractEventDispatcher::EventFilter prevEventFilter;
-    static bool eventFilter(void* message);
-#else
-    virtual bool nativeEventFilter(const QByteArray & eventType, void * message, long * result);
-#endif // QT_VERSION < QT_VERSION_CHECK(5,0,0)
+    virtual bool nativeEventFilter(const QByteArray &eventType, void *message, qintptr *result) override;
 #endif // Q_OS_MAC
 
     static void activateShortcut(quint32 nativeKey, quint32 nativeMods);

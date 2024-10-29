@@ -53,14 +53,13 @@ QDataStream &operator>>(QDataStream &in, ClipboardContent &obj)
 }
 
 
-QlipperPreferences* QlipperPreferences::m_instance = 0;
+QlipperPreferences* QlipperPreferences::m_instance = nullptr;
 
 
 QlipperPreferences::QlipperPreferences()
     : QSettings()
 {
     qRegisterMetaType<ClipboardContent>("ClipboardContent");
-    qRegisterMetaTypeStreamOperators<ClipboardContent>("ClipboardContent");
 }
 
 QlipperPreferences::~QlipperPreferences()
@@ -159,7 +158,7 @@ void QlipperPreferences::saveDynamicItems(QList<QlipperItem> list)
             i++;
             setValue("mode", item.clipBoardMode());
             setValue("contentType", item.contentType());
-            setValue("content", qVariantFromValue(item.content()));
+            setValue("content", QVariant::fromValue(item.content()));
         }
         endArray();
     }

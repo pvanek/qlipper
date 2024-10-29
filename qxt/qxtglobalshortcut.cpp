@@ -35,21 +35,14 @@
 
 #ifndef Q_OS_MAC
 int QxtGlobalShortcutPrivate::ref = 0;
-#   if QT_VERSION < QT_VERSION_CHECK(5,0,0)
-QAbstractEventDispatcher::EventFilter QxtGlobalShortcutPrivate::prevEventFilter = 0;
-#   endif
 #endif // Q_OS_MAC
 QHash<QPair<quint32, quint32>, QxtGlobalShortcut*> QxtGlobalShortcutPrivate::shortcuts;
 
-QxtGlobalShortcutPrivate::QxtGlobalShortcutPrivate() : enabled(true), key(Qt::Key(0)), mods(Qt::NoModifier)
+QxtGlobalShortcutPrivate::QxtGlobalShortcutPrivate() : enabled(true)
 {
 #ifndef Q_OS_MAC
     if (ref == 0) {
-#   if QT_VERSION < QT_VERSION_CHECK(5,0,0)
-        prevEventFilter = QAbstractEventDispatcher::instance()->setEventFilter(eventFilter);
-#   else
         QAbstractEventDispatcher::instance()->installNativeEventFilter(this);
-#endif
     }
     ++ref;
 #endif // Q_OS_MAC
@@ -62,11 +55,7 @@ QxtGlobalShortcutPrivate::~QxtGlobalShortcutPrivate()
     if (ref == 0) {
         QAbstractEventDispatcher *ed = QAbstractEventDispatcher::instance();
         if (ed != 0) {
-#   if QT_VERSION < QT_VERSION_CHECK(5,0,0)
-            ed->setEventFilter(prevEventFilter);
-#   else
             ed->removeNativeEventFilter(this);
-#   endif
         }
     }
 #endif // Q_OS_MAC
@@ -74,32 +63,29 @@ QxtGlobalShortcutPrivate::~QxtGlobalShortcutPrivate()
 
 bool QxtGlobalShortcutPrivate::setShortcut(const QKeySequence& shortcut)
 {
-    Qt::KeyboardModifiers allMods = Qt::ShiftModifier | Qt::ControlModifier | Qt::AltModifier | Qt::MetaModifier;
-    key = shortcut.isEmpty() ? Qt::Key(0) : Qt::Key((shortcut[0] ^ allMods) & shortcut[0]);
-    mods = shortcut.isEmpty() ? Qt::KeyboardModifiers(0) : Qt::KeyboardModifiers(shortcut[0] & allMods);
-    const quint32 nativeKey = nativeKeycode(key);
-    const quint32 nativeMods = nativeModifiers(mods);
+    shortcutCombination = shortcut.isEmpty() ? QKeyCombination{} : shortcut[0];
+    const quint32 nativeKey = nativeKeycode(shortcutCombination.key());
+    const quint32 nativeMods = nativeModifiers(shortcutCombination.keyboardModifiers());
     const bool res = registerShortcut(nativeKey, nativeMods);
     if (res)
         shortcuts.insert(qMakePair(nativeKey, nativeMods), &qxt_p());
     else
-        qWarning() << "QxtGlobalShortcut failed to register:" << QKeySequence(key + mods).toString();
+        qWarning() << "QxtGlobalShortcut failed to register:" << QKeySequence(shortcutCombination).toString();
     return res;
 }
 
 bool QxtGlobalShortcutPrivate::unsetShortcut()
 {
     bool res = false;
-    const quint32 nativeKey = nativeKeycode(key);
-    const quint32 nativeMods = nativeModifiers(mods);
+    const quint32 nativeKey = nativeKeycode(shortcutCombination.key());
+    const quint32 nativeMods = nativeModifiers(shortcutCombination.keyboardModifiers());
     if (shortcuts.value(qMakePair(nativeKey, nativeMods)) == &qxt_p())
         res = unregisterShortcut(nativeKey, nativeMods);
     if (res)
         shortcuts.remove(qMakePair(nativeKey, nativeMods));
     else
-        qWarning() << "QxtGlobalShortcut failed to unregister:" << QKeySequence(key + mods).toString();
-    key = Qt::Key(0);
-    mods = Qt::KeyboardModifiers(0);
+        qWarning() << "QxtGlobalShortcut failed to unregister:" << QKeySequence(shortcutCombination).toString();
+    shortcutCombination = QKeyCombination{};
     return res;
 }
 
@@ -162,7 +148,7 @@ QxtGlobalShortcut::QxtGlobalShortcut(const QKeySequence& shortcut, QObject* pare
  */
 QxtGlobalShortcut::~QxtGlobalShortcut()
 {
-    if (qxt_d().key != 0)
+    if (qxt_d().shortcutCombination != QKeyCombination{})
         qxt_d().unsetShortcut();
 }
 
@@ -182,12 +168,12 @@ QxtGlobalShortcut::~QxtGlobalShortcut()
  */
 QKeySequence QxtGlobalShortcut::shortcut() const
 {
-    return QKeySequence(qxt_d().key | qxt_d().mods);
+    return QKeySequence(qxt_d().shortcutCombination);
 }
 
 bool QxtGlobalShortcut::setShortcut(const QKeySequence& shortcut)
 {
-    if (qxt_d().key != 0)
+    if (qxt_d().shortcutCombination != QKeyCombination{})
         qxt_d().unsetShortcut();
     return qxt_d().setShortcut(shortcut);
 }

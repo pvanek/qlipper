@@ -23,6 +23,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 #include <QPainter>
 #include <QPixmapCache>
 #include <QMimeData>
+#include <QRegularExpression>
 #include <QUrl>
 #include <QtDebug>
 
@@ -32,8 +33,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 
 
 QlipperItem::QlipperItem()
-    : m_valid(false)
-{
+    : m_valid(false) {
 }
 
 QlipperItem::QlipperItem(QClipboard::Mode mode)
@@ -63,7 +63,7 @@ QlipperItem::QlipperItem(QClipboard::Mode mode)
     //  workadound until someone fixes this in gimp -> just read/store only the image/bmp
     //  and don't care about other bmps
     const bool has_bmp = mimeData->hasFormat(QStringLiteral("image/bmp"));
-    const QRegExp re_bmp(QStringLiteral("^image/.+-bmp$"));
+    const QRegularExpression re_bmp(QStringLiteral("^image/.+-bmp$"));
     foreach (QString format, mimeData->formats())
     {
         //qDebug() << format << mimeData->data(format);
@@ -82,7 +82,7 @@ QlipperItem::QlipperItem(QClipboard::Mode mode)
         // cheap at all, it is better to call it just for the real MIME types,
         // i.e. those containing a '/'.
         if (format.contains(QLatin1Char('/'))
-            && (!has_bmp || !re_bmp.exactMatch(format)))
+            && (!has_bmp || !re_bmp.match(format).hasMatch()))
             m_content[format] = mimeData->data(format);
     }
 
