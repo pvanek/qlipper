@@ -37,8 +37,7 @@ QlipperItem::QlipperItem()
 
 QlipperItem::QlipperItem(QClipboard::Mode mode)
     : m_mode(mode),
-      m_valid(true),
-      m_enforceHistory(false)
+      m_valid(true)
 {
     static const auto mime_helper = std::make_unique<QMimeData const>();
     const QMimeData *mimeData = ClipboardWrap::Instance()->mimeData(mode);
@@ -57,7 +56,6 @@ QlipperItem::QlipperItem(QClipboard::Mode mode)
     if (mimeData->formats().count() == 0)
     {
         m_valid = false;
-        m_enforceHistory = true;
     }
 
     //Note: reading all provided image/.*bmp data can make gimp crash
