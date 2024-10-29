@@ -17,7 +17,6 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
-#include <QApplication>
 #include <QImage>
 #include <QIcon>
 #include <QPainter>
@@ -41,8 +40,7 @@ QlipperItem::QlipperItem(QClipboard::Mode mode)
       m_valid(true),
       m_enforceHistory(false)
 {
-    QClipboard * clipboard = QApplication::clipboard();
-    const QMimeData *mimeData = clipboard->mimeData(mode);
+    const QMimeData *mimeData = ClipboardWrap::Instance()->mimeData(mode);
 
 //    qDebug() << "QlipperItem::QlipperItem(QClipboard::Mode mode)" << mode << clipboard->text(mode) << mimeData->hasImage();
 
