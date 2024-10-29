@@ -36,22 +36,24 @@
 #include <QHash>
 #include <QAbstractNativeEventFilter>
 
-class QxtGlobalShortcutPrivate : public QxtPrivate<QxtGlobalShortcut>, public QAbstractNativeEventFilter {
+class QxtGlobalShortcutPrivate : public QxtPrivate<QxtGlobalShortcut>, public QAbstractNativeEventFilter
+{
 public:
     QXT_DECLARE_PUBLIC(QxtGlobalShortcut)
     QxtGlobalShortcutPrivate();
     ~QxtGlobalShortcutPrivate();
 
     bool enabled;
-    Qt::Key key;
-    Qt::KeyboardModifiers mods;
+    QKeyCombination shortcutCombination;
 
     bool setShortcut(const QKeySequence& shortcut);
     bool unsetShortcut();
 
     static bool error;
+#ifndef Q_OS_MAC
     static int ref;
-    bool nativeEventFilter(const QByteArray &eventType, void *message, qintptr *result) override;
+    virtual bool nativeEventFilter(const QByteArray &eventType, void *message, qintptr *result) override;
+#endif // Q_OS_MAC
 
     static void activateShortcut(quint32 nativeKey, quint32 nativeMods);
 
