@@ -40,7 +40,10 @@ QlipperItem::QlipperItem(QClipboard::Mode mode)
       m_valid(true),
       m_enforceHistory(false)
 {
+    static const auto mime_helper = std::make_unique<QMimeData const>();
     const QMimeData *mimeData = ClipboardWrap::Instance()->mimeData(mode);
+    if (mimeData == nullptr)
+        mimeData = mime_helper.get();
 
 //    qDebug() << "QlipperItem::QlipperItem(QClipboard::Mode mode)" << mode << clipboard->text(mode) << mimeData->hasImage();
 
