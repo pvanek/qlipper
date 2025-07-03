@@ -40,8 +40,9 @@
 #    It will copy all dependecies (libs/resources) into bundle tree
 # -------------------------------------------------------
 
-CMAKE_MINIMUM_REQUIRED(VERSION 3.1.0)
-
+CMAKE_MINIMUM_REQUIRED(VERSION 3.11) 
+# from 3.1.0 to 3.6 because CMake now don't support backward compatibility for CMake < v3.5
+# and in future support for 3.11 is also getting dropped !
 project(qlipper)
 
 
