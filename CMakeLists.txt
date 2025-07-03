@@ -57,6 +57,7 @@ LIST(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
 find_package(Qt6Widgets REQUIRED)
 find_package(Qt6LinguistTools REQUIRED)
+find_package(KF6GuiAddons REQUIRED)
 
 if (USE_SYSTEM_QXT)
     find_package(Qxt)
@@ -202,6 +203,7 @@ set_property(TARGET ${EXE_NAME} PROPERTY CXX_STANDARD_REQUIRED ON)
 
 target_link_libraries( ${EXE_NAME}
     Qt6::Widgets
+    KF6::GuiAddons
 )
 
 if (ENABLE_NETWORK_CLIPBOARD_SHARING)

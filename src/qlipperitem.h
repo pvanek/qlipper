@@ -57,7 +57,6 @@ public:
     QlipperItem::ContentType contentType() const { return m_contentType; }
 
     bool isValid() const { return m_valid; }
-    bool enforceHistory() const { return m_enforceHistory; }
 
     void toClipboard(const Actions & actions) const;
 
@@ -71,7 +70,6 @@ private:
     QClipboard::Mode m_mode;
     ContentType m_contentType;
     bool m_valid;
-    bool m_enforceHistory;
 
     ClipboardContent m_content;
     QString m_display;

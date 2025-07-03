@@ -17,7 +17,6 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
-#include <QApplication>
 #include <QImage>
 #include <QIcon>
 #include <QPainter>
@@ -38,11 +37,12 @@ QlipperItem::QlipperItem()
 
 QlipperItem::QlipperItem(QClipboard::Mode mode)
     : m_mode(mode),
-      m_valid(true),
-      m_enforceHistory(false)
+      m_valid(true)
 {
-    QClipboard * clipboard = QApplication::clipboard();
-    const QMimeData *mimeData = clipboard->mimeData(mode);
+    static const auto mime_helper = std::make_unique<QMimeData const>();
+    const QMimeData *mimeData = ClipboardWrap::Instance()->mimeData(mode);
+    if (mimeData == nullptr)
+        mimeData = mime_helper.get();
 
 //    qDebug() << "QlipperItem::QlipperItem(QClipboard::Mode mode)" << mode << clipboard->text(mode) << mimeData->hasImage();
 
@@ -56,7 +56,6 @@ QlipperItem::QlipperItem(QClipboard::Mode mode)
     if (mimeData->formats().count() == 0)
     {
         m_valid = false;
-        m_enforceHistory = true;
     }
 
     //Note: reading all provided image/.*bmp data can make gimp crash

@@ -53,11 +53,11 @@ ClipboardWrap * ClipboardWrap::Instance()
 }
 
 ClipboardWrap::ClipboardWrap()
-    : m_clip(QApplication::clipboard())
+    : m_clip(KSystemClipboard::instance())
     , m_shouldEmit(true)
     , m_timer(new QTimer)
 {
-    connect(m_clip, &QClipboard::changed, this, &ClipboardWrap::onChanged);
+    connect(m_clip, &KSystemClipboard::changed, this, &ClipboardWrap::onChanged);
     connect(m_timer.data(), &QTimer::timeout, this, &ClipboardWrap::emitChanged);
 
     //Note: the timer is here as a workaround for signal flood for primary selection
@@ -82,6 +82,11 @@ void ClipboardWrap::onChanged(QClipboard::Mode mode)
         m_change = mode;
         m_timer->start();
     }
+}
+
+const QMimeData * ClipboardWrap::mimeData(QClipboard::Mode mode)
+{
+    return m_clip->mimeData(mode);
 }
 
 void ClipboardWrap::setMimeData(QMimeData * src, QClipboard::Mode mode)

@@ -20,7 +20,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 #ifndef CLIPBOARDWRAP_H
 #define CLIPBOARDWRAP_H
 
-#include <QClipboard>
+#include <ksystemclipboard.h>
 #include <QScopedPointer>
 
 class QTimer;
@@ -36,6 +36,7 @@ public:
     static ClipboardWrap *Instance();
     ~ClipboardWrap();
 
+    const QMimeData * mimeData(QClipboard::Mode mode = QClipboard::Clipboard);
     void setMimeData(QMimeData * src, QClipboard::Mode mode = QClipboard::Clipboard);
 
 signals:
@@ -50,7 +51,7 @@ private:
 
     static QScopedPointer<ClipboardWrap> m_instance;
 
-    QClipboard * m_clip;
+    KSystemClipboard * m_clip;
     bool m_shouldEmit;
     QClipboard::Mode m_change;
     QScopedPointer<QTimer> m_timer;
