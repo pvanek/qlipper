@@ -1,0 +1,49 @@
+name: Build Qt + KF6 App (Windows)
+
+on:
+  push:
+    branches: [ master, test ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-2022
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Install Python and Git
+      run: |
+        choco install -y python git
+
+    - name: Setup Craft
+      run: |
+        git clone https://invent.kde.org/sdk/craft.git C:\craft-root
+        python C:\craft-root\setup\setup-craft.py --prefix C:\CraftRoot --no-internal-packages
+
+    - name: Initialize Craft
+      run: |
+        echo "source C:\CraftRoot\craft\craftenv.ps1" >> $env:GITHUB_ENV
+        echo "C:\CraftRoot\craft\bin" >> $env:GITHUB_PATH
+
+    - name: Install KF6GuiAddons
+      run: |
+        $env:Path += ";C:\CraftRoot\craft\bin"
+        . "C:\CraftRoot\craft\craftenv.ps1"
+        craft --install kf6-guiaddons
+
+    - name: Configure and build app
+      run: |
+        . "C:\CraftRoot\craft\craftenv.ps1"
+        cmake -S . -B build -G Ninja -DCMAKE_PREFIX_PATH="C:/CraftRoot"
+        cmake --build build --config Release
+
+    - name: Upload built artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: app
+        path: build/qlipper
+
