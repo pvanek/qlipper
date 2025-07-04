@@ -91,7 +91,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="48"/>
         <source>Clipboard Entries Count:</source>
-        <translation>Брой записи в клипборда:</translation>
+        <translation>Брой записи в системния буфер:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="55"/>
