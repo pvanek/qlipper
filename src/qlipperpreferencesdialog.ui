@@ -42,10 +42,17 @@
        <string>Preferences</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout">
-       <item row="0" column="0">
-        <widget class="QLabel" name="label">
+       <item row="10" column="0">
+        <widget class="QCheckBox" name="confirmOnClear">
          <property name="text">
-          <string>Clipboard Entries Count:</string>
+          <string>Confirm Clear History</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QKeySequenceWidget" name="shortcutWidget" native="true">
+         <property name="toolTip">
+          <string>Change global keyboard shortcut to invoke the menu on screen</string>
          </property>
         </widget>
        </item>
@@ -97,7 +104,14 @@
          </property>
         </widget>
        </item>
-       <item row="2" column="0" colspan="2">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Clipboard Entries Count:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0" colspan="2">
         <widget class="QCheckBox" name="trimCheckBox">
          <property name="toolTip">
           <string>Useful for bigger text blocks copied for example from dummy terminals (minicom, etc.)</string>
@@ -107,21 +121,7 @@
          </property>
         </widget>
        </item>
-       <item row="3" column="0">
-        <widget class="QLabel" name="keyboardShortcutLabel">
-         <property name="text">
-          <string>Keyboard Shortcut:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1">
-        <widget class="QKeySequenceWidget" name="shortcutWidget" native="true">
-         <property name="toolTip">
-          <string>Change global keyboard shortcut to invoke the menu on screen</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="0">
+       <item row="5" column="0">
         <widget class="QLabel" name="label_3">
          <property name="text">
           <string>Tray icon image:</string>
@@ -131,23 +131,7 @@
          </property>
         </widget>
        </item>
-       <item row="4" column="1">
-        <widget class="QToolButton" name="buttonIconImage">
-         <property name="text">
-          <string/>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>20</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="popupMode">
-          <enum>QToolButton::InstantPopup</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="0" colspan="2">
+       <item row="6" column="0" colspan="2">
         <widget class="QCheckBox" name="platformExtensionsCheckBox">
          <property name="toolTip">
           <string>Use clipboard extensions (X11 Selections, OS X Find Buffer) when it's supported</string>
@@ -157,7 +141,27 @@
          </property>
         </widget>
        </item>
-       <item row="6" column="0" colspan="2">
+       <item row="9" column="0" colspan="2">
+        <widget class="QCheckBox" name="synchronizeHistory">
+         <property name="text">
+          <string>Synchronize history to storage instantly</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="0" colspan="2">
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>96</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="7" column="0" colspan="2">
         <widget class="QComboBox" name="synchronizePSE">
          <item>
           <property name="text">
@@ -176,37 +180,43 @@
          </item>
         </widget>
        </item>
-       <item row="7" column="0" colspan="2">
+       <item row="5" column="1">
+        <widget class="QToolButton" name="buttonIconImage">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="popupMode">
+          <enum>QToolButton::InstantPopup</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="keyboardShortcutLabel">
+         <property name="text">
+          <string>Keyboard Shortcut:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
         <widget class="QCheckBox" name="clearItemsOnExit">
          <property name="text">
           <string>Clear Items on Exit</string>
          </property>
         </widget>
        </item>
-       <item row="8" column="0" colspan="2">
-        <widget class="QCheckBox" name="synchronizeHistory">
+       <item row="2" column="1">
+        <widget class="QCheckBox" name="reverseOrder">
+         <property name="toolTip">
+          <string>Newly copied data appears at end of the menu</string>
+         </property>
          <property name="text">
-          <string>Synchronize history to storage instantly</string>
-         </property>
-        </widget>
-       </item>
-       <item row="10" column="0" colspan="2">
-        <spacer name="verticalSpacer">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>96</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="9" column="0">
-        <widget class="QCheckBox" name="confirmOnClear">
-         <property name="text">
-          <string>Confirm Clear History</string>
+          <string>Reverse order</string>
          </property>
         </widget>
        </item>
