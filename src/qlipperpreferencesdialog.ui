@@ -45,7 +45,7 @@
        <item row="0" column="0">
         <widget class="QLabel" name="label">
          <property name="text">
-          <string>Clipboard Entries Count:</string>
+          <string>Clipboard Entry Count:</string>
          </property>
         </widget>
        </item>
@@ -81,7 +81,7 @@
        <item row="1" column="1">
         <widget class="QSpinBox" name="displaySizeComboBox">
          <property name="toolTip">
-          <string>How long is the preview text in the menu</string>
+          <string>Length of preview text in the menu</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -117,14 +117,14 @@
        <item row="3" column="1">
         <widget class="QKeySequenceWidget" name="shortcutWidget" native="true">
          <property name="toolTip">
-          <string>Change global keyboard shortcut to invoke the menu on screen</string>
+          <string>Change keyboard shortcut to bring up the menu</string>
          </property>
         </widget>
        </item>
        <item row="4" column="0">
         <widget class="QLabel" name="label_3">
          <property name="text">
-          <string>Tray icon image:</string>
+          <string>Tray-icon image:</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -150,10 +150,10 @@
        <item row="5" column="0" colspan="2">
         <widget class="QCheckBox" name="platformExtensionsCheckBox">
          <property name="toolTip">
-          <string>Use clipboard extensions (X11 Selections, OS X Find Buffer) when it's supported</string>
+          <string>Use clipboard extensions (X11 Selections, macOS Find Buffer) when it's supported</string>
          </property>
          <property name="text">
-          <string>Use Platform Specific Extensions (Advanced)</string>
+          <string>Use Platform-specific Extensions (Advanced)</string>
          </property>
         </widget>
        </item>
@@ -161,17 +161,17 @@
         <widget class="QComboBox" name="synchronizePSE">
          <item>
           <property name="text">
-           <string>No synchronization of clipboard &amp; PSE</string>
+           <string>No syncing of clipboard and PSE</string>
           </property>
          </item>
          <item>
           <property name="text">
-           <string>Synchronize clipboard &amp; PSE when item selected</string>
+           <string>Sync clipboard and PSE when an item is selected</string>
           </property>
          </item>
          <item>
           <property name="text">
-           <string>Synchronize clipboard &amp; PSE instantly</string>
+           <string>Sync clipboard and PSE instantly</string>
           </property>
          </item>
         </widget>
@@ -179,14 +179,14 @@
        <item row="7" column="0" colspan="2">
         <widget class="QCheckBox" name="clearItemsOnExit">
          <property name="text">
-          <string>Clear Items on Exit</string>
+          <string>Clear Items after Exit</string>
          </property>
         </widget>
        </item>
        <item row="8" column="0" colspan="2">
         <widget class="QCheckBox" name="synchronizeHistory">
          <property name="text">
-          <string>Synchronize history to storage instantly</string>
+          <string>Sync history to storage instantly</string>
          </property>
         </widget>
        </item>
@@ -206,7 +206,7 @@
        <item row="9" column="0">
         <widget class="QCheckBox" name="confirmOnClear">
          <property name="text">
-          <string>Confirm Clear History</string>
+          <string>Confirm Clearing History</string>
          </property>
         </widget>
        </item>
