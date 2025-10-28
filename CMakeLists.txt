@@ -123,10 +123,10 @@ if (NOT QXT_FOUND)
         set (QLIPPER_SOURCES ${QLIPPER_SOURCES} qxt/qxtglobalshortcut_win.cpp)
     elseif (UNIX)
         set (QLIPPER_SOURCES ${QLIPPER_SOURCES} qxt/qxtglobalshortcut_x11.cpp)
-        # Qt 6.10: Usage of a private Qt module Foo now requires a call to find_package(Qt6 COMPONENTS FooPrivate) to make the Qt6::FooPrivate target available.
         if (Qt6Gui_VERSION VERSION_GREATER_EQUAL "6.10.0")
+            # Qt 6.10: Usage of a private Qt module Foo now requires a call to find_package(Qt6 COMPONENTS FooPrivate) to make the Qt6::FooPrivate target available.
+            # It will be linked below
             find_package(Qt6 COMPONENTS GuiPrivate)
-            link_libraries(Qt6::GuiPrivate)
         else ()
             include_directories(${Qt6Gui_PRIVATE_INCLUDE_DIRS})
         endif ()
@@ -211,6 +211,12 @@ target_link_libraries( ${EXE_NAME}
     Qt6::Widgets
     KF6::GuiAddons
 )
+
+if (Qt6Gui_VERSION VERSION_GREATER_EQUAL "6.10.0" AND HAVE_QXT AND UNIX)
+    target_link_libraries( ${EXE_NAME}
+        Qt6::GuiPrivate
+    )
+endif ()
 
 if (ENABLE_NETWORK_CLIPBOARD_SHARING)
     target_link_libraries( ${EXE_NAME}
