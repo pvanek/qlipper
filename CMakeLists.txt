@@ -59,6 +59,11 @@ find_package(Qt6Widgets REQUIRED)
 find_package(Qt6LinguistTools REQUIRED)
 find_package(KF6GuiAddons REQUIRED)
 
+# Qt 6.10: Usage of a private Qt module Foo now requires a call to find_package(Qt6 COMPONENTS FooPrivate) to make the Qt6::FooPrivate target available.
+if (Qt6Gui_VERSION VERSION_GREATER_EQUAL "6.10.0")
+    find_package(Qt6 REQUIRED COMPONENTS GuiPrivate)
+endif()
+
 if (USE_SYSTEM_QXT)
     find_package(Qxt)
     message(STATUS "Use system Qxt Library: " ${USE_SYSTEM_QXT})
@@ -202,13 +207,17 @@ set_property(TARGET ${EXE_NAME} PROPERTY CXX_STANDARD 11)
 set_property(TARGET ${EXE_NAME} PROPERTY CXX_STANDARD_REQUIRED ON)
 
 target_link_libraries( ${EXE_NAME}
-    Qt6::Widgets
-    KF6::GuiAddons
+    PUBLIC
+        Qt6::Widgets
+        KF6::GuiAddons
+    PRIVATE
+        Qt6::GuiPrivate
 )
 
 if (ENABLE_NETWORK_CLIPBOARD_SHARING)
     target_link_libraries( ${EXE_NAME}
-        Qt6::Network
+        PUBLIC
+            Qt6::Network
     )
 endif(ENABLE_NETWORK_CLIPBOARD_SHARING)
 
@@ -216,9 +225,15 @@ endif(ENABLE_NETWORK_CLIPBOARD_SHARING)
 #target_link_libraries( ${EXE_NAME} ${QT_QTNETWORK_LIBRARY})
 
 if (APPLE)
-    target_link_libraries(${EXE_NAME} ${CARBON_LIBRARY})
+    target_link_libraries(${EXE_NAME}
+        PUBLIC
+            ${CARBON_LIBRARY}
+    )
 elseif (UNIX)
-    target_link_libraries(${EXE_NAME} ${X11_X11_LIB})
+    target_link_libraries(${EXE_NAME}
+        PUBLIC
+            ${X11_X11_LIB}
+)
 endif ()
 
 
