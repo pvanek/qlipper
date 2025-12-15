@@ -1,3 +1,10 @@
+6.0.0 / 2025-12-15
+==================
+
+  * Plenty of translation updates
+  * Port to Qt v6
+  * Add wayland support (using KF6)
+
 5.1.2 / 2019-02-26
 ==================
 

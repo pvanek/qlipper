@@ -46,7 +46,7 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.11)
 project(qlipper)
 
 
-set(QLIPPER_VERSION 5.1.2)
+set(QLIPPER_VERSION 6.0.0)
 
 option(ENABLE_NETWORK_CLIPBOARD_SHARING "Enables experimental network support for clipboard sharing" OFF)
 option(ENABLE_LXQT_AUTOSTART "Enables autostart for LXQt" OFF)
