@@ -151,7 +151,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="169"/>
         <source>Synchronize clipboard &amp; PSE when item selected</source>
-        <translation>Synchronizuj schowek i PSE kiedy element zostanie zaznaczony</translation>
+        <translation>Synchronizuj schowek i PSE, gdy element zostanie zaznaczony</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="174"/>

@@ -63,7 +63,7 @@
     <message>
         <location filename="../src/qlippermodel.cpp" line="213"/>
         <source>Welcome to the Qlipper clipboard history applet</source>
-        <translation>Qlipper 클립보드 내역 애플릿에 오신 것을 환영합니다</translation>
+        <translation>Qlipper 클립보드 히스토리 애플릿의 사용을 환영합니다</translation>
     </message>
 </context>
 <context>
@@ -166,12 +166,12 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="189"/>
         <source>Synchronize history to storage instantly</source>
-        <translation>내역을 저장소에 즉시 동기화하기</translation>
+        <translation>즉시 저장소에 히스토리 동기화하기</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="209"/>
         <source>Confirm Clear History</source>
-        <translation>내역 비우기 확인하기</translation>
+        <translation>히스토리 비우기 확인하기</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="225"/>
@@ -305,7 +305,7 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="43"/>
         <source>C&amp;lear clipboard history</source>
-        <translation>클립보드 내역 지우기(&amp;L)</translation>
+        <translation>클립보드 히스토리 지우기(&amp;L)</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="45"/>
@@ -325,7 +325,7 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="57"/>
         <source>Qlipper - a clipboard history applet</source>
-        <translation>Qlipper - 클립보드 내역 애플릿</translation>
+        <translation>Qlipper - 클립보드 히스토리 애플릿</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="125"/>
@@ -351,7 +351,7 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="142"/>
         <source>Lightweight, cross-platform clipboard history applet.&lt;p&gt;(c)&amp;nbsp;2010-2016&amp;nbsp;Petr&amp;nbsp;Vanek&amp;nbsp;&amp;lt;petr@yarpen.cz&amp;gt;&lt;p&gt;&lt;a href=&quot;https://github.com/pvanek/qlipper/&quot;&gt;https://github.com/pvanek/qlipper/&lt;/a&gt;&lt;p&gt;Support for global keyboard shortcut: %1&lt;br&gt;Support for network clipboard sharing: %2</source>
-        <translation>경량, 교차 플랫폼 클립보드 내역 애플릿입니다.&lt;p&gt;(c)&amp;nbsp;2010-2016&amp;nbsp;Petr&amp;nbsp;Vanek&amp;nbsp;&amp;lt;petr@yarpen.cz&amp;gt;&lt;p&gt;&lt;a href=&quot;https://github.com/pvanek/qlipper/&quot;&gt;https://github.com/pvanek/qlipper/&lt;/a&gt;&lt;p&gt;전역 키보드 단축키 지원: %1&lt;br&gt;네트워크 클립보드 공유 지원: %2
+        <translation>경량, 교차 플랫폼 클립보드 히스토리 애플릿입니다.&lt;p&gt;(c)&amp;nbsp;2010-2016&amp;nbsp;Petr&amp;nbsp;Vanek&amp;nbsp;&amp;lt;petr@yarpen.cz&amp;gt;&lt;p&gt;&lt;a href=&quot;https://github.com/pvanek/qlipper/&quot;&gt;https://github.com/pvanek/qlipper/&lt;/a&gt;&lt;p&gt;전역 키보드 단축키 지원: %1&lt;br&gt;네트워크 클립보드 공유 지원: %2
 
 한국어 번역: 이정희 &lt;daemul72@gmail.com&gt;</translation>
     </message>
@@ -363,7 +363,7 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="170"/>
         <source>Are you sure that you want to clear your clipboard history?</source>
-        <translation>클립보드 내역을 비우시겠습니까?</translation>
+        <translation>클립보드 히스토리를 비우시겠습니까?</translation>
     </message>
 </context>
 </TS>
