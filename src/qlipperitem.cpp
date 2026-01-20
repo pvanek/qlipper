@@ -176,7 +176,7 @@ QString QlipperItem::displayRole() const
     case QlipperItem::Sticky:
         return m_display.left(QlipperPreferences::Instance()->displaySize());
     case QlipperItem::Url:
-        return QObject::tr("Url: %1").arg(m_display).left(QlipperPreferences::Instance()->displaySize());
+        return QObject::tr("URL: %1").arg(m_display).left(QlipperPreferences::Instance()->displaySize());
     case QlipperItem::Binary:
         return QObject::tr("Binary: %1").arg(m_display).left(QlipperPreferences::Instance()->displaySize());
     }
