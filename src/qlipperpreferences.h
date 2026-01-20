@@ -55,6 +55,7 @@ public:
     bool platformExtensions() const;
     PSESynchronization synchronizePSE() const;
     bool clearItemsOnExit() const;
+    bool reverseOrder() const;
     bool synchronizeHistory() const;
     bool confirmOnClear() const;
 

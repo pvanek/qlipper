@@ -222,6 +222,10 @@ bool QlipperPreferences::confirmOnClear() const
     return value("confirmClear", true).toBool();
 }
 
+bool QlipperPreferences::reverseOrder() const{
+    return value("reverseOrder", false).toBool();
+}
+
 bool QlipperPreferences::networkSend() const
 {
     return value("networkSend", false).toBool();
