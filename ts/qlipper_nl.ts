@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="180"/>
         <source>Url: %1</source>
-        <translation>URL: %1</translation>
+        <translation>Url: %1</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="182"/>
@@ -50,7 +50,7 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="256"/>
         <source>URL</source>
-        <translation>URL</translation>
+        <translation>Url</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="259"/>

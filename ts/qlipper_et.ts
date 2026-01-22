@@ -76,7 +76,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="42"/>
         <source>Preferences</source>
-        <translation>Üldised seadistused</translation>
+        <translation>Üldised eelistused</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="113"/>

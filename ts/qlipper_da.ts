@@ -71,12 +71,12 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="14"/>
         <source>Qlipper Preferences</source>
-        <translation>Qlipper-præferencer</translation>
+        <translation>Qlipper-indstillinger</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="42"/>
         <source>Preferences</source>
-        <translation>Præferencer</translation>
+        <translation>Indstillinger</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="113"/>
@@ -141,7 +141,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="127"/>
         <source>Tray icon image:</source>
-        <translation>Billede til bakkeikon:</translation>
+        <translation>Billede til statusikon:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="164"/>

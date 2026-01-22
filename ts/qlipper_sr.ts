@@ -30,7 +30,7 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="240"/>
         <source>Find Buffer</source>
-        <translation type="unfinished"></translation>
+        <translation>Пронађи бафер</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="247"/>
@@ -40,7 +40,7 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="250"/>
         <source>Rich Text</source>
-        <translation type="unfinished"></translation>
+        <translation>Обогаћени текст</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="253"/>
@@ -292,7 +292,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="143"/>
         <source>Icon type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Тип иконе:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="158"/>
@@ -305,22 +305,22 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="43"/>
         <source>C&amp;lear clipboard history</source>
-        <translation type="unfinished">Очисти &amp;историјат</translation>
+        <translation>&amp;Обриши историју клипборда</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="45"/>
         <source>&amp;Configure...</source>
-        <translation type="unfinished">&amp;Подеси...</translation>
+        <translation>&amp;Подеси...</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="48"/>
         <source>&amp;About Qlipper...</source>
-        <translation type="unfinished">&amp;О програму...</translation>
+        <translation>&amp;О програму...</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="50"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished">&amp;Напусти</translation>
+        <translation>&amp;Напусти</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="57"/>
@@ -351,7 +351,7 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="142"/>
         <source>Lightweight, cross-platform clipboard history applet.&lt;p&gt;(c)&amp;nbsp;2010-2016&amp;nbsp;Petr&amp;nbsp;Vanek&amp;nbsp;&amp;lt;petr@yarpen.cz&amp;gt;&lt;p&gt;&lt;a href=&quot;https://github.com/pvanek/qlipper/&quot;&gt;https://github.com/pvanek/qlipper/&lt;/a&gt;&lt;p&gt;Support for global keyboard shortcut: %1&lt;br&gt;Support for network clipboard sharing: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Лаган, вишеплатформски аплет за историју клипборда.&lt;p&gt;(c)&amp;nbsp;2010-2016&amp;nbsp;Petr&amp;nbsp;Vanek&amp;nbsp;&amp;lt;petr@yarpen.cz&amp;gt;&lt;p&gt;&lt;a href=&quot;https://github.com/pvanek/qlipper/&quot;&gt;https://github.com/pvanek/qlipper/&lt;/a&gt;&lt;p&gt;Подршка за глобалне пречице на тастатури: %1&lt;br&gt;Подршка за дељење клипборда преко мреже: %2</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="170"/>
