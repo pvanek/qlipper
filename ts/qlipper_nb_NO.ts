@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="182"/>
         <source>Binary: %1</source>
-        <translation type="unfinished">Kjørbar fil: %1</translation>
+        <translation>Binær: %1</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="234"/>
@@ -35,7 +35,7 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="247"/>
         <source>Plain Text</source>
-        <translation>Klartekst</translation>
+        <translation>Ren tekst</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="250"/>
@@ -45,7 +45,7 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="253"/>
         <source>Binary Content</source>
-        <translation type="unfinished">Binærfilsinnhold</translation>
+        <translation>Binært innhold</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="256"/>
@@ -55,7 +55,7 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="259"/>
         <source>Sticky Item (Plain Text)</source>
-        <translation>Festet element (klartekst)</translation>
+        <translation>Festet element (ren tekst)</translation>
     </message>
 </context>
 <context>
@@ -106,7 +106,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="77"/>
         <source>Maximum Display Size:</source>
-        <translation>Maksimal skjermstørrelse:</translation>
+        <translation>Maksimal visningsstørrelse:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="84"/>
@@ -206,7 +206,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="274"/>
         <source>Move item up</source>
-        <translation>Flytt element ↑</translation>
+        <translation>Flytt element opp</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="277"/>
@@ -216,7 +216,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="284"/>
         <source>Move item down</source>
-        <translation>Flytt element nedover</translation>
+        <translation>Flytt element ned</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="287"/>
@@ -361,7 +361,7 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="170"/>
         <source>Are you sure that you want to clear your clipboard history?</source>
-        <translation type="unfinished">Fjern all utklipstavlehistorikk?</translation>
+        <translation>Er du sikker på at du vil tømme utklippstavlehistorikken?</translation>
     </message>
 </context>
 </TS>
