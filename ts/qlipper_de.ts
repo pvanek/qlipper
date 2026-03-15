@@ -164,12 +164,12 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="182"/>
         <source>Clear Items on Exit</source>
-        <translation>Elemente beim Beenden löschen</translation>
+        <translation>Einträge beim Beenden löschen</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="189"/>
         <source>Synchronize history to storage instantly</source>
-        <translation>Verlauf sofort mit dem Speicher synchronisieren</translation>
+        <translation>Verlauf sofort auf die Festplatte synchronisieren</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.ui" line="209"/>
@@ -285,7 +285,7 @@
         <location filename="../src/qlipperpreferencesdialog.cpp" line="141"/>
         <source>Look in:</source>
         <extracomment>Label to describe the folder for icon file selection dialog.</extracomment>
-        <translation>Nachsehen in:</translation>
+        <translation>Suche in:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="142"/>
@@ -295,7 +295,7 @@
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="143"/>
         <source>Icon type:</source>
-        <translation>Symboltyp:</translation>
+        <translation>Symbolart:</translation>
     </message>
     <message>
         <location filename="../src/qlipperpreferencesdialog.cpp" line="158"/>
@@ -308,7 +308,7 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="43"/>
         <source>C&amp;lear clipboard history</source>
-        <translation>Zwischenablagenverlauf &amp;löschen</translation>
+        <translation>Zwischenablage-Verlauf &amp;löschen</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="45"/>

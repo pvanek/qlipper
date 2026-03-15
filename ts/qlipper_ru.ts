@@ -45,7 +45,7 @@
     <message>
         <location filename="../src/qlipperitem.cpp" line="253"/>
         <source>Binary Content</source>
-        <translation>Бинарные данные</translation>
+        <translation>Двоичные данные</translation>
     </message>
     <message>
         <location filename="../src/qlipperitem.cpp" line="256"/>
@@ -351,11 +351,7 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="142"/>
         <source>Lightweight, cross-platform clipboard history applet.&lt;p&gt;(c)&amp;nbsp;2010-2016&amp;nbsp;Petr&amp;nbsp;Vanek&amp;nbsp;&amp;lt;petr@yarpen.cz&amp;gt;&lt;p&gt;&lt;a href=&quot;https://github.com/pvanek/qlipper/&quot;&gt;https://github.com/pvanek/qlipper/&lt;/a&gt;&lt;p&gt;Support for global keyboard shortcut: %1&lt;br&gt;Support for network clipboard sharing: %2</source>
-        <translation>Легковесный кросс-платформенный апплет истории буфера обмена&lt;p&gt;
-(c)&amp;nbsp;2010-2016&amp;nbsp;Петр&amp;nbsp;Ванек&amp;nbsp;(Petr&amp;nbsp;Vanek)&amp;nbsp;&amp;lt;petr@yarpen.cz&amp;gt;&lt;p&gt;
-&lt;a href=&quot;https://github.com/pvanek/qlipper/&quot;&gt;https://github.com/pvanek/qlipper/&lt;/a&gt;&lt;p&gt;
-Поддержка глобальных сочетаний клавиш: %1&lt;br&gt;
-Поддержка совместного использования буфера по сети: %1</translation>
+        <translation>Легковесный кросс-платформенный апплет истории буфера обмена.&lt;p&gt;(c)&amp;nbsp;2010-2016&amp;nbsp;Petr&amp;nbsp;Vanek&amp;nbsp;&amp;lt;petr@yarpen.cz&amp;gt;&lt;p&gt;&lt;a href=&quot;https://github.com/pvanek/qlipper/&quot;&gt;https://github.com/pvanek/qlipper/&lt;/a&gt;&lt;p&gt;Поддержка глобальных сочетаний клавиш: %1&lt;br&gt;Поддержка общего доступа к буферу по сети: %2</translation>
     </message>
     <message>
         <location filename="../src/qlippersystray.cpp" line="170"/>
@@ -365,7 +361,7 @@
     <message>
         <location filename="../src/qlippersystray.cpp" line="170"/>
         <source>Are you sure that you want to clear your clipboard history?</source>
-        <translation>Вы уверены, что хотите очистить историю буфера обмена?</translation>
+        <translation>Уверены, что хотите очистить историю буфера обмена?</translation>
     </message>
 </context>
 </TS>
