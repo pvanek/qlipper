@@ -21,6 +21,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 
 #include <QFileDialog>
 #include <QMenu>
+#include <QGuiApplication>
 
 #include "qlipperitem.h"
 #include "qlipperpreferences.h"
@@ -37,6 +38,12 @@ QlipperPreferencesDialog::QlipperPreferencesDialog(QWidget *parent) :
     displaySizeComboBox->setValue(s->displaySize());
     trimCheckBox->setChecked(s->trim());
     shortcutWidget->setKeySequence(QKeySequence(s->shortcut()));
+    if (QGuiApplication::platformName() == "wayland")
+    {
+        keyboardShortcutLabel->setToolTip(tr("Global shortcuts can't be handled by app on wayland.\nYou can configure shortcut in compositor and use D-Bus invocation, e.g.:\nqdbus6 org.qlipper /org/qlipper show"));
+        keyboardShortcutLabel->setEnabled(false);
+        shortcutWidget->setEnabled(false);
+    }
     const bool pse = s->platformExtensions();
     platformExtensionsCheckBox->setChecked(pse);
     synchronizePSE->setEnabled(pse);

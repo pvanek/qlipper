@@ -24,13 +24,18 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 #include <QSharedMemory>
 #include <QTimer>
 #include <mutex>
+#include <QDBusConnection>
+#include <QDBusError>
 
 #include "qlippersystray.h"
 #include "qlipperpreferences.h"
+#include "qlipperdbusinterface.h"
 
 int main(int argc, char **argv)
 {
     QApplication a(argc, argv);
+    a.setApplicationName("qlipper");
+    a.setDesktopFileName("qlipper");
 
     // Note1: Allow only one instance of qlipper.
     // Note2: We can't use QSystemSemaphore as it doesn't provide
@@ -104,6 +109,13 @@ int main(int argc, char **argv)
 
     QlipperSystray s;
     s.show();
+
+    QlipperDbusInterface dbus_i{s};
+    auto conn = QDBusConnection::sessionBus();
+    if (!conn.registerService("org.qlipper"))
+        qWarning() << "Can't register D-Bus service";
+    if (!conn.registerObject("/org/qlipper", &dbus_i, QDBusConnection::ExportAllSlots))
+        qWarning() << "Can't register object:" << conn.lastError().message();
 
     return a.exec();
 }

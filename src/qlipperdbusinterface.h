@@ -1,6 +1,6 @@
 /*
 Qlipper - clipboard history manager
-Copyright (C) 2012 Petr Vanek <petr@yarpen.cz>
+Copyright (C) 2026 Palo Kisa <palo.kisa@gmail.com>
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -17,39 +17,24 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
-#ifndef QLIPPERSYSTRAY_H
-#define QLIPPERSYSTRAY_H
+#pragma once
 
-#include <QSystemTrayIcon>
+#include <QObject>
 
-class QlipperModel;
-class QMenuView;
-#ifndef NO_QXT
-class QxtGlobalShortcut;
-#endif
+class QlipperSystray;
 
-class QlipperSystray : public QSystemTrayIcon
+class QlipperDbusInterface : public QObject
 {
     Q_OBJECT
+
+    Q_CLASSINFO("D-Bus Interface", "org.qlipper")
+
 public:
-    explicit QlipperSystray(QObject *parent = 0);
-    ~QlipperSystray();
-
-private:
-    QlipperModel *m_model;
-    QMenu *m_contextMenu;
-#ifndef NO_QXT
-    QMenuView *m_shortcutMenu;
-    QxtGlobalShortcut *m_shortcut;
-#endif
-
+    explicit QlipperDbusInterface(QlipperSystray & tray, QObject * parent = nullptr);
 public slots:
-    void shortcut_activated();
-private slots:
-    void editPreferences();
-    void showAbout();
-    void systray_activated(QSystemTrayIcon::ActivationReason reason);
-    void clear_history();
+    void show();
+private:
+    QlipperSystray & m_tray;
 };
 
-#endif // QLIPPERSYSTRAY_H
+

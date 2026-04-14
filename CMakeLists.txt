@@ -55,8 +55,7 @@ option(USE_SYSTEM_QXT "Use system Qxt Library for global shortcuts; off for Qt6"
 
 LIST(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
-find_package(Qt6Widgets REQUIRED)
-find_package(Qt6LinguistTools REQUIRED)
+find_package(Qt6 REQUIRED COMPONENTS Widgets DBus LinguistTools)
 find_package(KF6GuiAddons REQUIRED)
 
 # Qt 6.10: Usage of a private Qt module Foo now requires a call to find_package(Qt6 COMPONENTS FooPrivate) to make the Qt6::FooPrivate target available.
@@ -98,6 +97,7 @@ set (QLIPPER_HEADERS
     src/qlippersystray.h
     src/qlippernetwork.h
     src/clipboardwrap.h
+    src/qlipperdbusinterface.h
 )
 set (QLIPPER_SOURCES 
     qkeysequencewidget/qkeysequencewidget.cpp
@@ -110,6 +110,7 @@ set (QLIPPER_SOURCES
     src/qlippersystray.cpp
     src/qlippernetwork.cpp
     src/clipboardwrap.cpp
+    src/qlipperdbusinterface.cpp
 )
 if (WIN32)
     set(QLIPPER_SOURCES ${QLIPPER_SOURCES} src/icons/qlipper.rc)
@@ -207,10 +208,10 @@ set_property(TARGET ${EXE_NAME} PROPERTY CXX_STANDARD 11)
 set_property(TARGET ${EXE_NAME} PROPERTY CXX_STANDARD_REQUIRED ON)
 
 target_link_libraries( ${EXE_NAME}
-    PUBLIC
-        Qt6::Widgets
-        KF6::GuiAddons
     PRIVATE
+        Qt6::Widgets
+        Qt6::DBus
+        KF6::GuiAddons
         Qt6::GuiPrivate
 )
 

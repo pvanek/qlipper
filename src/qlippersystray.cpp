@@ -19,7 +19,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 
 #include <QApplication>
 #include <QMessageBox>
-#include <QtDebug>
+#include <QDebug>
 
 #include "qmenuview.h"
 #include "qlippermodel.h"
