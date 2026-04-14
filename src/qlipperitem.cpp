@@ -163,7 +163,10 @@ void QlipperItem::toClipboard(const Actions & actions) const
     }
     if (actions.testFlag(ToOther))
     {
-        clipboard->setMimeData(mime, QClipboard::Clipboard == m_mode ? QClipboard::Selection : QClipboard::Clipboard);
+        auto mime_c = new QMimeData;
+        for (const auto & format : mime->formats())
+            mime_c->setData(format, mime->data(format));
+        clipboard->setMimeData(mime_c, QClipboard::Clipboard == m_mode ? QClipboard::Selection : QClipboard::Clipboard);
     }
 }
 
